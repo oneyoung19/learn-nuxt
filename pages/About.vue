@@ -2,15 +2,17 @@
   <div>about</div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-    }
+<script setup>
+useHead({
+  title: 'About',
+  meta: [
+    { name: 'description', content: 'About' }
+  ],
+  bodyAttrs: {
+    class: 'about'
   },
-  methods: {
-  }
-}
+  script: [ { innerHTML: 'console.log(\'Hello world\')' } ]
+})
 </script>
 
 <style scoped lang="less">
