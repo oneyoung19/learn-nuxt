@@ -1,6 +1,8 @@
 <template>
-  <NuxtLink to="/about">About</NuxtLink>
-  <div>This is from 'pages/index'</div>
+  <div>
+    <div>Home Page</div>
+    <NuxtLink to="/about">About</NuxtLink>
+  </div>
 </template>
 
 <script setup>

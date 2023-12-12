@@ -1,5 +1,8 @@
 <template>
-  <div>about</div>
+  <div>
+    <div>About Page</div>
+    <NuxtLink to="/">Home</NuxtLink>
+  </div>
 </template>
 
 <script setup>
@@ -12,6 +15,11 @@ useHead({
     class: 'about'
   },
   script: [ { innerHTML: 'console.log(\'Hello world\')' } ]
+})
+definePageMeta({
+  pageTransition: {
+    name: 'rotate'
+  }
 })
 </script>
 
