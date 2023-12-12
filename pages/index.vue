@@ -16,6 +16,7 @@ useHead({
   },
   script: [ { innerHTML: 'console.log(\'Hello world\')' } ]
 })
+await navigateTo('/en')
 </script>
 
 <style scoped lang="less">
