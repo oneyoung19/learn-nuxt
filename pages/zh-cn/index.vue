@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div>Home Page</div>
-    <NuxtLink to="/about">About</NuxtLink>
+    <div>zh-CN Home Page</div>
+    <NuxtLink to="/en/about">About</NuxtLink>
   </div>
 </template>
 
@@ -16,7 +16,6 @@ useHead({
   },
   script: [ { innerHTML: 'console.log(\'Hello world\')' } ]
 })
-await navigateTo('/zh-cn')
 </script>
 
 <style scoped lang="less">
