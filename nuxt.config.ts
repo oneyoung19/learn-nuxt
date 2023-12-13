@@ -8,8 +8,18 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' }
   },
   devtools: { enabled: true },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        less: {
+          // 变量样式
+          additionalData: '@import "@/assets/styles/variable.less";'
+        }
+      }
+    }
+  },
   // 全局样式
-  css: ['~/assets/styles/global.less'],
+  css: ['~/assets/styles/reset.less', '~/assets/styles/global.less'],
   // 配置pathPrefix 以使组件名不采用路径
   components: [
     {
