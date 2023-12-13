@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import path from 'path'
 export default defineNuxtConfig({
   app: {
     head: {
@@ -16,7 +18,13 @@ export default defineNuxtConfig({
           additionalData: '@import "@/assets/styles/variable/color.less";@import "@/assets/styles/variable/gradient.less";'
         }
       }
-    }
+    },
+    plugins: [
+      // vite处理svg https://www.cnblogs.com/lovewhatIlove/p/16879581.html
+      createSvgIconsPlugin({
+        iconDirs: [path.resolve(process.cwd(), 'assets/icons/svg')]
+      })
+    ]
   },
   // 全局样式
   css: ['~/assets/styles/reset.less', '~/assets/styles/global.less'],
