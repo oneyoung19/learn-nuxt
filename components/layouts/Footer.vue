@@ -49,9 +49,51 @@
           </ul>
         </div>
         <div class="footer-external-follow">
-          <p class="title">关注我们</p>
-          <ul></ul>
+          <p class="follow-title">关注我们</p>
+          <div class="follow-list">
+            <a href="" class="follow-item">
+              <SvgIcon  name="facebook"></SvgIcon>
+            </a>
+            <a href="" class="follow-item">
+              <SvgIcon name="twitter"></SvgIcon>
+            </a>
+            <a href="" class="follow-item">
+              <SvgIcon name="linkedin"></SvgIcon>
+            </a>
+            <a href="" class="follow-item youtube">
+              <SvgIcon name="youtube"></SvgIcon>
+            </a>
+            <a href="" class="follow-item">
+              <SvgIcon name="wechat"></SvgIcon>
+            </a>
+            <!-- <li class="follow-item">
+            </li>
+            <li class="follow-item">
+              <SvgIcon name="twitter"></SvgIcon>
+            </li>
+            <li class="follow-item">
+              <SvgIcon name="linkedin"></SvgIcon>
+            </li>
+            <li class="follow-item">
+              <SvgIcon name="youtube"></SvgIcon>
+            </li>
+            <li class="follow-item">
+              <SvgIcon name="wechat"></SvgIcon>
+            </li> -->
+          </div>
         </div>
+      </div>
+      <div class="footer-statement">
+        <p>CB International Bank LLC (CBiBank) 受美国波多黎各金融监管机构（OCIF）监管，是美国持牌的商业银行。CBiB 和 CBi 徽标是CB International Bank或其附属机构在波多黎各及美国的商标或注册商标，特此声明。</p>
+        <p>注册地址：ST 330, 270 Munoz Rivera Ave, San Juan, Puerto Rico, United States 00918</p>
+      </div>
+      <div class="footer-attach">
+        <div class="protocol">
+          <a href="">服务协议</a>
+          <span>|</span>
+          <a href="">隐私权协议</a>
+        </div>
+        <div class="copyright">Copyright ©2017 CB International Bank LLC</div>
       </div>
     </div>
   </div>
@@ -142,6 +184,7 @@ export default {
   .footer-external {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
     .footer-external-download {
       .download-title {
         margin-bottom: 40px;
@@ -214,7 +257,54 @@ export default {
         }
       }
     }
-    .footer-external-follow {}
+    .footer-external-follow {
+      .follow-title {
+        margin-bottom: 40px;
+      }
+      .follow-list {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        .follow-item {
+          width: 20px;
+          height: 20px;
+          margin-right: 38px;
+          &.youtube {
+            width: 49px;
+          }
+          :deep(.svgclass) {
+            width: 100%;
+            height: 100%;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  .footer-statement {
+    font-size: 14px;
+    color: @gray2;
+    line-height: 26px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid @blank3;
+  }
+  .footer-attach {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 106px;
+    font-size: 16px;
+    font-family: Poppins, Poppins;
+    line-height: 16px;
+    .protocol {
+      > span {
+        margin: 0 32px;
+      }
+    }
+    .copyright {
+    }
   }
 }
 </style>
