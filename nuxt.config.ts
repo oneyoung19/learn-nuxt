@@ -7,5 +7,14 @@ export default defineNuxtConfig({
     },
     pageTransition: { name: 'page', mode: 'out-in' }
   },
-  devtools: { enabled: true }
+  devtools: { enabled: true },
+  // 全局样式
+  css: ['~/assets/styles/global.less'],
+  // 配置pathPrefix 以使组件名不采用路径
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false
+    }
+  ]
 })
