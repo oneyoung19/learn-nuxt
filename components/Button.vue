@@ -1,20 +1,23 @@
 <template>
   <div class="button" :class="[type, size, plain ? 'plain' : '']">
-    <span>
+    <span
+      class="container"
+      :class="[
+        arrowConfig.moving ? 'moving' : '',
+        arrowConfig.suspend ? 'suspend' : '']">
       <slot></slot>
-    </span>
-    <div class="suffix">
       <SvgIcon
         class="arrow"
         name="arrow-right">
       </SvgIcon>
-    </div>
+    </span>
   </div>
 </template>
 
 <script>
 export default {
   props: {
+    // blue gray blank
     type: {
       type: String,
       default: 'primary'
@@ -27,6 +30,15 @@ export default {
     plain: {
       type: Boolean,
       default: false
+    },
+    arrowConfig: {
+      type: Object,
+      default () {
+        return {
+          moving: false,
+          suspend: false
+        }
+      }
     }
   },
   data () {
@@ -40,6 +52,7 @@ export default {
 
 <style scoped lang="less">
 .button {
+  position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -90,13 +103,45 @@ export default {
   +.button {
     margin-left: 20px;
   }
-  .suffix {
-    margin-left: 10px;
-    transition: all ease-in-out .5s;
+  .container {
+    display: flex;
+    align-items: center;
+    .arrow {
+      display: none;
+      transition: all ease-in-out .5s;
+    }
+    &.moving {
+      .arrow {
+        display: inline-block;
+        margin-left: 10px;
+      }
+    }
+    &.suspend {
+      position: relative;
+      .arrow {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        display: inline-block;
+        margin: 0;
+        transform: translate((100% + 10px), -50%);
+        opacity: 0;
+      }
+    }
   }
   &:hover {
-    .suffix {
-      transform: translateX(6px);
+    .container {
+      &.moving {
+        .arrow {
+          transform: translateX(6px);
+        }
+      }
+      &.suspend {
+        .arrow {
+          transform: translate((100% + 30px), -50%);
+          opacity: 1;
+        }
+      }
     }
   }
 }
