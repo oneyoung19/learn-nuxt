@@ -9,14 +9,14 @@
           <ul class="navigation">
             <li class="navigation-item">企业网银</li>
             <li class="navigation-item">个人网银</li>
-            <li class="navigation-item">关于我们</li>
+            <!-- <li class="navigation-item">关于我们</li> -->
+            <Select></Select>
           </ul>
         </div>
         <div class="header-right">
-          <div class="">
-            <Button type="gray" size="medium">企业登录</Button>
+          <div class="buttons">
+            <Button type="gray" size="small">企业登录</Button>
             <Button type="blue" size="small">开户申请</Button>
-            <Button type="blue" size="medium" plain>开户申请</Button>
           </div>
           <div class="switch-lang">
             <SvgIcon class="svg-global" name="global"></SvgIcon>
