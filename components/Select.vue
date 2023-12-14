@@ -1,43 +1,65 @@
 <template>
-  <div class="select" :class="visible ? 'active' : ''">
-    <div class="select-container" @click="handleClick">
-      <span class="select-text">关于我们</span>
+  <div
+    class="select"
+    :class="visible ? 'active' : ''"
+    @mouseover="handleMouseHover"
+    @mouseout.self="handleMouseOut">
+    <div
+      class="select-container"
+      @click="handleClick">
+      <span class="select-text">{{ text || selectedItem.label }}</span>
       <SvgIcon class="arrow" name="arrow-bottom"></SvgIcon>
     </div>
     <transition
       enter-active-class="animate__animated animate__fadeInDown"
       leave-active-class="animate__animated animate__fadeOutUp">
-      <ul
-        class="select-dropdown"
-        v-show="visible">
-        <li
-          class="select-dropdown-item"
-          :class="item.label === selectedItem ? 'selected' : ''"
-          v-for="(item, index) in list"
-          :key="index"
-          @click="handleSelect(item)">
-          {{ item.label }}
-        </li>
-      </ul>
+      <div class="select-dropdown" v-show="visible">
+        <ul
+          class="select-dropdown-list">
+          <li
+            class="select-dropdown-item"
+            :class="item.label === selectedItem ? 'selected' : ''"
+            v-for="(item, index) in list"
+            :key="index"
+            @click="handleSelect(item)">
+            {{ item.label }}
+          </li>
+        </ul>
+      </div>
     </transition>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    text: {
+      type: String,
+      default: ''
+    },
+    list: {
+      type: Array,
+      default () {
+        return []
+      }
+    }
+  },
   data () {
     return {
       visible: false,
-      list: [
-        { label: '安全合规' },
-        { label: '我们是谁' }
-      ],
       selectedItem: ''
     }
   },
   methods: {
     handleClick () {
       this.visible = true
+    },
+    handleMouseHover (e) {
+      console.log(e.target, e.currentTarget)
+      this.visible = true
+    },
+    handleMouseOut () {
+      this.visible = false
     },
     handleSelect (item) {
       this.selectedItem = item.label
@@ -63,27 +85,31 @@ export default {
   }
   .select-dropdown {
     position: absolute;
-    top: calc(100% + 15px);
+    top: 100%;
     right: 0;
-    width: 108px;
-    padding: 8px 0;
-    color: @blank;
-    background: @topwhite;
-    box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    .select-dropdown-item {
-      height: 42px;
-      line-height: 42px;
-      padding: 0 22px;
-      text-align: center;
-      &:hover {
-        background-color: @gray3;
-      }
-      &.selected {
-        color: @blue;
+    padding-top: 15px;
+    .select-dropdown-list {
+      width: 108px;
+      padding: 8px 0;
+      color: @blank;
+      background: @topwhite;
+      box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      .select-dropdown-item {
+        height: 42px;
+        line-height: 42px;
+        padding: 0 22px;
+        text-align: center;
+        &:hover {
+          background-color: @gray3;
+        }
+        &.selected {
+          color: @blue;
+        }
       }
     }
   }
+  
   &.active {
     .select-container {
       .arrow {

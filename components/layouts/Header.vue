@@ -9,8 +9,10 @@
           <ul class="navigation">
             <li class="navigation-item">企业网银</li>
             <li class="navigation-item">个人网银</li>
-            <!-- <li class="navigation-item">关于我们</li> -->
-            <Select></Select>
+            <Select
+              text="关于我们"
+              :list="aboutList">
+            </Select>
           </ul>
         </div>
         <div class="header-right">
@@ -20,7 +22,11 @@
           </div>
           <div class="switch-lang">
             <SvgIcon class="svg-global" name="global"></SvgIcon>
-            <span class="lang">简体中文</span>
+            <Select
+              class="lang"
+              text="简体中文"
+              :list="langList">
+            </Select>
           </div>
         </div>
       </div>
@@ -32,6 +38,15 @@
 export default {
   data () {
     return {
+      aboutList: [
+        { label: '安全合规' },
+        { label: '我们是谁' }
+      ],
+      langList: [
+        { label: '简体中文' },
+        { label: '繁体中文' },
+        { label: 'English' }
+      ]
     }
   },
   methods: {
