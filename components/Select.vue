@@ -2,8 +2,8 @@
   <div
     class="select"
     :class="visible ? 'active' : ''"
-    @mouseover="handleMouseHover"
-    @mouseout.self="handleMouseOut">
+    @mouseenter="handleMouseEnter"
+    @mouseleave="handleMouseLeave">
     <div
       class="select-container"
       @click="handleClick">
@@ -42,6 +42,11 @@ export default {
       default () {
         return []
       }
+    },
+    // hover or click
+    trigger: {
+      type: String,
+      default: 'click'
     }
   },
   data () {
@@ -52,13 +57,15 @@ export default {
   },
   methods: {
     handleClick () {
+      if (this.trigger !== 'click') return
       this.visible = true
     },
-    handleMouseHover (e) {
-      console.log(e.target, e.currentTarget)
+    handleMouseEnter () {
+      if (this.trigger !== 'hover') return
       this.visible = true
     },
-    handleMouseOut () {
+    handleMouseLeave () {
+      if (this.trigger !== 'hover') return
       this.visible = false
     },
     handleSelect (item) {
