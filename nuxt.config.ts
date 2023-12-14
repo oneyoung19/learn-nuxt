@@ -23,7 +23,13 @@ export default defineNuxtConfig({
       // vite处理svg https://www.cnblogs.com/lovewhatIlove/p/16879581.html
       createSvgIconsPlugin({
         iconDirs: [path.resolve(process.cwd(), 'assets/icons/svg')]
-      })
+      }),
+      // https://cloud.tencent.com/developer/ask/sof/106787568
+      {
+        src: '@/plugins/aos.js',
+        ssr: false,
+        mode: 'client'
+      }
     ]
   },
   // 全局样式

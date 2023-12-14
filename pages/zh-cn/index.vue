@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div>zh-CN Home Page</div>
+    <div style="height: 600px;">zh-CN Home Page</div>
     <NuxtLink to="/en/about">About</NuxtLink>
+    <div data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">sassasasasasas</div>
   </div>
 </template>
 
