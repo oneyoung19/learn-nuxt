@@ -26,10 +26,16 @@ export default defineNuxtConfig({
       }),
       // https://cloud.tencent.com/developer/ask/sof/106787568
       {
-        src: '@/plugins/aos.js',
+        src: '@/plugins/aos',
         ssr: false,
         mode: 'client'
-      }
+      },
+      // TODO:什么情况下 这里需要配置
+      // {
+      //   src: '@/plugins/click-outside.ts',
+      //   ssr: false,
+      //   mode: 'client'
+      // }
     ]
   },
   // 全局样式

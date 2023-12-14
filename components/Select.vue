@@ -3,7 +3,8 @@
     class="select"
     :class="visible ? 'active' : ''"
     @mouseenter="handleMouseEnter"
-    @mouseleave="handleMouseLeave">
+    @mouseleave="handleMouseLeave"
+    v-click-outside="handleClickOutside">
     <div
       class="select-container"
       @click="handleClick">
@@ -13,7 +14,9 @@
     <transition
       enter-active-class="animate__animated animate__fadeInDown"
       leave-active-class="animate__animated animate__fadeOutUp">
-      <div class="select-dropdown" v-show="visible">
+      <div
+        class="select-dropdown"
+        v-show="visible">
         <ul
           class="select-dropdown-list">
           <li
@@ -46,7 +49,7 @@ export default {
     // hover or click
     trigger: {
       type: String,
-      default: 'click'
+      default: 'hover'
     }
   },
   data () {
@@ -59,6 +62,10 @@ export default {
     handleClick () {
       if (this.trigger !== 'click') return
       this.visible = true
+    },
+    handleClickOutside () {
+      if (this.trigger !== 'click') return
+      this.visible = false
     },
     handleMouseEnter () {
       if (this.trigger !== 'hover') return
