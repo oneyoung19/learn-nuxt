@@ -3,6 +3,12 @@
     <span>
       <slot></slot>
     </span>
+    <div class="suffix">
+      <SvgIcon
+        class="arrow"
+        name="arrow-right">
+      </SvgIcon>
+    </div>
   </div>
 </template>
 
@@ -83,6 +89,15 @@ export default {
   }
   +.button {
     margin-left: 20px;
+  }
+  .suffix {
+    margin-left: 10px;
+    transition: all ease-in-out .5s;
+  }
+  &:hover {
+    .suffix {
+      transform: translateX(6px);
+    }
   }
 }
 </style>

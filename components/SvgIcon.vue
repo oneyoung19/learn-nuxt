@@ -1,6 +1,6 @@
 <template>
   <svg class="svgclass" aria-hidden="true">
-    <use :xlink:href="symbolId" :fill="color" />
+    <use :xlink:href="symbolId" />
   </svg>
 </template>
 
@@ -14,11 +14,7 @@ const props = defineProps({
   name: {
     type: String,
     required: true,
-  },
-  color: {
-    type: String,
-    default: "#333",
-  },
+  }
 })
 const symbolId = computed(() => `#${props.prefix}-${props.name}`)
 </script>
@@ -29,5 +25,7 @@ const symbolId = computed(() => `#${props.prefix}-${props.name}`)
   height: 1em;
   overflow: hidden;
   fill: currentColor;
+  // 保证与文字对齐
+  vertical-align: top;
 }
 </style>
