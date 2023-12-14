@@ -46,8 +46,8 @@
                   <img src="~assets/image/download-qrcode.png" alt="">
                 </div>
                 <p class="download-h5-text">
-                  <!-- 扫描下载APP -->
-                  Scan QR to download app
+                  <!-- Scan QR to download app -->
+                  扫码直接下载
                 </p>
               </div>
             </li>
@@ -60,7 +60,7 @@
               <SvgIcon  name="facebook"></SvgIcon>
             </a>
             <a href="" class="follow-item">
-              <SvgIcon name="twitter"></SvgIcon>
+              <SvgIcon name="x"></SvgIcon>
             </a>
             <a href="" class="follow-item">
               <SvgIcon name="linkedin"></SvgIcon>
@@ -191,8 +191,13 @@ export default {
         .download-item {
           position: relative;
           margin-right: 15px;
+          background-color: @topwhite;
+          border-radius: 6px;
           &:last-child {
             margin-right: 0;
+          }
+          &:hover {
+            background-color: @gray3;
           }
           > a {
             display: block;
@@ -211,6 +216,8 @@ export default {
             width: 50px;
             height: 50px;
             background-image: url('@/assets/image/qrcode.png');
+            background-size: 30px 30px;
+            background-position: center center;
           }
           .download-h5 {
             position: absolute;
