@@ -27,7 +27,7 @@ export default defineNuxtConfig({
     ]
   },
   // 全局样式
-  css: ['~/assets/styles/reset.less', '~/assets/styles/global.less'],
+  css: ['~/assets/styles/reset.less', '~/assets/styles/global.less', '~/assets/styles/animate.less'],
   // 配置pathPrefix 以使组件名不采用路径
   components: [
     {

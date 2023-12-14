@@ -16,11 +16,16 @@
             :key="linkIndex">
             <a
               v-if="linkItem.url"
+              :class="linkItem.url ? 'underline' : ''"
               :href="linkItem.url"
               target="_blank">
               {{ linkItem.text }}
             </a>
-            <span v-else>{{ linkItem.text }}</span>
+            <span
+              v-else
+              :class="linkItem.url ? 'underline' : ''">
+              {{ linkItem.text }}
+            </span>
           </p>
         </li>
       </ul>
@@ -66,20 +71,6 @@
             <a href="" class="follow-item">
               <SvgIcon name="wechat"></SvgIcon>
             </a>
-            <!-- <li class="follow-item">
-            </li>
-            <li class="follow-item">
-              <SvgIcon name="twitter"></SvgIcon>
-            </li>
-            <li class="follow-item">
-              <SvgIcon name="linkedin"></SvgIcon>
-            </li>
-            <li class="follow-item">
-              <SvgIcon name="youtube"></SvgIcon>
-            </li>
-            <li class="follow-item">
-              <SvgIcon name="wechat"></SvgIcon>
-            </li> -->
           </div>
         </div>
       </div>
@@ -177,6 +168,12 @@ export default {
         color: @gray2;
         &:last-child {
           margin-bottom: 0;
+        }
+        &:hover {
+          .underline {
+            color: @topwhite;
+            font-weight: bold;
+          }
         }
       }
     }
