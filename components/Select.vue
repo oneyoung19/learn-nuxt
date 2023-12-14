@@ -4,18 +4,22 @@
       <span class="select-text">关于我们</span>
       <SvgIcon class="arrow" name="arrow-bottom"></SvgIcon>
     </div>
-    <ul
-      class="select-dropdown"
-      v-show="visible">
-      <li
-        class="select-dropdown-item"
-        :class="item.label === selectedItem ? 'selected' : ''"
-        v-for="(item, index) in list"
-        :key="index"
-        @click="handleSelect(item)">
-        {{ item.label }}
-      </li>
-    </ul>
+    <transition
+      enter-active-class="animate__animated animate__fadeInDown"
+      leave-active-class="animate__animated animate__fadeOutUp">
+      <ul
+        class="select-dropdown"
+        v-show="visible">
+        <li
+          class="select-dropdown-item"
+          :class="item.label === selectedItem ? 'selected' : ''"
+          v-for="(item, index) in list"
+          :key="index"
+          @click="handleSelect(item)">
+          {{ item.label }}
+        </li>
+      </ul>
+    </transition>
   </div>
 </template>
 
