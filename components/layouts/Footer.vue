@@ -153,7 +153,7 @@ export default {
   padding-top: 100px;
   background: @blank;
   font-size: 16px;
-  color: @white;
+  color: @topwhite;
   line-height: 16px;
   .logo {
     margin-bottom: 80px;
@@ -222,7 +222,7 @@ export default {
             transform: translateX(-50%);
             display: none;
             padding: 6px 6px 16px;
-            background-color: @white;
+            background-color: @topwhite;
             border-radius: 8px;
             box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.1);
             &::before {
@@ -235,7 +235,7 @@ export default {
               height: 0;
               border-left: 7px solid transparent;
               border-right: 7px solid transparent;
-              border-bottom: 7px solid @white; /* 箭头的颜色，可以根据需要修改 */
+              border-bottom: 7px solid @topwhite; /* 箭头的颜色，可以根据需要修改 */
             }
             .download-h5-qrcode {
               width: 168px;
