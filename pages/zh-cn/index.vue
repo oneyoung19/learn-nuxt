@@ -104,6 +104,30 @@
         </ul>
       </div>
     </div>
+    <div class="swap">
+      <div class="swap-container layout">
+        <div class="swap-left">
+          <div class="swap-bg">
+            <img src="~assets/image/home/swap-bg.png" alt="">
+          </div>
+          <div class="circle-arrow">
+            <img src="~assets/image/home/circle-arrow.png" alt="">
+          </div>
+        </div>
+        <div class="swap-right">
+          <p class="title">无隐藏费用，即时货币兑换</p>
+          <p class="desc">美元、欧元、离岸人民币、英镑、日元、新加坡元、港币等全球主流币种灵活互通。</p>
+        </div>
+      </div>
+    </div>
+    <div class="fund">
+      <div class="fund-container layout">
+        <div class="fund-left">
+          <p class="title">量身定制的财富管理服务</p>
+          <p class="desc">投资组合实现帐户资产稳健增值，灵活的存款产品，帮助您实现资产保值。</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -389,6 +413,69 @@ const featureList = ref([
               }
             }
           }
+        }
+      }
+    }
+  }
+  .swap {
+    height: 700px;
+    background-color: @blank;
+    .swap-container {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 222px;
+      .swap-left {
+        position: relative;
+        padding-left: 47px;
+        .swap-bg {
+          width: 398px;
+          height: 318px;
+        }
+        .circle-arrow {
+          position: absolute;
+          top: -106px;
+          left: -117px;
+          width: 400px;
+          height: 472px;
+        }
+      }
+      .swap-right {
+        width: 586px;
+        padding-top: 55px;
+        // margin-left: 170px;
+        .title {
+          margin-bottom: 40px;
+          font-size: 40px;
+          color: @topwhite;
+          line-height: 40px;
+        }
+        .desc {
+          font-size: 18px;
+          color: @topwhite;
+          line-height: 40px;
+        }
+      }
+    }
+  }
+  .fund {
+    height: 700px;
+    background-color: @topwhite;
+    padding-top: 240px;
+    .fund-container {
+      display: flex;
+      justify-content: space-between;
+      .fund-left {
+        width: 542px;
+        padding-top: 54px;
+        .title {
+          margin-bottom: 40px;
+          font-size: 40px;
+          color: @blank;
+        }
+        .desc {
+          font-size: 18px;
+          color: @blank2;
+          line-height: 40px;
         }
       }
     }
