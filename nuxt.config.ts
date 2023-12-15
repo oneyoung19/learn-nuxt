@@ -15,7 +15,7 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         less: {
           // 变量样式
-          additionalData: '@import "@/assets/styles/variable/color.less";@import "@/assets/styles/variable/gradient.less";'
+          additionalData: '@import "@/assets/styles/variable/color.less";@import "@/assets/styles/variable/gradient.less";@import "@/assets/styles/variable/size.less";'
         }
       }
     },
