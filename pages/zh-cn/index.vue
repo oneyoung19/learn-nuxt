@@ -39,13 +39,24 @@
     <div class="video-apply">
       <div class="video-apply-container layout">
         <div class="video-apply-demo">
-          <div class="ghosted certificate-img">
+          <div class="certificate-img">
             <img src="~assets/image/home/certificate.png" alt="">
           </div>
           <div class="activated figure-img">
             <img src="~assets/image/home/figure.png" alt="">
-            <div class="activated-tip1"></div>
-            <div class="activated-tip2"></div>
+            <div class="activated-tip first">
+              <div class="icon-box">
+                <SvgIcon name="apply"></SvgIcon>
+              </div>
+              <span>在线申请</span>
+            </div>
+            <div class="activated-tip second">
+              <div class="icon-box">
+                <SvgIcon name="cert"></SvgIcon>
+              </div>
+              <span>线上开户</span>
+            </div>
+            <div class="timeout">3s</div>
           </div>
         </div>
         <div class="video-apply-tip">
@@ -201,20 +212,67 @@ const featureList = ref([
         position: relative;
         padding-top: 45px;
         .certificate-img {
-          width: 316px;
+          width: 261px;
           height: 190px;
         }
         .figure-img {
           width: 262px;
           height: 336px;
-        }
-        .ghosted {
-          position: relative;
-        }
-        .activated {
-          position: absolute;
-          top: 0;
-          left: 180px;
+          &.activated {
+            position: absolute;
+            top: 0;
+            left: 180px;
+            .activated-tip {
+              position: absolute;
+              display: flex;
+              align-items: center;
+              width: 154px;
+              height: 64px;
+              padding-left: 18px;
+              background: rgba(255,255,255,0.9);
+              box-shadow: 0px 8px 21px 0px rgba(0,0,0,0.1);
+              border-radius: 8px;
+              .icon-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 38px;
+                height: 38px;
+                margin-right: 14px;
+                line-height: 38px;
+                text-align: center;
+                background-color: @gray4;
+                border-radius: 8px;
+                font-size: 22px;
+                color: @topwhite;
+              }
+              &.first {
+                right: -84px;
+                bottom: 50px;
+              }
+              &.second {
+                left: -105px;
+                bottom: -22px;
+              }
+            }
+            .timeout {
+              position: absolute;
+              top: 35px;
+              right: 0;
+              transform: translateX(50%);
+              width: 84px;
+              height: 84px;
+              line-height: 84px;
+              text-align: center;
+              background: rgba(255,255,255,0.9);
+              box-shadow: 0px 8px 21px 0px rgba(0,0,0,0.1);
+              font-size: 20px;
+              font-family: Poppins, Poppins;
+              font-weight: 500;
+              color: @blue;
+              border-radius: 50%;
+            }
+          }
         }
       }
       .video-apply-tip {
