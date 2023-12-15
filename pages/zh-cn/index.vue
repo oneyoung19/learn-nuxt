@@ -94,7 +94,9 @@
                 <img src="~assets/image/home/union-pay-card.png" alt="">
               </div>
               <div class="card-tip">
-                <SvgIcon class="card-tip-icon" name="sawtooth-selected"></SvgIcon>
+                <div class="card-tip-icon">
+                  <img src="~assets/image/home/sawtooth-selected.png" alt="">
+                </div>
                 <p class="card-tip-text">消费成功</p>
               </div>
             </div>
@@ -377,7 +379,8 @@ const featureList = ref([
               .card-tip-icon {
                 display: block;
                 margin: 0 auto 22px;
-                font-size: 48px;
+                width: 48px;
+                height: 48px;
               }
               .card-tip-text {
                 font-size: 13px;
