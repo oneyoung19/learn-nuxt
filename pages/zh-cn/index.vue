@@ -113,6 +113,30 @@
           <div class="circle-arrow">
             <img src="~assets/image/home/circle-arrow.png" alt="">
           </div>
+          <div class="exchange-currency">
+            <SvgIcon class="icon-logo" name="cbibank"></SvgIcon>
+            <div class="exchange-box">
+              <div class="currency-box">
+                <div class="icon-currency">
+                  <img src="@/assets/image/home/eur.png" alt="">
+                </div>
+                <div class="icon-arrow-bottom">
+                  <img src="@/assets/image/home/arrow-bottom.png" alt="">
+                </div>
+                <!-- <SvgIcon class="icon-arrow-bottom" name="arrow-bottom"></SvgIcon> -->
+              </div>
+              <SvgIcon class="icon-arrow-circle" name="arrow-circle"></SvgIcon>
+              <div class="currency-box">
+                <div class="icon-currency">
+                  <img src="@/assets/image/home/usd.png" alt="">
+                </div>
+                <div class="icon-arrow-bottom">
+                  <img src="@/assets/image/home/arrow-bottom.png" alt="">
+                </div>
+                <!-- <SvgIcon class="icon-arrow-bottom" name="arrow-bottom"></SvgIcon> -->
+              </div>
+            </div>
+          </div>
         </div>
         <div class="swap-right">
           <p class="title">无隐藏费用，即时货币兑换</p>
@@ -437,6 +461,57 @@ const featureList = ref([
           left: -117px;
           width: 400px;
           height: 472px;
+        }
+        .exchange-currency {
+          position: absolute;
+          top: 130px;
+          right: -60px;
+          display: flex;
+          align-items: center;
+          width: 344px;
+          height: 72px;
+          padding: 0 24px;
+          background: @blur-gradient;
+          box-shadow: 0px 27px 36px 0px rgba(0,0,0,0.1);
+          border-radius: 8px;
+          border: 1px solid rgba(237.06778943538666, 238.8374000787735, 241.3392922282219, 1);
+          .icon-logo {
+            font-size: 35px;
+          }
+          .icon-currency {
+            width: 44px;
+            height: 30px;
+            margin-right: 9px;
+          }
+          .icon-arrow-bottom {
+            width: 8px;
+            height: 4px;
+          }
+          .icon-arrow-circle {
+            font-size: 30px;
+            color: #d0d0d2;
+            margin: 0 29px;
+          }
+          .exchange-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: 54px;
+            &::before {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 24px;
+              transform: translate(0, -50%);
+              width: 1px;
+              height: 30px;
+              border-right: 1px dashed #000;
+            }
+            .currency-box {
+              display: flex;
+              align-items: center;
+            }
+          }
         }
       }
       .swap-right {
