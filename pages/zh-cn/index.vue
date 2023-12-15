@@ -75,7 +75,17 @@
               </ul>
               <Button type="blue" plain :arrow-config="{ moving: true }">获取卡片</Button>
             </div>
-            <div class="cards-item-right">
+            <div class="cards-item-right background">
+              <div class="card">
+                <img src="~assets/image/home/visa-card.png" alt="">
+              </div>
+              <div class="card actived">
+                <img src="~assets/image/home/union-pay-card.png" alt="">
+              </div>
+              <div class="card-tip">
+                <SvgIcon class="card-tip-icon" name="sawtooth-selected"></SvgIcon>
+                <p class="card-tip-text">消费成功</p>
+              </div>
             </div>
           </li>
         </ul>
@@ -281,7 +291,42 @@ const featureList = ref([
             }
           }
           .cards-item-right {
-
+            position: relative;
+            width: 498px;
+            height: 520px;
+            background-image: url('@/assets/image/home/circle.png');
+            .card {
+              position: absolute;
+              top: 66px;
+              left: 104px;
+              width: 358px;
+              height: 220px;
+              &.actived {
+                top: 204px;
+                left: -36px;
+              }
+            }
+            .card-tip {
+              position: absolute;
+              right: -12px;
+              bottom: 50px;
+              width: 116px;
+              height: 145px;
+              padding-top: 28px;
+              background: rgba(255,255,255,0.8);
+              box-shadow: 0px 4px 18px -6px rgba(0,0,0,0.15);
+              border-radius: 14px;
+              .card-tip-icon {
+                display: block;
+                margin: 0 auto 22px;
+                font-size: 48px;
+              }
+              .card-tip-text {
+                font-size: 13px;
+                color: @blank2;
+                text-align: center;
+              }
+            }
           }
         }
       }
