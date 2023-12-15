@@ -69,6 +69,9 @@
               <SvgIcon name="youtube"></SvgIcon>
             </a>
             <a href="" class="follow-item">
+              <SvgIcon name="ins"></SvgIcon>
+            </a>
+            <a href="" class="follow-item">
               <SvgIcon name="wechat"></SvgIcon>
             </a>
           </div>
@@ -273,6 +276,7 @@ export default {
           width: 20px;
           height: 20px;
           margin-right: 38px;
+          color: @topwhite;
           &.youtube {
             width: 49px;
           }
@@ -282,6 +286,9 @@ export default {
           }
           &:last-child {
             margin-right: 0;
+          }
+          &:hover {
+            color: @gray2;
           }
         }
       }
