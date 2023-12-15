@@ -36,7 +36,25 @@
         </li>
       </ul>
     </div>
-    123
+    <div class="video-apply">
+      <div class="video-apply-container layout">
+        <div class="video-apply-demo">
+          <div class="ghosted certificate-img">
+            <img src="~assets/image/home/certificate.png" alt="">
+          </div>
+          <div class="activated figure-img">
+            <img src="~assets/image/home/figure.png" alt="">
+            <div class="activated-tip1"></div>
+            <div class="activated-tip2"></div>
+          </div>
+        </div>
+        <div class="video-apply-tip">
+          <p class="title">线上快速获取银行帐户</p>
+          <p class="desc">全程线上申请、视频面签，无需邮寄纸质材料、无需临柜，业务全流程实现线上办理，省时、省心、省力。</p>
+          <Button type="blue" plain :arrow-config="{ moving: true }">开始体验</Button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -119,6 +137,50 @@ useHead({
         }
         &.ocif {
           width: 278px;
+        }
+      }
+    }
+  }
+  .video-apply {
+    height: 700px;
+    padding-top: 180px;
+    background-color: @gray3;
+    .video-apply-container {
+      display: flex;
+      .video-apply-demo {
+        flex: 1;
+        position: relative;
+        padding-top: 45px;
+        .certificate-img {
+          width: 316px;
+          height: 190px;
+        }
+        .figure-img {
+          width: 262px;
+          height: 336px;
+        }
+        .ghosted {
+          position: relative;
+        }
+        .activated {
+          position: absolute;
+          top: 0;
+          left: 180px;
+        }
+      }
+      .video-apply-tip {
+        width: 586px;
+        margin-left: 64px;
+        .title {
+          margin-bottom: 40px;
+          font-size: 40px;
+          color: @blank;
+        }
+        .desc{
+          margin-bottom: 100px;
+          font-size: 18px;
+          color: @blank2;
+          line-height: 36px;
         }
       }
     }
