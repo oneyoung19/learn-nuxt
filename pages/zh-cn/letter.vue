@@ -5,7 +5,11 @@
         <p class="title">提供完备的银行单证服务</p>
       </div>
     </div>
-    <div class="switch"></div>
+    <div class="switch">
+      <div class="layout">
+        <SwitchTab></SwitchTab>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -41,6 +45,7 @@ export default {
     width: 100%;
     height: 320px;
     background: @gray3;
+    padding-top: 100px;
   }
 }
 </style>
