@@ -58,9 +58,27 @@
     <div class="cards">
       <div class="layout">
         <SwitchButton
+          class="switch-button"
           v-model="currentSwitchCard"
           :list="cardsSwitchList">
         </SwitchButton>
+        <ul class="cards-list">
+          <li class="cards-item enterprise">
+            <div class="cards-item-left">
+              <p class="title">无论您走到哪里，都可以刷卡消费</p>
+              <p class="desc">像当地人一样在全球范围内使用CBiBank企业借记卡消费，在当地ATM取现，试用商场、酒店、网购等等各类场景。</p>
+              <ul class="feature-list">
+                <li class="feature-item" v-for="(item, index) in featureList" :key="index">
+                  <SvgIcon class="feature-item-icon" name="selected"></SvgIcon>
+                  <span class="feature-item-text">{{ item.label }}</span>
+                </li>
+              </ul>
+              <Button type="blue" plain :arrow-config="{ moving: true }">获取卡片</Button>
+            </div>
+            <div class="cards-item-right">
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -82,6 +100,14 @@ const cardsSwitchList = ref([
   { label: '个人卡', value: 'personal' }
 ])
 const currentSwitchCard = ref('enterprise')
+
+const featureList = ref([
+  { label: 'ATM取现' },
+  { label: '商场消费' },
+  { label: 'POS刷卡' },
+  { label: '资金周转' },
+  { label: '采购' }
+])
 </script>
 
 <style scoped lang="less">
@@ -202,6 +228,64 @@ const currentSwitchCard = ref('enterprise')
     height: 838px;
     padding-top: 112px;
     background-color: @topwhite;
+    .switch-button {
+      margin-bottom: 35px;
+    }
+    .cards-list {
+      .cards-item {
+        display: flex;
+        &.enterprise {
+          .cards-item-left {
+            width: 586px;
+            margin-right: 104px;
+            .title {
+              width: 554px;
+              margin-bottom: 30px;
+              font-size: 40px;
+              color: @blank;
+              line-height: 55px;
+            }
+            .desc {
+              margin-bottom: 60px;
+              font-size: 18px;
+              color: @blank2;
+              line-height: 36px;
+            }
+            .feature-list {
+              display: flex;
+              flex-wrap: wrap;
+              margin-bottom: 100px;
+              .feature-item {
+                display: flex;
+                align-items: center;
+                width: 150px;
+                margin-right: 50px;
+                margin-bottom: 12px;
+                &:nth-child(3n) {
+                  margin-right: 0;
+                }
+                &:nth-last-child(1), &:nth-last-child(2) {
+                  margin-bottom: 0;
+                }
+                .feature-item-icon {
+                  font-size: 24px;
+                  margin-right: 10px;
+                  color: #DDE1EB;
+                }
+                .feature-item-text {
+                  font-size: 16px;
+                  color: #5C5C66;
+                  line-height: 40px;
+                }
+              }
+            }
+          }
+          .cards-item-right {
+
+          }
+        }
+      }
+    }
   }
 }
 </style>
