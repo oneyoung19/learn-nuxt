@@ -8,11 +8,33 @@
           <li class="carousel-item">
             <Button type="blue" class="carousel-item-btn">立即注册</Button>
             <div class="carousel-item-img">
-              <img src="~assets/image/home/carousel_01.png" alt="">
+              <img src="~assets/image/home/carousel-01.png" alt="">
             </div>
           </li>
         </ul>
       </div>
+    </div>
+    <div class="partners">
+      <ul class="partners-list">
+        <li class="partners-item cips">
+          <img src="~assets/image/home/cips.png" alt="">
+        </li>
+        <li class="partners-item union-pay">
+          <img src="~assets/image/home/union-pay.png" alt="">
+        </li>
+        <li class="partners-item swift">
+          <img src="~assets/image/home/swift.png" alt="">
+        </li>
+        <li class="partners-item visa">
+          <img src="~assets/image/home/visa.png" alt="">
+        </li>
+        <li class="partners-item aba">
+          <img src="~assets/image/home/aba.png" alt="">
+        </li>
+        <li class="partners-item ocif">
+          <img src="~assets/image/home/ocif.png" alt="">
+        </li>
+      </ul>
     </div>
     123
   </div>
@@ -60,6 +82,43 @@ useHead({
         }
         .carousel-item-img {
           width: 100%;
+        }
+      }
+    }
+  }
+  .partners {
+    background-color: #fff;
+    height: 340px;
+    .partners-list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: @homeParentsWidth;
+      height: 100%;
+      margin: 0 auto;
+      .partners-item {
+        height: 141px;
+        // margin-right: 42px;
+        &:last-child {
+          margin-right: 0;
+        }
+        &.cips {
+          width: 253px;
+        }
+        &.union-pay {
+          width: 272px;
+        }
+        &.swift {
+          width: 191px;
+        }
+        &.visa {
+          width: 251px;
+        }
+        &.aba {
+          width: 341px;
+        }
+        &.ocif {
+          width: 278px;
         }
       }
     }
