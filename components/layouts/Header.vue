@@ -56,6 +56,10 @@ export default {
 
 <style scoped lang="less">
 .header {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: @headerHeight;
   background: @blank;
   font-size: 16px;
   color: @topwhite;
@@ -64,7 +68,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 72px;
+    height: 100%;
     .header-left {
       display: flex;
       .logo {
