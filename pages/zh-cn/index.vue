@@ -55,6 +55,14 @@
         </div>
       </div>
     </div>
+    <div class="cards">
+      <div class="layout">
+        <SwitchButton
+          v-model="currentSwitchCard"
+          :list="cardsSwitchList">
+        </SwitchButton>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -69,6 +77,11 @@ useHead({
   },
   script: [ { innerHTML: 'console.log(\'Hello world\')' } ]
 })
+const cardsSwitchList = ref([
+  { label: '企业卡', value: 'enterprise' },
+  { label: '个人卡', value: 'personal' }
+])
+const currentSwitchCard = ref('enterprise')
 </script>
 
 <style scoped lang="less">
@@ -184,6 +197,11 @@ useHead({
         }
       }
     }
+  }
+  .cards {
+    height: 838px;
+    padding-top: 112px;
+    background-color: @topwhite;
   }
 }
 </style>
