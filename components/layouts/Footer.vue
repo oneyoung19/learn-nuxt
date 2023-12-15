@@ -56,19 +56,19 @@
         <div class="footer-external-follow">
           <p class="follow-title">关注我们</p>
           <div class="follow-list">
-            <a href="" class="follow-item">
+            <a href="https://www.facebook.com/cbibank2017" class="follow-item" target="_blank">
               <SvgIcon  name="facebook"></SvgIcon>
             </a>
-            <a href="" class="follow-item">
+            <a href="https://twitter.com/CBiBank2" class="follow-item" target="_blank">
               <SvgIcon name="x"></SvgIcon>
             </a>
-            <a href="" class="follow-item">
+            <a href="https://www.linkedin.com/company/cbibank" class="follow-item" target="_blank">
               <SvgIcon name="linkedin"></SvgIcon>
             </a>
-            <a href="" class="follow-item youtube">
+            <a href="https://www.youtube.com/channel/UC9mT7YZvaNlt_oMKXnLboKA" class="follow-item youtube" target="_blank">
               <SvgIcon name="youtube"></SvgIcon>
             </a>
-            <a href="" class="follow-item">
+            <a href="https://www.instagram.com/cbibank2023" class="follow-item" target="_blank">
               <SvgIcon name="ins"></SvgIcon>
             </a>
             <a href="" class="follow-item">
