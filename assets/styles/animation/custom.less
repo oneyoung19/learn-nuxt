@@ -1,13 +1,13 @@
 /* 自定义动画库 */
-// 下划线
+// 下划线 从左至右过渡动画
 .underline {
   position: relative;
   &:after {
+    content: '';
     position: absolute;
     left: 0;
     bottom: -2px;
     visibility: hidden;
-    content: '';
     width: 0;
     height: 1px;
     color: currentColor;
@@ -18,6 +18,19 @@
     &:after {
       visibility: visible;
       width: 100%;
+    }
+  }
+  // 从中间向两边过渡动画
+  &.underline-center {
+    &:after {
+      width: 100%;
+      height: 1px;
+      transform: scaleX(0);
+    }
+    &:hover {
+      &:after {
+        transform: scaleX(1);
+      }
     }
   }
 }
