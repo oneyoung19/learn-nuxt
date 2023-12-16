@@ -1,11 +1,11 @@
 <template>
   <div class="switch-button">
     <ul
-      class="switch-button-container"
+      class="switch-button-list"
       ref="buttonList">
       <li
-        class="button-item"
-        :class="item.value === modelValue ? 'actived' : ''"
+        class="switch-button-item"
+        :class="item.value === modelValue ? 'active' : ''"
         v-for="item in list"
         :key="item.value"
         @click="handleSwitchButton(item)">
@@ -69,8 +69,8 @@ export default {
       const { buttonList } = this.$refs
       let offsetList = []
       if (buttonList) {
-        const contenList = [...buttonList.querySelectorAll('.button-item .content')]
-        offsetList = contenList.map((content, index) => {
+        const contentList = [...buttonList.querySelectorAll('.switch-button-item .content')]
+        offsetList = contentList.map((content, index) => {
           // 目标元素的标识
           const { value } = content.dataset
           // 目标元素的本身大小及其距离父元素的偏移
@@ -133,23 +133,22 @@ export default {
   position: relative;
   display: inline-block;
   user-select: none;
-  .switch-button-container {
+  .switch-button-list {
     position: relative;
     display: flex;
     align-items: center;
     width: 100%;
-    height: 52px;
     background-color: @gray3;
     border-radius: 26px;
     font-size: 16px;
     color: @gray4;
-    .button-item {
+    .switch-button-item {
       position: relative;
       z-index: 2;
-      height: 100%;
+      height: 52px;
       text-align: center;
       transition: all ease .5s;
-      &.actived {
+      &.active {
         color: @topwhite;
       }
       .content {

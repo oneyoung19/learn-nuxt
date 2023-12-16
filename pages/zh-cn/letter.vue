@@ -7,7 +7,10 @@
     </div>
     <div class="switch">
       <div class="layout">
-        <SwitchTab></SwitchTab>
+        <SwitchTab
+          v-model="activeTab"
+          :list="tabList">
+        </SwitchTab>
       </div>
     </div>
   </div>
@@ -17,6 +20,12 @@
 export default {
   data () {
     return {
+      activeTab: 'credit',
+      tabList: [
+        { value: 'credit', label: '信用证业务', labelEn: '(Letter of Credit)' },
+        { value: 'documentary', label: '跟单托收业务', labelEn: '(Documentary Collections)' },
+        { value: 'guarantee', label: '保函业务', labelEn: '(Letter of Guarantee)' }
+      ]
     }
   },
   methods: {
