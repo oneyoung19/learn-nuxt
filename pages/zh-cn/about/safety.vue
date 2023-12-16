@@ -153,6 +153,36 @@
         </ul>
       </div>
     </div>
+    <div class="license">
+      <div class="license-container layout">
+        <div class="license-img">
+          <img src="@/assets/image/about/safety/license.png" alt="">
+        </div>
+        <div class="license-content">
+          <p class="title">我们的银行牌照</p>
+          <ul class="desc-list">
+            <li class="desc-item">您的资金由持牌银行保管</li>
+            <li class="desc-item">美国联邦法律的保护</li>
+            <li class="desc-item">美国货币和金融体系</li>
+            <li class="desc-item">波多黎各OCIF金融监管的银行体系</li>
+            <li class="desc-item">美国法律体系下的知识产权保护</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="notice">
+      <div class="notice-container layout">
+        <p class="title">CIP Notice - IMPORTANT INFORMATION ABOUT PROCEDURES FOR OPENING A NEW ACCOUNT IN THE U.S.</p>
+        <p class="desc">In order to assist the U.S. government in its effort to fight the funding of terrorism and money laundering activities, U.S. Federal law requires all financial institutions to obtain, verify, and record information that identifies who opens an account.</p>
+        <p class="quote">What this means for you: When you open an account, we will ask for the legal name of the entity, physical address, and other information that will allow us to identify you. We may also ask to see other identifying documents.</p>
+        <div class="dashed-img top-right">
+          <img src="@/assets/image/about/safety/dashed01.png" alt="">
+        </div>
+        <div class="dashed-img left-bottom">
+          <img src="@/assets/image/about/safety/dashed02.png" alt="">
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -454,6 +484,89 @@ export default {
             color: @topwhite;
             line-height: 30px;
           }
+        }
+      }
+    }
+  }
+  .license {
+    height: 640px;
+    background-color: @gray3;
+    .license-container {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 120px;
+      .license-img {
+        width: 550px;
+        height: 440px;
+      }
+      .license-content {
+        padding: 20px 80px 0 0;
+        .title {
+          margin-bottom: 25px;
+          font-size: 40px;
+          color: @blank;
+          line-height: 55px;
+        }
+        .desc-list {
+          width: 445px;
+          font-size: 16px;
+          color: @blank2;
+          line-height: 16px;
+          .desc-item {
+            padding: 20px 0;
+            border-bottom: 1px solid @blank2;
+          }
+        }
+      }
+    }
+  }
+  .notice {
+    height: 650px;
+    background-color: @topwhite;
+    .notice-container {
+      position: relative;
+      padding-top: 140px;
+      .title {
+        margin-bottom: 60px;
+        font-size: 36px;
+        color: @blank;
+        line-height: 55px;
+      }
+      .desc {
+        margin-bottom: 40px;
+        font-size: 16px;
+        color: @blank2;
+        line-height: 40px;
+      }
+      .quote {
+        position: relative;
+        padding-left: 24px;
+        font-size: 16px;
+        color: @blank3;
+        line-height: 40px;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 4px;
+          height: 100%;
+          background-color: @blue;
+        }
+      }
+      .dashed-img {
+        position: absolute;
+        &.top-right {
+          top: 75px;
+          right: -245px;
+          width: 110px;
+          height: 120px;
+        }
+        &.left-bottom {
+          left: -203px;
+          bottom: 86px;
+          width: 108px;
+          height: 58px;
         }
       }
     }
