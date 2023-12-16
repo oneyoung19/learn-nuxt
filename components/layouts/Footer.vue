@@ -103,7 +103,7 @@ export default {
           links: [
             { text: '企业服务', url: '' },
             { text: '个人服务', url: '' },
-            { text: '单证业务', url: '' },
+            { text: '单证业务', url: '/zh-cn/letter' },
             { text: '我们是谁', url: '' },
             { text: '安全合规', url: '' },
             { text: '反洗钱', url: '' }

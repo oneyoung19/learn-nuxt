@@ -3,9 +3,9 @@
     <div class="layout">
       <div class="header-container">
         <div class="header-left">
-          <div class="logo">
+          <NuxtLink class="logo" to="/zh-cn">
             <img src="~assets/image/logo.png" alt="logo">
-          </div>
+          </NuxtLink>
           <ul class="navigation">
             <li class="navigation-item">企业网银</li>
             <li class="navigation-item">个人网银</li>
@@ -71,13 +71,17 @@ export default {
     height: 100%;
     .header-left {
       display: flex;
+      align-items: center;
+      height: 100%;
       .logo {
         width: 114px;
-        margin-right: 50px;
+        height: 24px;
+        cursor: pointer;
       }
       .navigation {
         display: flex;
         align-items: center;
+        margin-left: 50px;
         .navigation-item {
           margin-right: 40px;
           &:last-child {
