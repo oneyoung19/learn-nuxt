@@ -72,6 +72,87 @@
         </ul>
       </div>
     </div>
+    <div class="communication">
+      <div class="communication-container layout">
+        <p class="title">隐私安全</p>
+        <p class="sub-title">您的信息安全是我们的首要任务
+        </p>
+        <ul class="communication-list">
+          <li class="communication-item">
+            <div class="icon">
+              <img src="@/assets/image/about/safety/communication01.png" alt="">
+            </div>
+            <p class="title">隐私保护</p>
+            <p class="desc">CBiBank會妥善保護客戶的個人及財務信息，未經客戶授權，銀行不會泄露任何隱私信息。</p>
+          </li>
+          <li class="communication-item">
+            <div class="icon">
+              <img src="@/assets/image/about/safety/communication02.png" alt="">
+            </div>
+            <p class="title">用戶安全</p>
+            <p class="desc">CBiBank採取多層次驗證及保護措施，以確保客戶的個人數據始終得到最高水準的安全保護。</p>
+          </li>
+          <li class="communication-item">
+            <div class="icon">
+              <img src="@/assets/image/about/safety/communication03.png" alt="">
+            </div>
+            <p class="title">加密存儲</p>
+            <p class="desc">CBiBank採用領先的數據加密技術，用以保護“在傳輸”和“存儲過”的客戶信息，每位客戶的信息都將被加密及再存儲。</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="monitor">
+      <div class="monitor-container layout">
+        <p class="title">交易监控，实时预警</p>
+        <p class="sub-title">自研风控引擎，为客户的交易保驾护航
+        </p>
+        <ul class="monitor-list">
+          <li class="monitor-item">
+            <div class="icon">
+              <img src="@/assets/image/about/safety/monitor01.png" alt="">
+            </div>
+            <p class="title">风险识别</p>
+            <p class="desc">智能识别，通过专家规则和机器学习模型，全面识别风险交易和可疑交易，95%风险事件提前预知。</p>
+          </li>
+          <li class="monitor-item">
+            <div class="icon">
+              <img src="@/assets/image/about/safety/monitor02.png" alt="">
+            </div>
+            <p class="title">风险决策</p>
+            <p class="desc">性能高效，50毫秒级别响应，实时监控预警，第一时间通过系统或人工介入风险可疑事件处理。</p>
+          </li>
+          <li class="monitor-item">
+            <div class="icon">
+              <img src="@/assets/image/about/safety/monitor03.png" alt="">
+            </div>
+            <p class="title">风险管理</p>
+            <p class="desc">对客户及交易进行事前事中事后的全流程监控，通过数字化手段对不同类别的流动性风险进行管理。</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="system">
+      <div class="system-container layout">
+        <p class="title">系统安全，无后顾之忧</p>
+        <p class="sub-title">全天候保障，打造安全可靠的信息环境
+        </p>
+        <ul class="system-list">
+          <li class="system-item background">
+            <p class="title">通过 PCI DSS 认证</p>
+            <p class="desc">全球范围内金融银行业数据安全标准的最高等级评定。</p>
+          </li>
+          <li class="system-item background">
+            <p class="title">加密传输通道</p>
+            <p class="desc">更安全的传输通道，保障您的信息隐私。</p>
+          </li>
+          <li class="system-item background">
+            <p class="title">专业运维团队</p>
+            <p class="desc">7*24全天候服务，保障您的每一笔交易安全。</p>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -224,6 +305,153 @@ export default {
           .desc {
             font-size: 14px;
             color: @blank2;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }
+  .communication {
+    height: 632px;
+    background-color: @topwhite;
+    .communication-container {
+      padding-top: 120px;
+      >.title {
+        margin-bottom: 40px;
+        font-size: 40px;
+        color: @blank;
+        line-height: 40px;
+        text-align: center;
+      }
+      >.sub-title {
+        margin-bottom: 60px;
+        font-size: 18px;
+        color: @blank2;
+        line-height: 36px;
+        text-align: center;
+      }
+      .communication-list {
+        display: flex;
+        .communication-item {
+          flex: 1;
+          margin-right: 75px;
+          &:last-child {
+            margin-right: 0;
+          }
+          .icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 26px;
+          }
+          .title {
+            margin-bottom: 14px;
+            font-size: 18px;
+            color: @blank;
+            line-height: 25px;
+          }
+          .desc {
+            font-size: 14px;
+            color: @blank2;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }
+  .monitor {
+    height: 632px;
+    background-color: @gray3;
+    .monitor-container {
+      padding-top: 120px;
+      >.title {
+        margin-bottom: 40px;
+        font-size: 40px;
+        color: @blank;
+        line-height: 40px;
+        text-align: center;
+      }
+      >.sub-title {
+        margin-bottom: 60px;
+        font-size: 18px;
+        color: @blank2;
+        line-height: 36px;
+        text-align: center;
+      }
+      .monitor-list {
+        display: flex;
+        .monitor-item {
+          flex: 1;
+          margin-right: 75px;
+          &:last-child {
+            margin-right: 0;
+          }
+          .icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+          }
+          .title {
+            margin-bottom: 14px;
+            font-size: 18px;
+            color: @blank;
+            line-height: 25px;
+          }
+          .desc {
+            font-size: 14px;
+            color: @blank2;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }
+  .system {
+    height: 596px;
+    background-color: @topwhite;
+    .system-container {
+      padding-top: 122px;
+      >.title {
+        margin-bottom: 40px;
+        font-size: 40px;
+        color: @blank;
+        line-height: 40px;
+        text-align: center;
+      }
+      >.sub-title {
+        margin-bottom: 60px;
+        font-size: 18px;
+        color: @blank2;
+        line-height: 36px;
+        text-align: center;
+      }
+      .system-list {
+        display: flex;
+        .system-item {
+          flex: 1;
+          margin-right: 25px;
+          padding: 40px 38px;
+          background-size: cover;
+          &:nth-child(1) {
+            background-image: url('@/assets/image/about/safety/system01.png');
+          }
+          &:nth-child(2) {
+            background-image: url('@/assets/image/about/safety/system02.png');
+          }
+          &:nth-child(3) {
+            background-image: url('@/assets/image/about/safety/system03.png');
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          .title {
+            margin-bottom: 14px;
+            font-size: 18px;
+            color: @topwhite;
+            line-height: 25px;
+          }
+          .desc {
+            font-size: 14px;
+            color: @topwhite;
             line-height: 30px;
           }
         }
