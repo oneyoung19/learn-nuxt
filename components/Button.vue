@@ -20,7 +20,7 @@ export default {
     // blue gray blank
     type: {
       type: String,
-      default: 'primary'
+      default: 'blue'
     },
     // 默认medium 高50px small 高36px
     size: {
@@ -75,6 +75,7 @@ export default {
   }
   &.blank {
     background-color: @topblank;
+    color: @topwhite;
     &:hover {
       background-color: @blank2;
     }

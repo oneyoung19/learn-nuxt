@@ -131,6 +131,20 @@
         </ul>
       </div>
     </div>
+    <div class="group background">
+      <div class="group-bg">
+        <div class="group-container layout">
+          <div class="mascot">
+            <img src="@/assets/image/who-we-are/mascot.png" alt="">
+          </div>
+          <div class="group-right">
+            <p class="title">贸易无国界，投资更简单</p>
+            <p class="sub-title">让我们成为您的优选银行</p>
+            <Button type="blank" :arrow-config="{ moving: true }">开启CBiBank</Button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -323,6 +337,41 @@ export default {
           margin-right: 80px;
           &:last-child {
             margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  .group {
+    height: 600px;
+    background: @gray-gradient2;
+    .group-bg {
+      margin: 0 auto;
+      width: @pageWidth;
+      height: 100%;
+      background-image: url('@/assets/image/who-we-are/mascot-bg.png');
+      background-size: cover;
+      .group-container {
+        display: flex;
+        padding-top: 80px;
+        .mascot {
+          margin-right: 154px;
+          width: 408px;
+          height: 520px;
+        }
+        .group-right {
+          padding-top: 88px;
+          .title {
+            margin-bottom: 40px;
+            font-size: 40px;
+            color: @blank;
+            line-height: 55px;
+          }
+          .sub-title {
+            margin-bottom: 80px;
+            font-size: 18px;
+            color: @blank2;
+            line-height: 40px;
           }
         }
       }
