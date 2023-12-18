@@ -114,10 +114,43 @@
         </div>
       </div>
     </div>
+    <div class="partners">
+      <div class="partners-container">
+        <p class="title">
+          合作伙伴
+        </p>
+        <ul class="partners-list">
+          <li class="partners-item" v-for="(item, index) in firstPartners" :key="index">
+            <img :src="item.img" alt="">
+          </li>
+        </ul>
+        <ul class="partners-list">
+          <li class="partners-item" v-for="(item, index) in secondPartners" :key="index">
+            <img :src="item.img" alt="">
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import dimVisa from '@/assets/image/who-we-are/dim-visa.png'
+import dimCips from '@/assets/image/who-we-are/dim-cips.png'
+import dimUnionPay from '@/assets/image/who-we-are/dim-union-pay.png'
+import dimSwift from '@/assets/image/who-we-are/dim-swift.png'
+import dimCitibank from '@/assets/image/who-we-are/dim-citibank.png'
+import dimAba from '@/assets/image/who-we-are/dim-aba.png'
+import dimJiangsubank from '@/assets/image/who-we-are/dim-jiangsubank.png'
+import dimDbs from '@/assets/image/who-we-are/dim-dbs.png'
+import dimOcbc from '@/assets/image/who-we-are/dim-ocbc.png'
+import dimNanjingbank from '@/assets/image/who-we-are/dim-nanjingbank.png'
+import dimZhongguobank from '@/assets/image/who-we-are/dim-zhongguobank.png'
+import dimCommonwealthbank from '@/assets/image/who-we-are/dim-commonwealthbank.png'
+import dimXingyebank from '@/assets/image/who-we-are/dim-xingyebank.png'
+import dimEstpac from '@/assets/image/who-we-are/dim-estpac.png'
+import dimInternationalbank from '@/assets/image/who-we-are/dim-internationalbank.png'
+
 export default {
   data () {
     return {
@@ -125,6 +158,25 @@ export default {
       buttonList: [
         { label: '我们的使命', value: 'mission' },
         { label: '我们的愿景', value: 'vision' }
+      ],
+      firstPartners: [
+        { img: dimVisa },
+        { img: dimCips },
+        { img: dimUnionPay },
+        { img: dimSwift },
+        { img: dimCitibank },
+        { img: dimAba },
+        { img: dimJiangsubank },
+        { img: dimDbs }
+      ],
+      secondPartners: [
+        { img: dimOcbc },
+        { img: dimNanjingbank },
+        { img: dimZhongguobank },
+        { img: dimCommonwealthbank },
+        { img: dimXingyebank },
+        { img: dimEstpac },
+        { img: dimInternationalbank }
       ]
     }
   },
@@ -238,6 +290,39 @@ export default {
             font-size: 12px;
             color: @gray4;
             line-height: 12px;
+          }
+        }
+      }
+    }
+  }
+  .partners {
+    height: 738px;
+    background-color: @gray3;
+    .partners-container {
+      padding-top: 140px;
+      text-align: center;
+      .title {
+        margin-bottom: 100px;
+        font-size: 40px;
+        color: #171725;
+        line-height: 55px;
+      }
+      .partners-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: scroll;
+        margin-bottom: 80px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .partners-item {
+          width: 245px;
+          min-width: 245px;
+          height: 125px;
+          margin-right: 80px;
+          &:last-child {
+            margin-right: 0;
           }
         }
       }
