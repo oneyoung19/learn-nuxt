@@ -145,6 +145,25 @@
         </div>
       </div>
     </div>
+    <div class="qa">
+      <div class="qa-container layout">
+        <p class="title">关于CBiBank常见问题</p>
+        <ul class="qa-list">
+          <li
+            class="qa-item"
+            :class="item.active ? 'active' : ''"
+            v-for="(item, index) in qaList"
+            :key="index"
+            @click="handleToggleQa(item)">
+            <p class="question">
+              <SvgIcon class="icon" name="arrow-right"></SvgIcon>
+              <span>{{ item.question }}</span>
+            </p>
+            <p class="answer">{{ item.answer }}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -191,10 +210,21 @@ export default {
         { img: dimXingyebank },
         { img: dimEstpac },
         { img: dimInternationalbank }
+      ],
+      qaList: [
+        { question: 'CBiBank能做什么？', answer: '我们可以为您提供企业及个人的国际银行服务，包含不限于银行开户、全球转帐汇款、换汇结汇、电商收款、银联收单、信用证、财富升值、薪资发放、借记卡等。', active: true },
+        { question: '使用CBiBank汇款安全吗？', answer: 'CBiBank是美国商业银行，受美国银行监管体系监管，牌照资质完善。依托CBiBank强大的全球清算网络及风控体系，我们可以极大限度保障您的资金安全。' },
+        { question: '开户需要多长时间？', answer: 'CBiBank支持全程线上进行开户操作，如果您提供的相关资料准确且充分，最快1天即可开户成功。' },
+        { question: '企业开户要求高吗？', answer: '在CBiBank开户无需注册年限、无关联性公司、无资金流水需求，无需购买理材。如果您是中小型企业，从事全球贸易、电商等行业，CBiBank企业账户将是您最好的选择。' },
+        { question: '账户资金是否可以停留境外？', answer: 'CBiBank作为一家美国专业银行，可为客户提供存款业务，支持客户资金合法合规留存。' },
+        { question: '银行是如何收费的？', answer: 'CBiBank无隐藏费用，费用公开透明，详情请查阅我们的最新收费标准《CBiBank收费标准》。' }
       ]
     }
   },
   methods: {
+    handleToggleQa (item) {
+      item.active = !item.active
+    }
   }
 }
 </script>
@@ -372,6 +402,65 @@ export default {
             font-size: 18px;
             color: @blank2;
             line-height: 40px;
+          }
+        }
+      }
+    }
+  }
+  .qa {
+    // min-height: 985px;
+    background-color: @gray3;
+    .qa-container {
+      padding: 120px 0;
+      .title {
+        margin-bottom: 80px;
+        font-size: 40px;
+        color: @blank;
+        line-height: 55px;
+        text-align: center;
+      }
+      .qa-list {
+        cursor: pointer;
+        .qa-item {
+          padding: 26px 30px 26px 80px;
+          border-top: 1px solid @blank;
+          background-color: @gray3;
+          &:last-child {
+            border-bottom: 1px solid @blank;
+          }
+          .question {
+            position: relative;
+            margin-bottom: 10px;
+            font-size: 22px;
+            font-weight: 500;
+            color: @blank;
+            line-height: 38px;
+            .icon {
+              position: absolute;
+              top: 50%;
+              left: -50px;
+              transform: translateY(-50%);
+              font-size: 26px;
+              color: @blank;
+              transition: all ease-in-out .5s;
+            }
+          }
+          .answer {
+            display: none;
+            font-size: 16px;
+            color: @blank2;
+            line-height: 30px;
+          }
+          &.active {
+            background-color: @topwhite;
+            .question {
+              .icon {
+                transform: translateY(-50%) rotate(90deg);
+              }
+            }
+            .answer {
+              display: block;
+            }
           }
         }
       }
