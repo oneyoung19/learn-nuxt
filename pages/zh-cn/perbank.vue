@@ -35,6 +35,41 @@
         </div>
       </div>
     </div>
+    <div class="remit">
+      <div class="remit-container layout">
+        <div class="remit-left">
+          <p class="title">随时随地、多币种轻松汇款</p>
+          <p class="desc">美元、欧元、离岸人民币、港币等主流货币，全球范围内自由汇转。</p>
+        </div>
+        <div class="remit-right">
+          <div class="remit-bg">
+            <img src="@/assets/image/perbank/remit-bg.png" alt="">
+          </div>
+          <div class="remit-data">
+            <img src="@/assets/image/perbank/remit-data.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swap">
+      <div class="swap-container layout">
+        <div class="swap-left">
+          <div class="swap-steps">
+            <img src="@/assets/image/perbank/swap-steps.png" alt="">
+          </div>
+          <div class="swap-select">
+            <img src="@/assets/image/perbank/swap-select.png" alt="">
+          </div>
+          <div class="swap-confirm">
+            <img src="@/assets/image/perbank/swap-confirm.png" alt="">
+          </div>
+        </div>
+        <div class="swap-right">
+          <p class="title">以实时的汇率进行换汇</p>
+          <p class="desc">轻松换汇，您可以通过CBiBank快捷完成货币兑换，以实时汇率结算。</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -148,6 +183,92 @@ export default {
               line-height: 16px;
             }
           }
+        }
+      }
+    }
+  }
+  .remit {
+    height: 700px;
+    background-color: @gray3;
+    .remit-container {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 80px;
+      .remit-left {
+        flex: 1;
+        padding-top: 205px;
+        .title {
+          margin-bottom: 40px;
+          font-size: 40px;
+          color: @blank;
+          line-height: 55px;
+        }
+        .desc {
+          font-size: 18px;
+          color: @blank2;
+          line-height: 36px;
+        }
+      }
+      .remit-right {
+        position: relative;
+        margin-left: 80px;
+        width: 578px;
+        .remit-bg {
+          width: 400px;
+          height: 475px;
+        }
+        .remit-data {
+          position: absolute;
+          top: 285px;
+          left: 255px;
+          width: 290px;
+          height: 256px;
+        }
+      }
+    }
+  }
+  .swap {
+    height: 700px;
+    background-color: @topwhite;
+    .swap-container {
+      display: flex;
+      padding-top: 132px;
+      .swap-left {
+        position: relative;
+        margin-right: 115px;
+        padding-left: 162px;
+        .swap-steps {
+          width: 280px;
+          height: 438px;
+        }
+        .swap-select {
+          position: absolute;
+          top: 120px;
+          left: 0;
+          width: 198px;
+          height: 298px;
+        }
+        .swap-confirm {
+          position: absolute;
+          top: 208px;
+          left: 385px;
+          width: 116px;
+          height: 126px;
+        }
+      }
+      .swap-right {
+        flex: 1;
+        padding-top: 150px;
+        .title {
+          margin-bottom: 40px;
+          font-size: 40px;
+          color: @blank;
+          line-height: 55px;
+        }
+        .desc {
+          font-size: 18px;
+          color: @blank2;
+          line-height: 40px;
         }
       }
     }
