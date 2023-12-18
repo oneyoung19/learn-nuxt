@@ -35,6 +35,85 @@
         </div>
       </div>
     </div>
+    <div class="institution">
+      <div class="institution-container layout">
+        <div class="institution-left">
+          <p class="title">守护您的资金安全</p>
+          <p class="desc">CBiBank受美国金融监管机构监管，是美国银行家协会(ABA)、环球银行金融电信协会(SWIFT)、银联国际(UNIONPAY)、跨境人民币清算(CIPS)等多家机构成员、中国银行间市场交易商协会备案交易商、中国外汇交易中心外币市场会员。</p>
+        </div>
+        <div class="institution-right">
+          <ul class="institution-list">
+            <li class="institution-item">
+              <div class="img">
+                <img src="@/assets/image/who-we-are/ocif.png" alt="">
+              </div>
+              <p class="title">美国持牌商业银行</p>
+              <p class="desc">受美国金融监管机构监督</p>
+            </li>
+            <li class="institution-item">
+              <div class="img">
+                <img src="@/assets/image/who-we-are/swift.png" alt="">
+              </div>
+              <p class="title">环球银行金融电信协会</p>
+              <p class="desc">SWIFT：CBLBPRSJ</p>
+            </li>
+            <li class="institution-item">
+              <div class="img">
+                <img src="@/assets/image/who-we-are/aba.png" alt="">
+              </div>
+              <p class="title">美国银行家协会</p>
+              <p class="desc">ABA：021508125</p>
+            </li>
+          </ul>
+          <ul class="institution-list">
+            <li class="institution-item">
+              <div class="img">
+                <img src="@/assets/image/who-we-are/visa.png" alt="">
+              </div>
+              <p class="title">VISA成员</p>
+              <p class="desc">国际金融机构VISA成员</p>
+            </li>
+            <li class="institution-item">
+              <div class="img">
+                <img src="@/assets/image/who-we-are/union-pay.png" alt="">
+              </div>
+              <p class="title">银联国际</p>
+              <p class="desc">银联国际北美成员</p>
+            </li>
+            <li class="institution-item">
+              <div class="img">
+                <img src="@/assets/image/who-we-are/cips.png" alt="">
+              </div>
+              <p class="title">跨境人民币参与行</p>
+              <p class="desc">参与离岸人民币清算</p>
+            </li>
+          </ul>
+          <ul class="institution-list">
+            <li class="institution-item">
+              <div class="img">
+                <img src="@/assets/image/who-we-are/cfets.png" alt="">
+              </div>
+              <p class="title">中国外汇交易中心</p>
+              <p class="desc">外币市场会员</p>
+            </li>
+            <li class="institution-item">
+              <div class="img">
+                <img src="@/assets/image/who-we-are/csrc.png" alt="">
+              </div>
+              <p class="title">CSRC中国证监会</p>
+              <p class="desc">合格境外投资者资格</p>
+            </li>
+            <li class="institution-item">
+              <div class="img">
+                <img src="@/assets/image/who-we-are/nafmii.png" alt="">
+              </div>
+              <p class="title">中国银行间市场</p>
+              <p class="desc">备案交易商</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -105,6 +184,61 @@ export default {
           font-family: Poppins, Poppins;
           color: @blank2;
           line-height: 40px;
+        }
+      }
+    }
+  }
+  .institution {
+    height: 640px;
+    background-color: @topwhite;
+    .institution-container {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 100px;
+      .institution-left {
+        flex: 1;
+        padding-top: 92px;
+        .title {
+          margin-bottom: 40px;
+          font-size: 40px;
+          color: @blank;
+          line-height: 55px;
+        }
+        .desc {
+          font-size: 18px;
+          color: @blank2;
+          line-height: 40px;
+        }
+      }
+      .institution-right {
+        margin-left: 106px;
+        width: 508px;
+        .institution-list {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 45px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        .institution-item {
+          text-align: center;
+          >.img {
+            margin: 0 auto 20px;
+            width: 112px;
+            height: 60px;
+          }
+          >.title {
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: @blank4;
+            line-height: 12px;
+          }
+          >.desc {
+            font-size: 12px;
+            color: @gray4;
+            line-height: 12px;
+          }
         }
       }
     }
