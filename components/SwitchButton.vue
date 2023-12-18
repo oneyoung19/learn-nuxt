@@ -1,5 +1,5 @@
 <template>
-  <div class="switch-button">
+  <div class="switch-button" :class="theme">
     <ul
       class="switch-button-list"
       ref="buttonList">
@@ -35,6 +35,10 @@ export default {
       default () {
         return []
       }
+    },
+    theme: {
+      type: String,
+      default: 'default'
     }
   },
   data () {
@@ -169,6 +173,15 @@ export default {
     background-color: @gray4;
     border-radius: 26px;
     transition: top 0.5s ease, left 0.5s ease;
+  }
+  &.dark {
+    .switch-button-list {
+      background-color: @topwhite;
+      color: @gray;
+    }
+    .slider {
+      background-color: @blank;
+    }
   }
 }
 </style>

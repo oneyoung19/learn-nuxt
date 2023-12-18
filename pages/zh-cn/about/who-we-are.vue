@@ -21,6 +21,7 @@
         <div class="profession-right">
           <SwitchButton
             v-model="activeButton"
+            theme="dark"
             :list="buttonList">
           </SwitchButton>
           <div class="mission-content" v-show="activeButton === 'mission'">
@@ -105,7 +106,6 @@ export default {
           color: @blank2;
           line-height: 40px;
         }
-        .mission-content {}
       }
     }
   }
