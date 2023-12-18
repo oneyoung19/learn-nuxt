@@ -12,6 +12,28 @@
         <div class="location background"></div>
       </div>
     </div>
+    <div class="profession">
+      <div class="profession-container layout">
+        <div class="profession-left">
+          <img v-show="activeButton === 'mission'" src="@/assets/image/who-we-are/mission.png" alt="">
+          <img v-show="activeButton === 'vision'" src="@/assets/image/who-we-are/vision.png" alt="">
+        </div>
+        <div class="profession-right">
+          <SwitchButton
+            v-model="activeButton"
+            :list="buttonList">
+          </SwitchButton>
+          <div class="mission-content" v-show="activeButton === 'mission'">
+            <p class="title">助力全球互联互通，为中小企业创造更多贸易及投资机会</p>
+            <p class="desc">我们正在建立安全便捷的银行体系——让它更快、更方便的为企业和个人服务：收款、支付、获得报酬、消费，无论您身在何处，都可以使用我们的银行服务，我们正在推动全球贸易及投资便利化，打造最受信赖的国际商业银行。</p>
+          </div>
+          <div class="vision-content" v-show="activeButton === 'vision'">
+            <p class="title">推动全球贸易及投资便利化，打造最受信赖的国际商业银行</p>
+            <p class="desc">在深刻理解国际贸易企业需求的基础上，打造差异化的产品服务，持续提升国际间贸易收付结算的便利化水平，为广大投资者提供多元、稳健、可预期的投资产品。</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -19,6 +41,11 @@
 export default {
   data () {
     return {
+      activeButton: 'mission',
+      buttonList: [
+        { label: '我们的使命', value: 'mission' },
+        { label: '我们的愿景', value: 'vision' }
+      ]
     }
   },
   methods: {
@@ -49,6 +76,36 @@ export default {
         width: 615px;
         height: 352px;
         background-image: url('@/assets/image/who-we-are/location.png');
+      }
+    }
+  }
+  .profession {
+    height: 746px;
+    background-color: @gray3;
+    .profession-container {
+      display: flex;
+      padding-top: 140px;
+      .profession-left {
+        margin-right: 88px;
+        width: 528px;
+        height: 466px;
+      }
+      .profession-right {
+        flex: 1;
+        .title {
+          margin: 60px 0 40px;
+          font-size: 40px;
+          font-weight: 600;
+          color: @blank;
+          line-height: 55px;
+        }
+        .desc {
+          font-size: 18px;
+          font-family: Poppins, Poppins;
+          color: @blank2;
+          line-height: 40px;
+        }
+        .mission-content {}
       }
     }
   }
