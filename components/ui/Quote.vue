@@ -21,7 +21,6 @@ export default {
   padding-left: 24px;
   font-size: 16px;
   color: @blank3;
-  line-height: 40px;
   &::before {
     content: '';
     position: absolute;

@@ -174,7 +174,7 @@
       <div class="notice-container layout">
         <p class="title">CIP Notice - IMPORTANT INFORMATION ABOUT PROCEDURES FOR OPENING A NEW ACCOUNT IN THE U.S.</p>
         <p class="desc">In order to assist the U.S. government in its effort to fight the funding of terrorism and money laundering activities, U.S. Federal law requires all financial institutions to obtain, verify, and record information that identifies who opens an account.</p>
-        <Quote>What this means for you: When you open an account, we will ask for the legal name of the entity, physical address, and other information that will allow us to identify you. We may also ask to see other identifying documents.</Quote>
+        <Quote class="quote">What this means for you: When you open an account, we will ask for the legal name of the entity, physical address, and other information that will allow us to identify you. We may also ask to see other identifying documents.</Quote>
         <div class="dashed-img top-right">
           <img src="@/assets/image/about/safety/dashed01.png" alt="">
         </div>
@@ -538,7 +538,9 @@ export default {
         color: @blank2;
         line-height: 40px;
       }
-      
+      >.quote {
+        line-height: 40px;
+      }
       .dashed-img {
         position: absolute;
         &.top-right {
