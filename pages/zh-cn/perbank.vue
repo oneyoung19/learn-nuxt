@@ -109,6 +109,7 @@
             <p class="guide-text">开户完成</p>
           </li>
         </ul>
+        <DownloadApp theme="blank"></DownloadApp>
       </div>
     </div>
   </div>
@@ -365,7 +366,7 @@ export default {
       .guide-list {
         display: flex;
         justify-content: space-between;
-        // width: 280px;
+        margin-bottom: 80px;
         .guide-item {
           position: relative;
           flex: 1;
