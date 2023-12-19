@@ -59,6 +59,7 @@ export default {
   cursor: pointer;
   user-select: none;
   line-height: 1;
+  color: @topwhite;
   text-align: center;
   transition: all ease-in-out .5s;
   &.blue {
