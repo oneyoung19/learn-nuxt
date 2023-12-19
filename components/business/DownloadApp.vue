@@ -1,5 +1,5 @@
 <template>
-  <ul class="download-list">
+  <ul class="download-list" :class="theme">
     <li class="download-item">
       <a href="" class="download-app-store background"></a>
     </li>
@@ -23,6 +23,12 @@
 
 <script>
 export default {
+  props: {
+    theme: {
+      type: String,
+      default: 'default'
+    }
+  },
   data () {
     return {
     }
@@ -81,12 +87,28 @@ export default {
         top: 0;
         left: 50%;
         transform: translate(-50%, -100%);
+        z-index: 2;
         content: '';
         width: 0;
         height: 0;
         border-left: 7px solid transparent;
         border-right: 7px solid transparent;
-        border-bottom: 7px solid @topwhite; /* 箭头的颜色，可以根据需要修改 */
+        /* 箭头的颜色，可以根据需要修改 */
+        border-bottom: 7px solid @topwhite;
+      }
+      /* after伪元素覆盖before伪元素 从而使三角形有边框 */
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        display: none;
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid @gray2;
       }
       .download-h5-qrcode {
         width: 168px;
@@ -103,6 +125,29 @@ export default {
     &:hover {
       .download-h5 {
         display: block;
+      }
+    }
+  }
+  &.blank {
+    .download-item {
+      background-color: @topblank;
+      &:hover {
+        background-color: @blank2;
+      }
+      .download-app-store {
+        background-image: url('@/assets/image/app-store-blank.png');
+      }
+      .download-google-play {
+        background-image: url('@/assets/image/google-play-blank.png');
+      }
+      .download-qrcode {
+        background-image: url('@/assets/image/qrcode-blank.png');
+      }
+      .download-h5 {
+        border: 1px solid @gray2;
+        &::after {
+          display: block;
+        }
       }
     }
   }
