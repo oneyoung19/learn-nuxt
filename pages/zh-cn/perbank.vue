@@ -70,6 +70,47 @@
         </div>
       </div>
     </div>
+    <div class="express">
+      <div class="express-container layout">
+        <div class="express-left">
+          <p class="title">提供全球的速汇业务</p>
+          <p class="desc">为有跨国汇款需求的人群提供即时到账的速汇服务，资金即时汇转到您的当地银行卡。</p>
+        </div>
+        <div class="express-right background"></div>
+      </div>
+    </div>
+    <div class="open-guide">
+      <div class="open-guide-container layout">
+        <p class="title">如何拥有帐户</p>
+        <p class="sub-title">线上即刻开户，纵享全球服务</p>
+        <ul class="guide-list">
+          <li class="guide-item">
+            <div class="guide-icon">
+              <SvgIcon name="download"></SvgIcon>
+            </div>
+            <p class="guide-text">下载APP注册</p>
+          </li>
+          <li class="guide-item">
+            <div class="guide-icon">
+              <SvgIcon class="icon" name="cert"></SvgIcon>
+            </div>
+            <p class="guide-text">实名认证，提交KYC</p>
+          </li>
+          <li class="guide-item">
+            <div class="guide-icon">
+              <SvgIcon class="icon" name="computer"></SvgIcon>
+            </div>
+            <p class="guide-text">视频面签，24H审核</p>
+          </li>
+          <li class="guide-item">
+            <div class="guide-icon">
+              <SvgIcon class="icon" name="wallet"></SvgIcon>
+            </div>
+            <p class="guide-text">开户完成</p>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -269,6 +310,103 @@ export default {
           font-size: 18px;
           color: @blank2;
           line-height: 40px;
+        }
+      }
+    }
+  }
+  .express {
+    height: 700px;
+    background-color: @gray3;
+    .express-container {
+      display: flex;
+      padding-top: 116px;
+      .express-left {
+        flex: 1;
+        padding-top: 146px;
+        .title {
+          margin-bottom: 40px;
+          font-size: 40px;
+          color: @blank;
+          line-height: 55px;
+        }
+        .desc {
+          font-size: 18px;
+          color: @blank2;
+          line-height: 40px;
+        }
+      }
+      .express-right {
+        margin-left: 90px;
+        margin-right: 40px;
+        width: 510px;
+        height: 584px;
+        background-image: url('@/assets/image/perbank/express-bg.png');
+      }
+    }
+  }
+  .open-guide {
+    height: 798px;
+    background-color: @topwhite;
+    .open-guide-container {
+      padding-top: 120px;
+      text-align: center;
+      .title {
+        margin-bottom: 40px;
+        font-size: 40px;
+        color: @blank;
+        line-height: 55px;
+      }
+      .sub-title {
+        margin-bottom: 80px;
+        font-size: 18px;
+        color: @blank2;
+        line-height: 40px;
+      }
+      .guide-list {
+        display: flex;
+        justify-content: space-between;
+        // width: 280px;
+        .guide-item {
+          position: relative;
+          flex: 1;
+          margin-right: 25px;
+          height: 213px;
+          background: @gray-gradient3;
+          border-radius: 20px;
+          text-align: center;
+          &::after {
+            content: '';
+            position: absolute;
+            top: 37px;
+            left: calc(50% + (37px * 2));
+            z-index: 2;
+            width: calc(100% + 20px - (37px * 4));
+            height: 2px;
+            background-color: @blue;
+          }
+          &:last-child {
+            margin-right: 0;
+            &::after {
+              display: none;
+            }
+          }
+          .guide-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 74px;
+            height: 74px;
+            margin: 0 auto 50px;
+            background-color: @blank;
+            border-radius: 37px;
+            color: @topwhite;
+            font-size: 35px;
+          }
+          .guide-text {
+            font-size: 16px;
+            color: @blank2;
+            line-height: 30px;
+          }
         }
       }
     }
