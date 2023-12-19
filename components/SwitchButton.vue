@@ -174,7 +174,7 @@ export default {
     border-radius: 26px;
     transition: top 0.5s ease, left 0.5s ease;
   }
-  &.dark {
+  &.blank {
     .switch-button-list {
       background-color: @topwhite;
       color: @gray;

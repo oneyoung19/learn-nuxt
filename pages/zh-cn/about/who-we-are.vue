@@ -21,7 +21,7 @@
         <div class="profession-right">
           <SwitchButton
             v-model="activeButton"
-            theme="dark"
+            theme="blank"
             :list="buttonList">
           </SwitchButton>
           <div class="mission-content" v-show="activeButton === 'mission'">
