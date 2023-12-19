@@ -130,6 +130,7 @@ export default {
   font-size: 16px;
   color: @topwhite;
   line-height: 16px;
+  overflow: hidden;
   .logo {
     margin-bottom: 80px;
     width: 170px;
