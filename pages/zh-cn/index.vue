@@ -150,6 +150,90 @@
           <p class="title">量身定制的财富管理服务</p>
           <p class="desc">投资组合实现帐户资产稳健增值，灵活的存款产品，帮助您实现资产保值。</p>
         </div>
+        <div class="fund-right background">
+          <div class="fund-img">
+            <img src="@/assets/image/home/fund-img-01.png" alt="">
+          </div>
+          <div class="fund-img">
+            <img src="@/assets/image/home/fund-img-02.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="letter">
+      <div class="letter-container layout">
+        <div class="letter-left background">
+          <div class="letter-img">
+            <img src="@/assets/image/home/letter-img-01.png" alt="">
+          </div>
+          <div class="letter-img">
+            <img src="@/assets/image/home/letter-img-02.png" alt="">
+          </div>
+          <div class="letter-img">
+          </div>
+          <div class="letter-img">
+          </div>
+          <div class="letter-img">
+            <img src="@/assets/image/home/letter-img-03.png" alt="">
+          </div>
+        </div>
+        <div class="letter-right">
+          <p class="title">提供完备的银行单证服务</p>
+          <p class="desc">支持美元、欧元、人民币等主流币种的多种单证类业务，包括：</p>
+          <p class="desc-item">托收业务；</p>
+          <p class="desc-item">保函业务；</p>
+          <p class="desc-item mb100">信用证业务等。</p>
+          <Button
+            type="blank"
+            :arrow-config="{ moving: true }">
+            了解详情
+          </Button>
+        </div>
+      </div>
+    </div>
+    <div class="service">
+      <div class="service-container layout">
+        <div class="service-left">
+          <p class="title">为多种类型的企业和个人提供定制化服务</p>
+          <p class="desc">支持实物贸易、服务贸易、全球投资、跨境电商等企业类型，服务留学生、移民、跨境工作者、个人投资者。</p>
+        </div>
+        <div class="service-right background"></div>
+      </div>
+    </div>
+    <div class="global-net">
+      <div class="global-net-container layout">
+        <p class="title">完善的国际清算网络</p>
+        <p class="desc">CBiBank业务覆盖全球163个国家和地区，轻松助您开启全球商机之门。</p>
+        <div class="global-net-main">
+          <div class="global-net-bg background">
+            <div class="global-net-img">
+              <img src="@/assets/image/home/global-net-img-01.png" alt="">
+            </div>
+            <div class="global-net-img">
+              <img src="@/assets/image/home/global-net-img-02.png" alt="">
+            </div>
+            <div class="global-net-img">
+              <img src="@/assets/image/home/global-net-img-03.png" alt="">
+            </div>
+            <div class="global-net-img">
+              <img src="@/assets/image/home/global-net-img-04.png" alt="">
+            </div>
+          </div>
+          <ul class="global-net-list">
+            <li class="global-net-item">
+              <span class="text-bold">163+</span>
+              <span class="text">覆盖国际和地区</span>
+            </li>
+            <li class="global-net-item">
+              <span class="text-bold">120+</span>
+              <span class="text">合作银行与金融机构</span>
+            </li>
+            <li class="global-net-item">
+              <span class="text-bold">20+</span>
+              <span class="text">全球主流电商平台和支付网关</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -542,6 +626,7 @@ const featureList = ref([
       .fund-left {
         width: 542px;
         padding-top: 54px;
+        margin-right: 160px;
         .title {
           margin-bottom: 40px;
           font-size: 40px;
@@ -551,6 +636,225 @@ const featureList = ref([
           font-size: 18px;
           color: @blank2;
           line-height: 40px;
+        }
+      }
+      .fund-right {
+        position: relative;
+        width: 510px;
+        height: 368px;
+        background-image: url('@/assets/image/home/fund-bg.png');
+        .fund-img {
+          position: absolute;
+          width: 356px;
+          height: 286px;
+          &:nth-child(1) {
+            top: -60px;
+            left: -75px;
+          }
+          &:nth-child(2) {
+            top: -60px;
+            right: -75px;
+          }
+        }
+      }
+    }
+  }
+  .letter {
+    height: 700px;
+    background-color: @gray3;
+    .letter-container {
+      display: flex;
+      padding-top: 40px;
+      .letter-left {
+        position: relative;
+        width: 620px;
+        height: 620px;
+        // margin-right: 165px;
+        margin-right: 120px;
+        background-image: url('@/assets/image/home/letter-bg.png');
+        .letter-img {
+          position: absolute;
+          &:nth-child(1) {
+            top: 130px;
+            right: 62px;
+            z-index: 2;
+            width: 215px;
+            height: 106px;
+          }
+          &:nth-child(2) {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 388px;
+            height: 214px;
+          }
+          &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+            right: 0;
+            bottom: 84px;
+            width: 186px;
+            height: 235px;
+            background: @topwhite;
+            border-radius: 10px;
+            box-shadow: 0px 5px 25px -6px rgba(22,31,91,0.149);
+            transition: all ease .5s;
+          }
+        }
+        &:hover {
+          .letter-img {
+            &:nth-child(4) {
+              transform: translate(14px, 14px);
+            }
+            &:nth-child(5) {
+              z-index: 2;
+              transform: translate(28px, 28px);
+            }
+          }
+        }
+      }
+      .letter-right {
+        flex: 1;
+        padding-top: 120px;
+        font-size: 18px;
+        color: @blank2;
+        line-height: 36px;
+        .title {
+          margin-bottom: 40px;
+          font-size: 40px;
+          color: @blank;
+          line-height: 40px;
+        }
+        .desc {
+          margin-bottom: 20px;
+        }
+        .desc-item {
+          position: relative;
+          padding-left: 26px;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: @blank2;
+            border-radius: 4px;
+          }
+          &.mb100 {
+            margin-bottom: 100px;
+          }
+        }
+      }
+    }
+  }
+  .service {
+    height: 700px;
+    background-color: @topwhite;
+    .service-container {
+      display: flex;
+      padding-top: 100px;
+      .service-left {
+        flex: 1;
+        padding-top: 138px;
+        .title {
+          margin-bottom: 40px;
+          font-size: 40px;
+          color: @blank;
+          line-height: 55px;
+        }
+        .desc {
+          font-size: 18px;
+          color: @blank2;
+          line-height: 36px;
+        }
+      }
+      .service-right {
+        position: relative;
+        width: 610px;
+        height: 600px;
+        margin-left: 145px;
+        margin-right: -75px;
+        // margin-left: 70px;
+        background-image: url('@/assets/image/home/service-bg.png');
+      }
+    }
+  }
+  .global-net {
+    height: 762px;
+    background: @blank;
+    .global-net-container {
+      position: relative;
+      padding-top: 140px;
+      text-align: center;
+      .title {
+        margin-bottom: 34px;
+        font-size: 40px;
+        color: @topwhite;
+        line-height: 40px;
+      }
+      .desc {
+        margin-bottom: 84px;
+        font-size: 18px;
+        color: @topwhite;
+        line-height: 32px;
+      }
+      .global-net-main {
+        display: flex;
+        align-items: center;
+        .global-net-bg {
+          position: relative;
+          width: 730px;
+          height: 333px;
+          margin-right: 36px;
+          background-image: url('@/assets/image/home/global-net-bg.png');
+          .global-net-img {
+            position: absolute;
+            width: 48px;
+            height: 60px;
+            &:nth-child(1) {
+              top: 30px;
+              left: 165px;
+            }
+            &:nth-child(2) {
+              top: 72px;
+              right: 150px;
+            }
+            &:nth-child(3) {
+              top: 122px;
+              left: 288px;
+            }
+            &:nth-child(4) {
+              top: 174px;
+              left: 200px;
+            }
+          }
+        }
+        .global-net-list {
+          flex: 1;
+          .global-net-item {
+            display: flex;
+            align-items: center;
+            height: 86px;
+            margin-bottom: 35px;
+            color: @topwhite;
+            border-top: 1px solid @topwhite;
+            &:last-child {
+              margin-bottom: 0;
+            }
+            .text-bold {
+              width: 92px;
+              margin-right: 35px;
+              font-size: 40px;
+              font-family: Poppins, Poppins;
+              font-weight: 600;
+              line-height: 46px;
+              text-align: left;
+            }
+            .text {
+              font-size: 16px;
+              line-height: 34px;
+            }
+          }
         }
       }
     }
