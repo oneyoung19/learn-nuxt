@@ -90,7 +90,8 @@
       <div class="letter-container layout">
         <SwitchTab
           v-model="activeTab"
-          :list="tabList">
+          :list="tabList"
+          border>
         </SwitchTab>
         <ul class="letter-list">
           <li class="letter-item" v-show="activeTab === 'credit'">

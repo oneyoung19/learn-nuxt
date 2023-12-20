@@ -2,6 +2,7 @@
   <div class="switch-tab">
     <ul
       class="switch-tab-list"
+      :class="border ? 'border-bottom' : ''"
       ref="tabList">
       <li
         class="switch-tab-item"
@@ -39,6 +40,10 @@ export default {
       default () {
         return []
       }
+    },
+    border: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -135,6 +140,9 @@ export default {
     display: inline-flex;
     align-items: center;
     background-color: @topwhite;
+    &.border-bottom {
+      border-bottom: 4px solid @gray3;
+    }
     .switch-tab-item {
       position: relative;
       width: 400px;
@@ -145,7 +153,13 @@ export default {
       cursor: pointer;
       transition: all ease .5s;
       &.active {
-        background-color: @blank3;
+        background: #FFFFFF linear-gradient(180deg, #F3F5F8 3%, rgba(255,255,255,0) 100%);
+      }
+      &:first-child {
+        border-radius: 10px 0 0 0;
+      }
+      &:last-child {
+        border-radius: 0 10px 0 0;
       }
       .content {
         margin-bottom: 4px;
