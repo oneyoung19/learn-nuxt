@@ -236,6 +236,38 @@
         </div>
       </div>
     </div>
+    <div class="customer">
+      <div class="customer-container layout">
+        <div class="customer-left">
+          <div
+            v-show="activeTab === 'customer-material'"
+            class="customer-left-item background">
+            <p class="title">实物贸易型企业</p>
+            <p class="desc">针对实物贸易型企业的实际业务需求，尤其是中小企业在国际银行开户及全球汇款等方面的痛点，CBiBank可为客户提供相应的高效、便捷的银行服务。</p>
+          </div>
+          <div
+            v-show="activeTab === 'customer-service'"
+            class="customer-left-item background">
+            <p class="title">服务贸易型企业</p>
+            <p class="desc">基于出海服务型企业对全球多币种开户、跨境支付和定制化金融产品的迫切需求，CBiBank为IT外包、互联网运营服务等行业的出海服务型企业打造了定制化的银行服务和多元化的解决方案。</p>
+          </div>
+          <div
+            v-show="activeTab === 'customer-invest'"
+            class="customer-left-item background">
+            <p class="title">国际投融资企业</p>
+            <p class="desc">赴海外投资和融资企业在国际金融业务方面的需求往往多样复杂，CBiBank可为客户提供基于CBiBank银行帐户之上的安全、高效、多元化资产管理解决方案。</p>
+          </div>
+        </div>
+        <div class="customer-right">
+          <p class="title">我们的客户</p>
+          <p class="desc">让全球商贸类企业、全球服务型企业、全球投融资企业像在本地一样便捷进行资金往来。</p>
+          <ToggleTab
+            v-model="activeTab"
+            :list="tabList">
+          </ToggleTab>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -262,6 +294,13 @@ const featureList = ref([
   { label: 'POS刷卡' },
   { label: '资金周转' },
   { label: '采购' }
+])
+
+const activeTab = ref('customer-material')
+const tabList = ref([
+  { label: '实物贸易型企业', value: 'customer-material', iconName: 'rectangle-deep', activeIconName: 'rectangle-light' },
+  { label: '服务贸易型企业', value: 'customer-service', iconName: 'conversation-deep', activeIconName: 'conversation-light' },
+  { label: '国际投融资企业', value: 'customer-invest', iconName: 'strip-deep', activeIconName: 'strip-light' }
 ])
 </script>
 
@@ -855,6 +894,60 @@ const featureList = ref([
               line-height: 34px;
             }
           }
+        }
+      }
+    }
+  }
+  .customer {
+    height: 808px;
+    background-color: @topwhite;
+    .customer-container {
+      display: flex;
+      padding: 140px 60px 0;
+      .customer-left {
+        margin-right: 95px;
+        width: 458px;
+        height: 529px;
+        >.customer-left-item {
+          width: 100%;
+          height: 100%;
+          padding: 50px 40px;
+          &:nth-child(1) {
+            background-image: url('@/assets/image/home/customer-bg-01.png');
+          }
+          &:nth-child(2) {
+            background-image: url('@/assets/image/home/customer-bg-02.png');
+          }
+          &:nth-child(3) {
+            background-image: url('@/assets/image/home/customer-bg-03.png');
+          }
+          .title {
+            margin-bottom: 30px;
+            font-size: 20px;
+            color: @topwhite;
+            line-height: 20px;
+          }
+          .desc {
+            font-size: 14px;
+            color: @gray3;
+            line-height: 40px;
+          }
+        }
+      }
+      .customer-right {
+        flex: 1;
+        >.title {
+          margin-bottom: 44px;
+          font-size: 40px;
+          color: @blank;
+          line-height: 40px;
+        }
+        >.desc {
+          // margin-bottom: 74px;
+          margin-bottom: 65px;
+          font-size: 18px;
+          color: @blank2;
+          line-height: 32px;
         }
       }
     }
