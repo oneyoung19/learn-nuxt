@@ -268,6 +268,12 @@
         </div>
       </div>
     </div>
+    <div class="celebrity">
+      <div class="celebrity-container layout">
+        <p class="title">大咖之声</p>
+        <Celebrities></Celebrities>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -949,6 +955,20 @@ const tabList = ref([
           color: @blank2;
           line-height: 32px;
         }
+      }
+    }
+  }
+  .celebrity {
+    height: 762px;
+    background-color: @gray3;
+    .celebrity-container {
+      padding-top: 120px;
+      .title {
+        margin-bottom: 100px;
+        font-size: 40px;
+        color: @blank;
+        line-height: 40px;
+        text-align: center;
       }
     }
   }
