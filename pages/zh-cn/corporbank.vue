@@ -195,7 +195,32 @@
       </div>
     </div>
     <div class="fund">
-      <div class="fund-container layout"></div>
+      <div class="fund-container layout">
+        <div class="fund-left">
+          <p class="title">更高效的多类型企业资产管理</p>
+          <p class="desc">提供高灵活度的存款产品“余额宝”与高投资性的美元基金产品，帮助您实现资产增值。</p>
+        </div>
+        <div class="fund-right">
+          <div class="fund-bg">
+            <img src="@/assets/image/corporbank/fund-bg.png" alt="">
+          </div>
+          <div class="fund-img">
+            <img src="@/assets/image/corporbank/fund-img-01.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="open-guide">
+      <div class="open-guide-container layout">
+        <p class="title">我们该如何申请</p>
+        <p class="sub-title">完成流程后，仅需1~3天即可开始使用</p>
+        <GuideSteps
+          class="guide-list"
+          theme="white"
+          :list="guideList">
+        </GuideSteps>
+        <Button type="blank" :arrow-config="{ moving: true }">立即申请</Button>
+      </div>
     </div>
   </div>
 </template>
@@ -222,6 +247,12 @@ export default {
         { label: 'POS刷卡' },
         { label: '资金周转' },
         { label: '采购' }
+      ],
+      guideList: [
+        { label: '下载APP注册', iconName: 'download' },
+        { label: '实名认证，提交KYC', iconName: 'cert' },
+        { label: '视频面签，24H审核', iconName: 'computer' },
+        { label: '开户完成', iconName: 'wallet' }
       ]
     }
   },
@@ -565,6 +596,7 @@ export default {
   }
   .cards {
     height: 720px;
+    overflow: hidden;
     background-color: @topwhite;
     .cards-container {
       display: flex;
@@ -646,6 +678,71 @@ export default {
           color: @blank2;
           line-height: 40px;
         }
+      }
+    }
+  }
+  .fund {
+    height: 700px;
+    overflow: hidden;
+    background-color: @topwhite;
+    .fund-container {
+      display: flex;
+      .fund-left {
+        width: 523px;
+        padding-top: 266px;
+        margin-left: 77px;
+        .title {
+          margin-bottom: 40px;
+          font-size: 40px;
+          color: @blank;
+          line-height: 55px;
+        }
+        .desc {
+          font-size: 18px;
+          color: @blank2;
+          line-height: 36px;
+        }
+      }
+      .fund-right {
+        flex: 1;
+        position: relative;
+        .fund-bg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 960px;
+          height: 700px;
+        }
+        .fund-img {
+          position: absolute;
+          top: 100px;
+          left: 58px;
+          width: 566px;
+          height: 480px;
+        }
+      }
+    }
+  }
+  .open-guide {
+    height: 798px;
+    background-color: @gray3;
+    .open-guide-container {
+      padding-top: 120px;
+      text-align: center;
+      .title {
+        margin-bottom: 40px;
+        font-size: 40px;
+        color: @blank;
+        line-height: 55px;
+      }
+      .sub-title {
+        margin-bottom: 80px;
+        font-size: 18px;
+        color: @blank2;
+        line-height: 40px;
+      }
+      .guide-list {
+        margin-bottom: 80px;
       }
     }
   }

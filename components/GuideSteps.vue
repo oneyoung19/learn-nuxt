@@ -89,7 +89,7 @@ export default {
   }
   &.white {
     .guide-item {
-      background: @topwhite;
+      background: @gray-gradient5;
     }
   }
 }
