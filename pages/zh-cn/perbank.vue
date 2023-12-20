@@ -78,32 +78,10 @@
       <div class="open-guide-container layout">
         <p class="title">如何拥有帐户</p>
         <p class="sub-title">线上即刻开户，纵享全球服务</p>
-        <ul class="guide-list">
-          <li class="guide-item">
-            <div class="guide-icon">
-              <SvgIcon name="download"></SvgIcon>
-            </div>
-            <p class="guide-text">下载APP注册</p>
-          </li>
-          <li class="guide-item">
-            <div class="guide-icon">
-              <SvgIcon class="icon" name="cert"></SvgIcon>
-            </div>
-            <p class="guide-text">实名认证，提交KYC</p>
-          </li>
-          <li class="guide-item">
-            <div class="guide-icon">
-              <SvgIcon class="icon" name="computer"></SvgIcon>
-            </div>
-            <p class="guide-text">视频面签，24H审核</p>
-          </li>
-          <li class="guide-item">
-            <div class="guide-icon">
-              <SvgIcon class="icon" name="wallet"></SvgIcon>
-            </div>
-            <p class="guide-text">开户完成</p>
-          </li>
-        </ul>
+        <GuideSteps
+          class="guide-list"
+          :list="guideList">
+        </GuideSteps>
         <DownloadApp theme="blank"></DownloadApp>
       </div>
     </div>
@@ -120,6 +98,12 @@ export default {
         { label: 'POS刷卡' },
         { label: '订票' },
         { label: '购物' }
+      ],
+      guideList: [
+        { label: '下载APP注册', iconName: 'download' },
+        { label: '实名认证，提交KYC', iconName: 'cert' },
+        { label: '视频面签，24H审核', iconName: 'computer' },
+        { label: '开户完成', iconName: 'wallet' }
       ]
     }
   },
@@ -338,51 +322,7 @@ export default {
         line-height: 40px;
       }
       .guide-list {
-        display: flex;
-        justify-content: space-between;
         margin-bottom: 80px;
-        .guide-item {
-          position: relative;
-          flex: 1;
-          margin-right: 25px;
-          height: 213px;
-          background: @gray-gradient3;
-          border-radius: 20px;
-          text-align: center;
-          &::after {
-            content: '';
-            position: absolute;
-            top: 37px;
-            left: calc(50% + (37px * 2));
-            z-index: 2;
-            width: calc(100% + 20px - (37px * 4));
-            height: 2px;
-            background-color: @blue;
-          }
-          &:last-child {
-            margin-right: 0;
-            &::after {
-              display: none;
-            }
-          }
-          .guide-icon {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 74px;
-            height: 74px;
-            margin: 0 auto 50px;
-            background-color: @blank;
-            border-radius: 37px;
-            color: @topwhite;
-            font-size: 35px;
-          }
-          .guide-text {
-            font-size: 16px;
-            color: @blank2;
-            line-height: 30px;
-          }
-        }
       }
     }
   }
