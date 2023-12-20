@@ -1,22 +1,24 @@
 <template>
-  <ul class="celebrity-list">
-    <li
-      class="celebrity-item"
-      v-for="(item, index) in celebrityList"
-      :key="index">
-      <p class="celebrity-words">{{ item.words }}</p>
-      <div class="celebrity-introduce">
-        <SvgIcon class="celebrity-introduce-icon" name="quotes"></SvgIcon>
-        <div class="celebrity-introduce-text">
-          <p class="celebrity-name">{{ item.name }}</p>
-          <p class="celebrity-position text-overflow">{{ item.position }}</p>
+  <div class="celebrities">
+    <ul class="celebrity-list">
+      <li
+        class="celebrity-item"
+        v-for="(item, index) in celebrityList"
+        :key="index">
+        <p class="celebrity-words">{{ item.words }}</p>
+        <div class="celebrity-introduce">
+          <SvgIcon class="celebrity-introduce-icon" name="quotes"></SvgIcon>
+          <div class="celebrity-introduce-text">
+            <p class="celebrity-name">{{ item.name }}</p>
+            <p class="celebrity-position text-overflow">{{ item.position }}</p>
+          </div>
         </div>
-      </div>
-      <div class="celebrity-avatar">
-        <img :src="item.avatar" alt="">
-      </div>
-    </li>
-  </ul>
+        <div class="celebrity-avatar">
+          <img :src="item.avatar" alt="">
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -65,66 +67,72 @@ export default {
 </script>
 
 <style scoped lang="less">
-.celebrity-list {
-  display: flex;
+.celebrities {
   width: 100%;
-  padding-bottom: 34px;
-  overflow: scroll;
-  .celebrity-item {
-    position: relative;
-    width: 380px;
-    min-width: 380px;
-    height: 264px;
-    margin-right: 30px;
-    padding: 25px 30px 0;
-    background: @topwhite;
-    box-shadow: 0px 0px 30px 0px rgba(50,50,71,0.08);
-    border-radius: 9px;
-    &:last-child {
-      margin-right: 0;
-    }
-    .celebrity-words {
-      margin-bottom: 40px;
-      height: 120px;
-      font-size: 14px;
-      color: @blank2;
-      line-height: 24px;
-      overflow: scroll;
-    }
-    .celebrity-introduce {
-      display: flex;
-      .celebrity-introduce-icon {
-        margin-right: 10px;
-        font-size: 45px;
-        color: #CFD4DD;
+  overflow-x: scroll;
+  .celebrity-list {
+    display: flex;
+    /* 为动画和头像预留位置 padding-top会造成box-shadow外泄 所以使用margin-top */
+    margin-top: 10px;
+    padding-bottom: 34px;
+    .celebrity-item {
+      position: relative;
+      width: 380px;
+      min-width: 380px;
+      height: 264px;
+      margin-right: 30px;
+      padding: 25px 30px 0;
+      background: @topwhite;
+      box-shadow: 0px 10px 30px 0px rgba(50,50,71,0.08);
+      border-radius: 9px;
+      transition: all ease .5s;
+      &:last-child {
+        margin-right: 0;
       }
-      .celebrity-introduce-text {
-        width: 148px;
-        .celebrity-name {
-          margin-bottom: 10px;
-          font-size: 16px;
-          color: #222222;
-          line-height: 16px;
+      .celebrity-words {
+        margin-bottom: 40px;
+        height: 120px;
+        font-size: 14px;
+        color: @blank2;
+        line-height: 24px;
+        overflow: scroll;
+      }
+      .celebrity-introduce {
+        display: flex;
+        .celebrity-introduce-icon {
+          margin-right: 10px;
+          font-size: 45px;
+          color: #CFD4DD;
         }
-        .celebrity-position {
-          font-size: 14px;
-          color: #87878F;
-          line-height: 20px;
+        .celebrity-introduce-text {
+          width: 148px;
+          .celebrity-name {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #222222;
+            line-height: 16px;
+          }
+          .celebrity-position {
+            font-size: 14px;
+            color: #87878F;
+            line-height: 20px;
+          }
         }
       }
-    }
-    .celebrity-avatar {
-      position: absolute;
-      // width: 80px;
-      // height: 80px;
-      right: 24px;
-      bottom: -34px;
-      z-index: 2;
-      width: 108px;
-      height: 108px;
-      padding: 14px;
-      border-radius: 100px;
-      border: 2px dashed #ADB2CB;
+      .celebrity-avatar {
+        position: absolute;
+        right: 24px;
+        bottom: -34px;
+        z-index: 2;
+        width: 108px;
+        height: 108px;
+        padding: 14px;
+        border-radius: 100px;
+        border: 2px dashed #ADB2CB;
+      }
+      &:hover {
+        transform: translateY(-10px);
+      }
     }
   }
 }
