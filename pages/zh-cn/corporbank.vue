@@ -147,13 +147,52 @@
     </div>
     <div class="lock">
       <div class="lock-container layout">
+        <div class="lock-left background">
+          <div class="lock-img-01">
+            <img src="@/assets/image/corporbank/lock-img-01.png" alt="">
+          </div>
+        </div>
+        <div class="lock-right">
+          <p class="title">灵活锁汇，为您智慧避险</p>
+          <p class="desc">我们提供灵活的“锁汇”即远期结售汇服务，极大限度的帮助企业规避汇率风险。</p>
+        </div>
       </div>
     </div>
     <div class="cards">
-      <div class="cards-container layout"></div>
+      <div class="cards-container layout">
+        <div class="cards-left">
+          <p class="title">全球随心刷，生活更简单</p>
+          <p class="desc">在全球范围内都可使用的CBiBank企业借记卡，全球ATM取现，商场消费、POS刷卡和采购等。</p>
+          <CardUseList class="use-list" :list="useList"></CardUseList>
+          <Button type="blank" :arrow-config="{ moving: true }">获取卡片</Button>
+          <div class="cards-bg">
+            <img src="@/assets/image/corporbank/cards-bg.png" alt="">
+          </div>
+        </div>
+        <!-- <div class="cards-right"></div> -->
+      </div>
     </div>
     <div class="salary">
-      <div class="salary-container layout"></div>
+      <div class="salary-container layout">
+        <div class="salary-left background">
+          <div class="salary-img">
+            <img src="@/assets/image/corporbank/salary-img-01.png" alt="">
+          </div>
+          <div class="salary-img">
+            <img src="@/assets/image/corporbank/salary-img-02.png" alt="">
+          </div>
+          <div class="salary-img">
+            <img src="@/assets/image/corporbank/salary-img-03.png" alt="">
+          </div>
+          <div class="salary-img">
+            <img src="@/assets/image/corporbank/salary-img-04.png" alt="">
+          </div>
+        </div>
+        <div class="salary-right">
+          <p class="title">跨国企业向本地人进行工资发放</p>
+          <p class="desc">全球地区支付员工薪资，无论员工选择在哪里工作，在几分钟内为世界各地的员工进行工资发放。</p>
+        </div>
+      </div>
     </div>
     <div class="fund">
       <div class="fund-container layout"></div>
@@ -176,6 +215,13 @@ export default {
         { value: 'credit', label: '信用证业务', labelEn: '(Letter of Credit)' },
         { value: 'documentary', label: '跟单托收业务', labelEn: '(Documentary Collections)' },
         { value: 'guarantee', label: '保函业务', labelEn: '(Letter of Guarantee)' }
+      ],
+      useList: [
+        { label: 'ATM取现' },
+        { label: '商场消费' },
+        { label: 'POS刷卡' },
+        { label: '资金周转' },
+        { label: '采购' }
       ]
     }
   },
@@ -476,6 +522,129 @@ export default {
               }
             }
           }
+        }
+      }
+    }
+  }
+  .lock {
+    height: 700px;
+    background-color: @gray3;
+    .lock-container {
+      display: flex;
+      padding-top: 63px;
+      .lock-left {
+        position: relative;
+        width: 460px;
+        height: 574px;
+        margin-right: 192px;
+        background-image: url('@/assets/image/corporbank/lock-img-bg.png');
+        .lock-img-01 {
+          position: absolute;
+          top: 235px;
+          right: -80px;
+          width: 198px;
+          height: 198px;
+        }
+      }
+      .lock-right {
+        padding-top: 207px;
+        width: 550px;
+        .title {
+          margin-bottom: 40px;
+          font-size: 40px;
+          color: @blank;
+          line-height: 40px;
+        }
+        .desc {
+          font-size: 18px;
+          color: @blank2;
+          line-height: 40px;
+        }
+      }
+    }
+  }
+  .cards {
+    height: 720px;
+    background-color: @topwhite;
+    .cards-container {
+      display: flex;
+      padding-top: 140px;
+      .cards-left {
+        position: relative;
+        width: 518px;
+        .title {
+          margin-bottom: 40px;
+          font-size: 40px;
+          color: @blank;
+          line-height: 55px;
+        }
+        .desc {
+          margin-bottom: 40px;
+          font-size: 18px;
+          color: @blank2;
+          line-height: 40px;
+        }
+        .use-list {
+          margin-bottom: 100px;
+        }
+        .cards-bg {
+          position: absolute;
+          top: -75px;
+          left: 100%;
+          width: 947px;
+          height: 655px;
+        }
+      }
+      // .cards-right {}
+    }
+  }
+  .salary {
+    height: 700px;
+    background-color: @gray3;
+    .salary-container {
+      display: flex;
+      padding-top: 107px;
+      .salary-left {
+        position: relative;
+        width: 504px;
+        height: 504px;
+        margin-right: 136px;
+        background-image: url('@/assets/image/corporbank/salary-bg.png');
+        .salary-img {
+          position: absolute;
+          width: 130px;
+          height: 130px;
+          &:nth-child(1) {
+            top: 7px;
+            left: -13px;
+          }
+          &:nth-child(2) {
+            top: 38px;
+            right: -38px;
+          }
+          &:nth-child(3) {
+            bottom: 28px;
+            right: -21px;
+          }
+          &:nth-child(4) {
+            bottom: 24px;
+            left: 0;
+          }
+        }
+      }
+      .salary-right {
+        flex: 1;
+        padding-top: 164px;
+        .title {
+          margin-bottom: 40px;
+          font-size: 40px;
+          color: @blank;
+          line-height: 40px;
+        }
+        .desc {
+          font-size: 18px;
+          color: @blank2;
+          line-height: 40px;
         }
       }
     }

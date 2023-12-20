@@ -25,12 +25,7 @@
         <div class="cards-right">
           <p class="title">在全球，以更优惠的汇率刷卡消费</p>
           <p class="desc">环球旅行，ATM取现，使用您的 CBiBank 实体卡在全球地区消费 ，CBiBank已与北美银联、Visa建立深度合作。</p>
-          <ul class="use-list">
-            <li class="use-item" v-for="(item, index) in useList" :key="index">
-              <SvgIcon class="icon" name="selected-white"></SvgIcon>
-              <span class="text">{{ item.label }}</span>
-            </li>
-          </ul>
+          <CardUseList class="use-list" :list="useList"></CardUseList>
           <Button type="blank" :arrow-config="{ moving: true }">获取卡片</Button>
         </div>
       </div>
@@ -203,28 +198,7 @@ export default {
           line-height: 40px;
         }
         >.use-list {
-          display: flex;
-          flex-wrap: wrap;
           margin-bottom: 100px;
-          .use-item {
-            display: flex;
-            align-items: center;
-            width: 33%;
-            margin-bottom: 26px;
-            &:nth-last-child(1), &:nth-last-child(2) {
-              margin-bottom: 0;
-            }
-            .icon {
-              font-size: 24px;
-              color: @blank2;
-            }
-            .text {
-              margin-left: 10px;
-              font-size: 16px;
-              color: @blank2;
-              line-height: 16px;
-            }
-          }
         }
       }
     }
