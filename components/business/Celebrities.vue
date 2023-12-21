@@ -13,7 +13,7 @@
             <p class="celebrity-position text-overflow">{{ item.position }}</p>
           </div>
         </div>
-        <div class="celebrity-avatar">
+        <div class="celebrity-avatar background">
           <img :src="item.avatar" alt="">
         </div>
       </li>
@@ -24,9 +24,11 @@
 <script>
 export default {
   data () {
+    const getLocaltionImage = id => `/assets/image/celebrity/${id}.png`
     const celebrities = import.meta.glob('@/assets/image/celebrity/*.png', {
       eager: true
     })
+    console.log(celebrities)
     return {
       celebrityList: [
         {
@@ -50,11 +52,15 @@ export default {
       ].map(item => {
         const { id } = item
         if (id) {
-          const avatar = celebrities[`/assets/image/celebrity/${id}.png`].default
-          return {
-            avatar,
-            ...item
+          const avatarModule = celebrities[getLocaltionImage(id)]
+          if (avatarModule && avatarModule.default) {
+            const avatar = avatarModule.default
+            return {
+              avatar,
+              ...item
+            }
           }
+          return item
         } else {
           return item
         }
@@ -128,7 +134,7 @@ export default {
         height: 108px;
         padding: 14px;
         border-radius: 100px;
-        border: 2px dashed #ADB2CB;
+        background-image: url('@/assets/image/circle-dashed.png');
       }
       &:hover {
         transform: translateY(-10px);
