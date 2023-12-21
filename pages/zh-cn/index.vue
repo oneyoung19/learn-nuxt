@@ -274,6 +274,7 @@
         <Celebrities></Celebrities>
       </div>
     </div>
+    <EleDialog></EleDialog>
   </div>
 </template>
 

@@ -44,7 +44,9 @@ export default defineNuxtConfig({
     '~/assets/styles/global.less',
     'animate.css/animate.css',
     '~/assets/styles/animation/cover-animate.less',
-    '~/assets/styles/animation/custom.less'
+    '~/assets/styles/animation/custom.less',
+    'element-plus/dist/index.css',
+    '~/assets/styles/element/index.js'
   ],
   // 配置pathPrefix 以使组件名不采用路径
   components: [
@@ -52,5 +54,11 @@ export default defineNuxtConfig({
       path: '~/components',
       pathPrefix: false
     }
-  ]
+  ],
+  // https://element-plus.org/zh-CN/guide/quickstart.html#%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5
+  modules: ['@element-plus/nuxt'],
+  elementPlus: {
+    // https://github.com/element-plus/element-plus-nuxt/issues/77
+    importStyle: false
+  }
 })
