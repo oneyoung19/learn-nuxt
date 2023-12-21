@@ -51,8 +51,10 @@ export default {
   },
   watch: {
     modelValue: {
-      handler () {
-        this.setSlider()
+      handler (modelValue) {
+        this.$nextTick(() => {
+          this.setSlider()
+        })
       },
       immediate: true
     }
@@ -181,6 +183,15 @@ export default {
     }
     .slider {
       background-color: @blank;
+    }
+  }
+  &.gray {
+    .switch-button-list {
+      background-color: @gray3;
+      color: @gray4;
+    }
+    .slider {
+      background-color: @gray4;
     }
   }
 }

@@ -274,7 +274,7 @@
         <Celebrities></Celebrities>
       </div>
     </div>
-    <PersonDebitCardDialog v-model="corporDebitCardDialogVisible"></PersonDebitCardDialog>
+    <OpenAccountDialog v-model="corporDebitCardDialogVisible"></OpenAccountDialog>
   </div>
 </template>
 

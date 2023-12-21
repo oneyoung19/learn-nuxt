@@ -1,6 +1,6 @@
 <template>
   <ElDialog
-    class="el-custom-cover"
+    class="el-dialog-cover"
     :modelValue="visible"
     @update:modelValue="handleVisible">
     <div class="debit-card">
@@ -69,6 +69,12 @@ export default {
 }
 </script>
 
+<style lang="less">
+.el-dialog-cover {
+  width: 600px;
+}
+</style>
+
 <style scoped lang="less">
 .debit-card {
   position: relative;
@@ -91,7 +97,7 @@ export default {
     width: 600px;
     height: 285px;
     padding: 60px 60px 30px;
-    background-image: url('@/assets/image/dialog/debit-card-bg.png');
+    background-image: url('@/assets/image/dialog/dialog-large-bg.png');
     text-align: left;
     .text {
       flex: 1;
