@@ -6,9 +6,9 @@
     <div class="debit-card">
       <SvgIcon class="icon-close" name="close" @click="handleClose"></SvgIcon>
       <div class="debit-card-banner background">
-        <p class="text">CBiBank 企业借记卡</p>
+        <p class="text">CBiBank 个人借记卡</p>
         <div class="img">
-          <img src="@/assets/image/dialog/corpor-debit-card.png" alt="">
+          <img src="@/assets/image/dialog/person-debit-card.png" alt="">
         </div>
       </div>
       <div class="debit-card-content">
@@ -16,8 +16,8 @@
           <li class="debit-card-content-item">
             <SvgIcon class="icon" name="i-deep"></SvgIcon>
             <div class="content">
-              <p class="title">如何拥有企业借记卡</p>
-              <p class="desc">拥有CBiBank企业账户——登录企业网银——账户管理——申请企业借记卡</p>
+              <p class="title">如何申请卡片</p>
+              <p class="desc">下载CBiBank App——注册个人账户——入金激活账户——申请借记卡</p>
             </div>
           </li>
           <li class="debit-card-content-item">
@@ -26,19 +26,22 @@
               <p class="title">卡片额度</p>
               <p class="desc">ATM取现限额：2000美元/笔，2000美元/日，5000美元/月，20000美元/年；</p>
               <p class="desc">POS刷卡限额： 100000美元/笔，200000美元/日；</p>
-              <p class="desc">EC消费限额：5000美元/比，10000美元/日，50000美元/月；</p>
+              <p class="desc">EC消费限额：5000美元/比，10000美元/日，20000美元/月；</p>
             </div>
           </li>
           <li class="debit-card-content-item">
             <SvgIcon class="icon" name="note-deep"></SvgIcon>
             <div class="content">
               <p class="title">收费标准</p>
-              <p class="desc">办卡费用49美元</p>
+              <p class="desc">办卡费用9.9美元</p>
             </div>
           </li>
         </ul>
       </div>
-      <Button class="debit-card-button" type="blank">立即申请</Button>
+      <div class="debit-card-footer">
+        <p class="text">下载 CBiBank APP 完成操作</p>
+        <DownloadApp class="download" invert></DownloadApp>
+      </div>
     </div>
   </ElDialog>
 </template>
@@ -71,7 +74,6 @@ export default {
   position: relative;
   width: 100%;
   text-align: center;
-  padding-bottom: 40px;
   .icon-close {
     position: absolute;
     top: 20px;
@@ -104,7 +106,7 @@ export default {
     }
   }
   .debit-card-content {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     padding: 0 40px;
     text-align: left;
     .debit-card-content-list {
@@ -138,8 +140,35 @@ export default {
       }
     }
   }
-  .debit-card-button {
-    width: 300px;
+  .debit-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 108px;
+    padding: 0 40px;
+    background: linear-gradient(90deg, #44444F 0%, #171725 100%);
+    .text {
+      font-size: 14px;
+      color: @topwhite;
+      line-height: 24px;
+    }
+    .download {
+      :deep(.download-item) {
+        .download-app-store {
+          width: 90px;
+          height: 30px;
+        }
+        .download-google-play {
+          width: 100px;
+          height: 30px;
+        }
+        .download-qrcode {
+          width: 30px;
+          height: 30px;
+          background-size: 18px 18px;
+        }
+      }
+    }
   }
 }
 </style>

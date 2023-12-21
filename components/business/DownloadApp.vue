@@ -8,7 +8,7 @@
     </li>
     <li class="download-item">
       <a href="" class="download-qrcode background"></a>
-      <div class="download-h5">
+      <div class="download-h5" :class="invert ? 'invert' : ''">
         <div class="download-h5-qrcode">
           <img src="~assets/image/download-qrcode.png" alt="">
         </div>
@@ -24,9 +24,15 @@
 <script>
 export default {
   props: {
+    // default blank
     theme: {
       type: String,
       default: 'default'
+    },
+    // 二维码是否倒转180deg显示
+    invert: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -74,7 +80,7 @@ export default {
     }
     .download-h5 {
       position: absolute;
-      top: calc(100% + 22px);
+      top: calc(100% + 17px);
       left: 50%;
       transform: translateX(-50%);
       display: none;
@@ -120,6 +126,25 @@ export default {
         color: #44444F;
         line-height: 14px;
         text-align: center;
+      }
+      &.invert {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, calc(-100% - 17px));
+        &::before {
+          position: absolute;
+          top: auto;
+          bottom: -14px;
+          left: 50%;
+          transform: translate(-50%, -100%) rotate(180deg);
+        }
+        &::after {
+          position: absolute;
+          top: auto;
+          bottom: -16px;
+          left: 50%;
+          transform: translate(-50%, -100%) rotate(180deg);
+        }
       }
     }
     &:hover {
