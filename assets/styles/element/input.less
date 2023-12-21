@@ -1,11 +1,44 @@
 .el-input {
   &.el-input-cover {
     height: 46px;
-    .el-input__wrapper {
+    border-radius: 23px;
+    border: 2px solid transparent;
+    transition: all ease .5s;
+    &:hover {
+      border: 2px solid @gray3;
+    }
+    >.el-input__wrapper {
       padding: 1px 15px;
-      box-shadow: none;
+      box-shadow: none!important;
       border-radius: 23px;
       border: 1px solid @gray2;
+      &.is-focus {
+        box-shadow: none!important;
+        border: 1px solid @blank2;
+      }
+      &:hover {
+        box-shadow: none!important;
+      }
+      >.el-input__inner {
+        color: @blank2;
+        &::placeholder {
+          color: @gray;
+        }
+      }
+    }
+  }
+}
+
+.el-form-item {
+  &.is-error {
+    .el-input__wrapper {
+      border: 1px solid @red;
+      &.is-focus {
+        border: 1px solid @red;
+      }
+      &:hover {
+        box-shadow: none!important;
+      }
     }
   }
 }

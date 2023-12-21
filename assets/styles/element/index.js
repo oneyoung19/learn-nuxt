@@ -1,3 +1,5 @@
+import './color.less'
 import './dialog.less'
 import './form-item.less'
 import './input.less'
+import './select.less'

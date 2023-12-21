@@ -1,0 +1,46 @@
+.el-select {
+  &.el-select-hidden-cover {
+    .el-input__wrapper {
+      box-shadow: none!important;
+      padding: 1px 0;
+      &.is-focus {
+        box-shadow: none!important;
+      }
+      &:hover {
+        box-shadow: none!important;
+      }
+    }
+  }
+}
+
+.el-form-item.is-error .el-select.el-select-hidden-cover {
+  .el-input  {
+    &.is-focus {
+      .el-input__wrapper {
+        box-shadow: none!important;
+      }
+    }
+    .el-input__wrapper {
+      border: none;
+      &.is-focus {
+        box-shadow: none!important;
+      }
+      &:hover {
+        box-shadow: none!important;
+      }
+    }
+  }
+}
+
+/* 下拉框样式覆盖 */
+.el-select-dropdown {
+  .el-select-dropdown__item {
+    font-size: 14px;
+    &.hover {
+      background-color: @gray3;
+    }
+    &.selected {
+      color: @blue;
+    }
+  }
+}
