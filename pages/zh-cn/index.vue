@@ -274,11 +274,13 @@
         <Celebrities></Celebrities>
       </div>
     </div>
-    <EleDialog></EleDialog>
+    <!-- <EleDialog></EleDialog> -->
+    <CorporDebitCardDialog v-model="corporDebitCardDialogVisible"></CorporDebitCardDialog>
   </div>
 </template>
 
 <script setup>
+const corporDebitCardDialogVisible = ref(true)
 useHead({
   title: 'CBiBank',
   meta: [
