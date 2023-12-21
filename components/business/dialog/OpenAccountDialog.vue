@@ -10,19 +10,26 @@
         <SwitchButton theme="gray" v-model="activeButton" :list="buttonList"></SwitchButton>
       </div>
       <ul class="open-account-list">
-        <li class="open-account-item enterprise">
-          <p class="text">输入您的信息，客户经理和您取得联系</p>
+        <li class="open-account-item enterprise" v-show="activeButton === 'enterprise'">
+          <p class="tip-text">输入您的信息，客户经理和您取得联系</p>
           <ElForm class="form">
-            <ElFormItem class="form-item">
-              <ElInput class="form-item-input"></ElInput>
+            <ElFormItem class="el-form-cover">
+              <ElInput class="el-input-cover"></ElInput>
             </ElFormItem>
-            <ElFormItem class="form-item">
-              <ElInput class="form-item-input"></ElInput>
+            <ElFormItem class="el-form-cover">
+              <ElInput class="el-input-cover"></ElInput>
             </ElFormItem>
-            <Button class="submit-btn" type="blank">提交</Button>
           </ElForm>
+          <div class="submit-btn">
+            <Button type="blank">提交</Button>
+          </div>
         </li>
-        <li class="open-account-item person"></li>
+        <li class="open-account-item person" v-show="activeButton === 'person'">
+          <p class="tip-text">输入您的信息，客户经理和您取得联系</p>
+          <div class="download-qrcode">
+            <img src="@/assets/image/download-qrcode.png" alt="">
+          </div>
+        </li>
       </ul>
     </div>
   </ElDialog>
@@ -95,27 +102,31 @@ export default {
     .open-account-item {
       width: 100%;
       min-width: 100%;
+      padding-bottom: 40px;
+      >.tip-text {
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background: linear-gradient(270deg, rgba(225,230,234,0) 0%, #DBF0FF 51%, rgba(225,230,234,0) 100%);
+      }
       &.enterprise {
-        >.text {
-          height: 40px;
-          line-height: 40px;
-          text-align: center;
-          background: linear-gradient(270deg, rgba(225,230,234,0) 0%, #DBF0FF 51%, rgba(225,230,234,0) 100%);
-        }
         .form {
           padding: 30px 60px;
-          .form-item {
-            margin-bottom: 20px;
-            &:last-child {
-              margin-bottom: 0;
-            }
-            .form-item-input {
-              height: 46px;
-            }
-          }
-          .submit-btn {
+        }
+        .submit-btn {
+          padding: 0 60px;
+          :deep(.button) {
             width: 100%;
             border-radius: 4px;
+          }
+        }
+      }
+      &.person {
+        &.person {
+          .download-qrcode {
+            margin: 22px auto 0;
+            width: 200px;
+            height: 200px;
           }
         }
       }
