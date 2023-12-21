@@ -274,12 +274,10 @@
         <Celebrities></Celebrities>
       </div>
     </div>
-    <OpenAccountDialog v-model="corporDebitCardDialogVisible"></OpenAccountDialog>
   </div>
 </template>
 
 <script setup>
-const corporDebitCardDialogVisible = ref(true)
 useHead({
   title: 'CBiBank',
   meta: [

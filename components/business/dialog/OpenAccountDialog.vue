@@ -54,7 +54,7 @@
           </div>
         </li>
         <li class="open-account-item person" v-show="activeButton === 'person'">
-          <p class="tip-text">输入您的信息，客户经理和您取得联系</p>
+          <p class="tip-text">手机扫描下方二维码下载CBiBank APP</p>
           <div class="download-qrcode">
             <img src="@/assets/image/download-qrcode.png" alt="">
           </div>
