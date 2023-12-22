@@ -15,26 +15,37 @@
       </div>
     </div>
     <div class="partners">
-      <ul class="partners-list">
-        <li class="partners-item cips">
+      <Swiper
+        class="partners-list"
+        :modules="swiperModules"
+        :autoplay="{
+          delay: 0,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false
+        }"
+        :loop="true"
+        :speed="3000"
+        :slidesPerView="5"
+        :centeredSlides="false">
+        <SwiperSlide class="partners-item cips">
           <img src="~assets/image/home/cips.png" alt="">
-        </li>
-        <li class="partners-item union-pay">
+        </SwiperSlide>
+        <SwiperSlide class="partners-item union-pay">
           <img src="~assets/image/home/union-pay.png" alt="">
-        </li>
-        <li class="partners-item swift">
+        </SwiperSlide>
+        <SwiperSlide class="partners-item swift">
           <img src="~assets/image/home/swift.png" alt="">
-        </li>
-        <li class="partners-item visa">
+        </SwiperSlide>
+        <SwiperSlide class="partners-item visa">
           <img src="~assets/image/home/visa.png" alt="">
-        </li>
-        <li class="partners-item aba">
+        </SwiperSlide>
+        <SwiperSlide class="partners-item aba">
           <img src="~assets/image/home/aba.png" alt="">
-        </li>
-        <li class="partners-item ocif">
+        </SwiperSlide>
+        <SwiperSlide class="partners-item ocif">
           <img src="~assets/image/home/ocif.png" alt="">
-        </li>
-      </ul>
+        </SwiperSlide>
+      </Swiper>
     </div>
     <div class="video-apply">
       <div class="video-apply-container layout">
@@ -297,6 +308,7 @@
 </template>
 
 <script setup>
+import { Autoplay } from 'swiper/modules'
 useHead({
   title: 'CBiBank',
   // meta: [
@@ -345,6 +357,9 @@ const tabList = ref([
   { label: '服务贸易型企业', value: 'customer-service', iconName: 'conversation-deep', activeIconName: 'conversation-light' },
   { label: '国际投融资企业', value: 'customer-invest', iconName: 'strip-deep', activeIconName: 'strip-light' }
 ])
+
+/* swiper */
+const swiperModules = ref([Autoplay])
 
 /* 动画 */
 const swapLeftTransitionend = ref(false)
@@ -400,6 +415,10 @@ onMounted(() => {
       width: @homeParentsWidth;
       height: 100%;
       margin: 0 auto;
+      // 匀速滚动
+      :deep(.swiper-wrapper) {
+        transition-timing-function: linear !important;
+      }
       .partners-item {
         height: 141px;
         // margin-right: 42px;
