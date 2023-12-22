@@ -121,16 +121,20 @@
     </DebitCardPersonDialog>
     <div class="swap">
       <div class="swap-container layout">
-        <div class="swap-left">
+        <div class="swap-left" data-aos="fade-up" data-aos-delay="1000" ref="swapLeft">
           <div class="swap-bg">
             <img src="~assets/image/home/swap-bg.png" alt="">
           </div>
-          <div class="circle-arrow">
+          <div
+            class="circle-arrow"
+            :class="swapLeftTransitionend ? 'animate__animated animate__rotateIn' : ''">
             <img src="~assets/image/home/circle-arrow.png" alt="">
           </div>
           <div class="exchange-currency">
             <SvgIcon class="icon-logo" name="cbibank"></SvgIcon>
-            <div class="exchange-box">
+            <div
+              class="exchange-box"
+              :class="swapLeftTransitionend ? 'animate__animated rotate-deg' : ''">
               <div class="currency-box">
                 <div class="icon-currency">
                   <img src="@/assets/image/home/eur.png" alt="">
@@ -153,7 +157,7 @@
             </div>
           </div>
         </div>
-        <div class="swap-right">
+        <div class="swap-right" data-aos="fade-up">
           <p class="title">无隐藏费用，即时货币兑换</p>
           <p class="desc">美元、欧元、离岸人民币、英镑、日元、新加坡元、港币等全球主流币种灵活互通。</p>
         </div>
@@ -208,11 +212,11 @@
     </div>
     <div class="service">
       <div class="service-container layout">
-        <div class="service-left">
+        <div class="service-left" data-aos="fade-right">
           <p class="title">为多种类型的企业和个人提供定制化服务</p>
           <p class="desc">支持实物贸易、服务贸易、全球投资、跨境电商等企业类型，服务留学生、移民、跨境工作者、个人投资者。</p>
         </div>
-        <div class="service-right background"></div>
+        <div class="service-right background" data-aos="fade-left"></div>
       </div>
     </div>
     <div class="global-net">
@@ -341,6 +345,16 @@ const tabList = ref([
   { label: '服务贸易型企业', value: 'customer-service', iconName: 'conversation-deep', activeIconName: 'conversation-light' },
   { label: '国际投融资企业', value: 'customer-invest', iconName: 'strip-deep', activeIconName: 'strip-light' }
 ])
+
+/* 动画 */
+const swapLeftTransitionend = ref(false)
+onMounted(() => {
+  const { swapLeft } = getCurrentInstance().ctx.$refs
+  swapLeft.addEventListener('transitionend', () => {
+    swapLeftTransitionend.value = true
+    console.log('transitionend')
+  })
+})
 </script>
 
 <style scoped lang="less">
