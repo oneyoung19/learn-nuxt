@@ -25,25 +25,14 @@
         }"
         :loop="true"
         :speed="3000"
-        :slidesPerView="5"
+        slidesPerView="auto"
         :centeredSlides="false">
-        <SwiperSlide class="partners-item cips">
-          <img src="~assets/image/home/cips.png" alt="">
-        </SwiperSlide>
-        <SwiperSlide class="partners-item union-pay">
-          <img src="~assets/image/home/union-pay.png" alt="">
-        </SwiperSlide>
-        <SwiperSlide class="partners-item swift">
-          <img src="~assets/image/home/swift.png" alt="">
-        </SwiperSlide>
-        <SwiperSlide class="partners-item visa">
-          <img src="~assets/image/home/visa.png" alt="">
-        </SwiperSlide>
-        <SwiperSlide class="partners-item aba">
-          <img src="~assets/image/home/aba.png" alt="">
-        </SwiperSlide>
-        <SwiperSlide class="partners-item ocif">
-          <img src="~assets/image/home/ocif.png" alt="">
+        <SwiperSlide
+          class="partners-item"
+          :class="item.id"
+          v-for="(item, index) in swiperImgList"
+          :key="index">
+          <img :src="item.src" alt="">
         </SwiperSlide>
       </Swiper>
     </div>
@@ -308,6 +297,12 @@
 </template>
 
 <script setup>
+import cipsImg from '@/assets/image/home/cips.png'
+import unionPayImg from '@/assets/image/home/union-pay.png'
+import swiftImg from '@/assets/image/home/swift.png'
+import visaImg from '@/assets/image/home/visa.png'
+import abaImg from '@/assets/image/home/aba.png'
+import ocifImg from '@/assets/image/home/ocif.png'
 import { Autoplay } from 'swiper/modules'
 useHead({
   title: 'CBiBank',
@@ -359,6 +354,15 @@ const tabList = ref([
 ])
 
 /* swiper */
+const imgList = [
+  { id: 'cips', src: cipsImg },
+  { id: 'union-pay', src: unionPayImg },
+  { id: 'swift', src: swiftImg },
+  { id: 'visa', src: visaImg },
+  { id: 'aba', src: abaImg },
+  { id: 'ocif', src: ocifImg }
+]
+const swiperImgList = imgList.concat(imgList)
 const swiperModules = ref([Autoplay])
 
 /* 动画 */
@@ -417,6 +421,8 @@ onMounted(() => {
       margin: 0 auto;
       // 匀速滚动
       :deep(.swiper-wrapper) {
+        justify-content: space-between;
+        align-items: center;
         transition-timing-function: linear !important;
       }
       .partners-item {
