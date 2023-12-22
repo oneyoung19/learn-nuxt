@@ -58,6 +58,7 @@ export default {
       default: 'click'
     }
   },
+  emits: ['change'],
   data () {
     return {
       visible: false
