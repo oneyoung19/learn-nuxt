@@ -38,7 +38,7 @@
           <p class="follow-title">关注我们</p>
           <div class="follow-list">
             <a href="https://www.facebook.com/cbibank2017" class="follow-item" target="_blank">
-              <SvgIcon  name="facebook"></SvgIcon>
+              <SvgIcon name="facebook"></SvgIcon>
             </a>
             <a href="https://twitter.com/CBiBank2" class="follow-item" target="_blank">
               <SvgIcon name="x"></SvgIcon>
@@ -64,9 +64,9 @@
       </div>
       <div class="footer-attach">
         <div class="protocol">
-          <a href="">服务协议</a>
+          <a href="https://www.cbibank.com/protocol.html" target="_blank">服务协议</a>
           <span>|</span>
-          <a href="">隐私权协议</a>
+          <a href="https://www.cbibank.com/privacy.html" target="_blank">隐私权协议</a>
         </div>
         <div class="copyright">Copyright ©2017 CB International Bank LLC</div>
       </div>
@@ -82,20 +82,23 @@ export default {
         {
           title: '银行服务',
           links: [
-            { text: '企业服务', url: '' },
-            { text: '个人服务', url: '' },
+            { text: '企业服务', url: '/zh-cn/corporbank' },
+            { text: '个人服务', url: '/zh-cn/perbank' },
             { text: '单证业务', url: '/zh-cn/letter' },
-            { text: '我们是谁', url: '' },
-            { text: '安全合规', url: '' },
+            { text: '我们是谁', url: '/zh-cn/about/who-we-are' },
+            { text: '安全合规', url: '/zh-cn/about/safety' },
+            // TODO: 跳转到/zh-cn/about/safety的反洗钱
             { text: '反洗钱', url: '' }
           ]
         },
         {
           title: '帮助中心',
           links: [
-            { text: '费用说明', url: '' },
-            { text: '尽调查册缴费', url: '' },
-            { text: '百科全书', url: '' }
+            // TODO: 添加费用说明
+            { text: '费用说明', url: 'https://help.cbibank.com/341b' },
+            // TODO: lang参数不生效
+            { text: '尽调查册缴费', url: 'https://pay.cbibank.com/?lang=zh-CN#/' },
+            { text: '百科全书', url: '/wiki' }
           ]
         },
         {

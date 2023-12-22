@@ -7,11 +7,16 @@
             <img src="~assets/image/logo.png" alt="logo">
           </NuxtLink>
           <ul class="navigation">
-            <li class="navigation-item">企业网银</li>
-            <li class="navigation-item">个人网银</li>
+            <li class="navigation-item">
+              <NuxtLink to="/zh-cn/corporbank">企业网银</NuxtLink>
+            </li>
+            <li class="navigation-item">
+              <NuxtLink to="/zh-cn/perbank">个人网银</NuxtLink>
+            </li>
             <Select
               text="关于我们"
-              :list="aboutList">
+              v-model="aboutSelectValue"
+              :list="aboutSelectList">
             </Select>
           </ul>
         </div>
@@ -25,7 +30,9 @@
             <Select
               class="lang"
               text="简体中文"
-              :list="langList">
+              v-model="langSelectValue"
+              :list="langSelectList"
+              @change="handleLangSelect">
             </Select>
           </div>
         </div>
@@ -38,18 +45,29 @@
 export default {
   data () {
     return {
-      aboutList: [
-        { label: '安全合规' },
-        { label: '我们是谁' }
+      aboutSelectValue: {},
+      aboutSelectList: [
+        { label: '安全合规', value: '/about/safety' },
+        { label: '我们是谁', value: '/about/who-we-are' }
       ],
-      langList: [
-        { label: '简体中文' },
-        { label: '繁体中文' },
-        { label: 'English' }
+      langSelectValue: {},
+      langSelectList: [
+        { label: '简体中文', value: 'zh-cn' },
+        { label: '繁体中文', value: 'zh-hant' },
+        { label: 'English', value: 'en' }
       ]
     }
   },
   methods: {
+    handleAboutSelect (aboutInfo) {},
+    handleLangSelect (langInfo) {
+      const { value } = langInfo
+      if (value === 'zh-hant') {
+        window.location.href = 'https://www.cbibank.com/index-hant.html'
+      } else if (value === 'en') {
+        window.location.href = 'https://www.cbibank.com/index-en.html'
+      }
+    }
   }
 }
 </script>

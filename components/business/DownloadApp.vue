@@ -1,10 +1,10 @@
 <template>
   <ul class="download-list" :class="theme">
     <li class="download-item">
-      <a href="" class="download-app-store background"></a>
+      <a :href="urls.appStore" class="download-app-store background" target="_blank"></a>
     </li>
     <li class="download-item">
-      <a href="" class="download-google-play background"></a>
+      <a :href="urls.googlePlay" class="download-google-play background" target="_blank"></a>
     </li>
     <li class="download-item">
       <a href="" class="download-qrcode background"></a>
@@ -37,6 +37,10 @@ export default {
   },
   data () {
     return {
+      urls: {
+        appStore: 'https://apps.apple.com/cn/app/cbibank-%E5%AF%8C%E6%B8%AF%E9%8A%80%E8%A1%8C/id1433853123',
+        googlePlay: 'https://play.google.com/store/apps/details?id=com.cbibank.cbiIntbank&hl=en'
+      }
     }
   },
   methods: {

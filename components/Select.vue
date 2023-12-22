@@ -8,7 +8,7 @@
     <div
       class="select-container"
       @click="handleClick">
-      <span class="select-text">{{ text || selectedItem.label }}</span>
+      <span class="select-text">{{ text || modelValue.label }}</span>
       <SvgIcon class="arrow" name="arrow-bottom"></SvgIcon>
     </div>
     <transition
@@ -21,7 +21,7 @@
           class="select-dropdown-list">
           <li
             class="select-dropdown-item"
-            :class="item.label === selectedItem ? 'selected' : ''"
+            :class="item.label === modelValue.label ? 'selected' : ''"
             v-for="(item, index) in list"
             :key="index"
             @click="handleSelect(item)">
@@ -36,6 +36,12 @@
 <script>
 export default {
   props: {
+    modelValue: {
+      type: Object,
+      default () {
+        return {}
+      }
+    },
     text: {
       type: String,
       default: ''
@@ -49,13 +55,12 @@ export default {
     // hover or click
     trigger: {
       type: String,
-      default: 'hover'
+      default: 'click'
     }
   },
   data () {
     return {
-      visible: false,
-      selectedItem: ''
+      visible: false
     }
   },
   methods: {
@@ -76,7 +81,8 @@ export default {
       this.visible = false
     },
     handleSelect (item) {
-      this.selectedItem = item.label
+      this.$emit('update:modelValue', item)
+      this.$emit('change', item)
       this.visible = false
     }
   }

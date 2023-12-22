@@ -28,7 +28,6 @@ export default {
     const celebrities = import.meta.glob('@/assets/image/celebrity/*.png', {
       eager: true
     })
-    console.log(celebrities)
     return {
       celebrityList: [
         {
