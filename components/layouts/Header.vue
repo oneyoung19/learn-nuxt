@@ -7,16 +7,20 @@
             <img src="~assets/image/logo.png" alt="logo">
           </NuxtLink>
           <ul class="navigation">
-            <li class="navigation-item">
-              <NuxtLink to="/zh-cn/corporbank">企业网银</NuxtLink>
-            </li>
-            <li class="navigation-item">
-              <NuxtLink to="/zh-cn/perbank">个人网银</NuxtLink>
+            <li
+              class="navigation-item"
+              :class="item.value === $route.path ? 'active' : ''"
+              v-for="(item, index) in navigationList"
+              :key="index">
+              <NuxtLink :to="item.value">
+                {{ item.label }}
+              </NuxtLink>
             </li>
             <Select
               text="关于我们"
               v-model="aboutSelectValue"
-              :list="aboutSelectList">
+              :list="aboutSelectList"
+              @change="handleAboutSelect">
             </Select>
           </ul>
         </div>
@@ -45,10 +49,14 @@
 export default {
   data () {
     return {
+      navigationList: [
+        { label: '企业网银', value: '/zh-cn/corporbank' },
+        { label: '个人网银', value: '/zh-cn/perbank' }
+      ],
       aboutSelectValue: {},
       aboutSelectList: [
-        { label: '安全合规', value: '/about/safety' },
-        { label: '我们是谁', value: '/about/who-we-are' }
+        { label: '安全合规', value: '/zh-cn/about/safety' },
+        { label: '我们是谁', value: '/zh-cn/about/who-we-are' }
       ],
       langSelectValue: {},
       langSelectList: [
@@ -59,7 +67,13 @@ export default {
     }
   },
   methods: {
-    handleAboutSelect (aboutInfo) {},
+    handleAboutSelect (aboutInfo) {
+      const { value: path } = aboutInfo
+      console.log(path)
+      this.$router.push({
+        path
+      })
+    },
     handleLangSelect (langInfo) {
       const { value } = langInfo
       if (value === 'zh-hant') {
@@ -101,9 +115,21 @@ export default {
         align-items: center;
         margin-left: 50px;
         .navigation-item {
+          position: relative;
           margin-right: 40px;
           &:last-child {
             margin-right: 0;
+          }
+          &.active {
+            &:after {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: calc(100% + 15px);
+              width: 100%;
+              height: 2px;
+              background-color: @blue;
+            }
           }
         }
       }
