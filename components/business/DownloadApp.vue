@@ -8,7 +8,7 @@
     </li>
     <li class="download-item">
       <a href="" class="download-qrcode background"></a>
-      <div class="download-h5" :class="invert ? 'invert' : ''">
+      <div class="download-h5 animate__animated animate__fadeIn" :class="invert ? 'invert' : ''">
         <div class="download-h5-qrcode">
           <img src="~assets/image/download-qrcode.png" alt="">
         </div>
