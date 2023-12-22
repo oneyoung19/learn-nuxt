@@ -6,7 +6,7 @@
         <p class="sub-title">CB International Bank 快速开启国际银行帐户</p>
         <ul class="carousel-list">
           <li class="carousel-item">
-            <Button type="blue" class="carousel-item-btn">立即注册</Button>
+            <Button type="blue" class="carousel-item-btn">立即申请</Button>
             <div class="carousel-item-img">
               <img src="~assets/image/home/carousel-01.png" alt="">
             </div>
