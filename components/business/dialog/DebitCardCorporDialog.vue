@@ -38,7 +38,12 @@
           </li>
         </ul>
       </div>
-      <Button class="debit-card-button" type="blank">立即申请</Button>
+      <Button
+        class="debit-card-button"
+        type="blank"
+        @click="handleApply">
+        立即申请
+      </Button>
     </div>
   </ElDialog>
 </template>
@@ -56,6 +61,9 @@ export default {
     }
   },
   methods: {
+    handleApply () {
+      window.open('https://online.cbibank.com')
+    },
     handleClose () {
       this.$emit('update:modelValue', false)
     },

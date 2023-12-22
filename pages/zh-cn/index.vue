@@ -67,30 +67,39 @@
       </div>
     </div>
     <div class="cards">
-      <div class="layout">
+      <div class="cards-container layout">
         <SwitchButton
           class="switch-button"
           v-model="currentSwitchCard"
           :list="cardsSwitchList">
         </SwitchButton>
         <ul class="cards-list">
-          <li class="cards-item enterprise">
+          <li class="cards-item">
             <div class="cards-item-left">
               <p class="title">无论您走到哪里，都可以刷卡消费</p>
               <p class="desc">像当地人一样在全球范围内使用CBiBank企业借记卡消费，在当地ATM取现，试用商场、酒店、网购等等各类场景。</p>
               <ul class="feature-list">
-                <li class="feature-item" v-for="(item, index) in featureList" :key="index">
+                <li
+                  class="feature-item"
+                  v-for="(item, index) in featureList.value"
+                  :key="index">
                   <SvgIcon class="feature-item-icon" name="selected"></SvgIcon>
                   <span class="feature-item-text">{{ item.label }}</span>
                 </li>
               </ul>
-              <Button type="blue" plain :arrow-config="{ moving: true }">获取卡片</Button>
+              <Button
+                type="blue"
+                plain
+                :arrow-config="{ moving: true }"
+                @click="handleApplyCards">
+                获取卡片
+              </Button>
             </div>
             <div class="cards-item-right background">
-              <div class="card">
+              <div class="card" :class="currentSwitchCard === 'perbank' ?'card-above' : ''">
                 <img src="~assets/image/home/visa-card.png" alt="">
               </div>
-              <div class="card actived">
+              <div class="card card-bottom" :class="currentSwitchCard === 'corporbank' ?'card-above' : ''">
                 <img src="~assets/image/home/union-pay-card.png" alt="">
               </div>
               <div class="card-tip">
@@ -104,6 +113,12 @@
         </ul>
       </div>
     </div>
+    <DebitCardCorporDialog
+      v-model="debitCardCorporDialogVisible">
+    </DebitCardCorporDialog>
+    <DebitCardPersonDialog
+      v-model="debitCardPersonDialogVisible">
+    </DebitCardPersonDialog>
     <div class="swap">
       <div class="swap-container layout">
         <div class="swap-left">
@@ -280,27 +295,45 @@
 <script setup>
 useHead({
   title: 'CBiBank',
-  meta: [
-    { name: 'description', content: 'My amazing site.' }
-  ],
-  bodyAttrs: {
-    class: 'index'
-  },
-  script: [ { innerHTML: 'console.log(\'Hello world\')' } ]
+  // meta: [
+  //   { name: 'description', content: 'My amazing site.' }
+  // ],
+  // bodyAttrs: {
+  //   class: 'index'
+  // },
+  // script: [ { innerHTML: 'console.log(\'Hello world\')' } ]
 })
+const currentSwitchCard = ref('corporbank')
 const cardsSwitchList = ref([
-  { label: '企业卡', value: 'enterprise' },
-  { label: '个人卡', value: 'personal' }
+  { label: '企业卡', value: 'corporbank' },
+  { label: '个人卡', value: 'perbank' }
 ])
-const currentSwitchCard = ref('enterprise')
-
-const featureList = ref([
+const corporFeatureList = ref([
   { label: 'ATM取现' },
   { label: '商场消费' },
   { label: 'POS刷卡' },
   { label: '资金周转' },
   { label: '采购' }
 ])
+const perFeatureList = ref([
+  { label: 'ATM取现' },
+  { label: '网上购物' },
+  { label: 'POS刷卡' },
+  { label: '订酒店' },
+  { label: '超时购物' }
+])
+const featureList = computed(() => {
+  return currentSwitchCard.value === 'corporbank' ? corporFeatureList : perFeatureList
+})
+const debitCardCorporDialogVisible = ref(false)
+const debitCardPersonDialogVisible = ref(false)
+const handleApplyCards = () => {
+  if (currentSwitchCard.value === 'corporbank') {
+    debitCardCorporDialogVisible.value = true
+  } else {
+    debitCardPersonDialogVisible.value = true
+  }
+}
 
 const activeTab = ref('customer-material')
 const tabList = ref([
@@ -473,15 +506,19 @@ const tabList = ref([
   }
   .cards {
     height: 838px;
-    padding-top: 112px;
     background-color: @topwhite;
-    .switch-button {
-      margin-bottom: 35px;
-    }
-    .cards-list {
-      .cards-item {
+    .cards-container {
+      padding-top: 112px;
+      .switch-button {
+        margin-bottom: 35px;
+      }
+      .cards-list {
         display: flex;
-        &.enterprise {
+        width: 100%;
+        .cards-item {
+          display: flex;
+          width: 100%;
+          min-width: 100%;
           .cards-item-left {
             width: 586px;
             margin-right: 104px;
@@ -538,9 +575,12 @@ const tabList = ref([
               left: 104px;
               width: 358px;
               height: 220px;
-              &.actived {
+              &.card-bottom {
                 top: 204px;
                 left: -36px;
+              }
+              &.card-above {
+                z-index: 2;
               }
             }
             .card-tip {
