@@ -11,30 +11,49 @@
     <div class="channel">
       <div class="channel-container layout">
         <div class="channel-left">
-          <p class="title">贸易无国界，</p>
-          <p class="title">轻松应对每一笔收付款</p>
+          <p class="title" data-aos="fade-up">贸易无国界，</p>
+          <p class="title" data-aos="fade-up" data-aos-delay="500">轻松应对每一笔收付款</p>
           <ToggleTab
             class="channel-list"
+            data-aos="fade-up"
+            data-aos-delay="1000"
             v-model="activeChannel"
-            :list="channelList">
+            :list="channelList"
+            @change="handleToggleTab">
           </ToggleTab>
         </div>
         <div
           class="channel-right background"
+          data-aos="fade-up"
+          data-aos-delay="1000"
           :class="activeChannel">
           <div
             class="global-bg background"
+            data-aos="fade-up"
+            data-aos-delay="1000"
             v-show="activeChannel === 'global'">
-            <div class="global-img global-usd">
+            <div
+              class="global-img global-usd"
+              data-aos="fade-right"
+              data-aos-delay="1500">
               <img src="@/assets/image/corporbank/global-usd.png" alt="">
             </div>
-            <div class="global-img global-gbp">
+            <div
+              class="global-img global-gbp"
+              data-aos="fade-up"
+              data-aos-delay="1500">
               <img src="@/assets/image/corporbank/global-gbp.png" alt="">
             </div>
-            <div class="global-img global-cad">
+            <div
+              class="global-img global-cad"
+              data-aos="fade-up"
+              data-aos-delay="1500">
               <img src="@/assets/image/corporbank/global-cad.png" alt="">
             </div>
-            <div class="global-img global-eur">
+            <div
+              class="global-img global-eur"
+              data-aos="fade-left"
+              data-aos-delay="1500">
               <img src="@/assets/image/corporbank/global-eur.png" alt="">
             </div>
           </div>
@@ -259,7 +278,14 @@ export default {
       ]
     }
   },
+  mounted () {
+  },
   methods: {
+    handleToggleTab (value) {
+      const nuxtApp = useNuxtApp()
+      console.log(nuxtApp)
+      nuxtApp.AOS[3].refresh()
+    }
   }
 }
 </script>

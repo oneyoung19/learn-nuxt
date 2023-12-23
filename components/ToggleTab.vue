@@ -30,6 +30,7 @@ export default {
       }
     }
   },
+  emits: ['change'],
   data () {
     return {
     }
@@ -38,6 +39,7 @@ export default {
     handleClick (item) {
       const { value } = item
       this.$emit('update:modelValue', value)
+      this.$emit('change', value)
     }
   }
 }
