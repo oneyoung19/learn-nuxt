@@ -119,16 +119,45 @@
         <p class="title">
           合作伙伴
         </p>
-        <ul class="partners-list">
-          <li class="partners-item" v-for="(item, index) in firstPartners" :key="index">
+        <Swiper
+          class="partners-list"
+          :modules="swiperModules"
+          :autoplay="{
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false
+          }"
+          :loop="true"
+          :speed="3000"
+          :spaceBetween="80"
+          slidesPerView="auto">
+          <SwiperSlide
+            class="partners-item"
+            v-for="(item, index) in firstPartners"
+            :key="index">
             <img :src="item.img" alt="">
-          </li>
-        </ul>
-        <ul class="partners-list">
-          <li class="partners-item" v-for="(item, index) in secondPartners" :key="index">
+          </SwiperSlide>
+        </Swiper>
+        <Swiper
+          class="partners-list"
+          :modules="swiperModules"
+          :autoplay="{
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            reverseDirection: true
+          }"
+          :loop="true"
+          :speed="3000"
+          :spaceBetween="80"
+          slidesPerView="auto">
+          <SwiperSlide
+            class="partners-item"
+            v-for="(item, index) in secondPartners"
+            :key="index">
             <img :src="item.img" alt="">
-          </li>
-        </ul>
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
     <div class="group background">
@@ -183,6 +212,7 @@ import dimCommonwealthbank from '@/assets/image/who-we-are/dim-commonwealthbank.
 import dimXingyebank from '@/assets/image/who-we-are/dim-xingyebank.png'
 import dimEstpac from '@/assets/image/who-we-are/dim-estpac.png'
 import dimInternationalbank from '@/assets/image/who-we-are/dim-internationalbank.png'
+import { Autoplay } from 'swiper/modules'
 
 export default {
   data () {
@@ -192,6 +222,7 @@ export default {
         { label: '我们的使命', value: 'mission' },
         { label: '我们的愿景', value: 'vision' }
       ],
+      swiperModules: [Autoplay],
       firstPartners: [
         { img: dimVisa },
         { img: dimCips },
@@ -360,11 +391,14 @@ export default {
         &:last-child {
           margin-bottom: 0;
         }
+        :deep(.swiper-wrapper) {
+          transition-timing-function: linear !important;
+        }
         .partners-item {
           width: 245px;
           min-width: 245px;
           height: 125px;
-          margin-right: 80px;
+          // margin-right: 80px;
           &:last-child {
             margin-right: 0;
           }
