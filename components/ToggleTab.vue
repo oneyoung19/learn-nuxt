@@ -6,23 +6,13 @@
       v-for="(item, index) in list"
       :key="index"
       @click="handleClick(item)">
-      <SvgIcon class="icon" :name="modelValue === item.value ? item.activeIconName : item.iconName"></SvgIcon>
+      <SvgIcon
+        class="icon"
+        :name="modelValue === item.value ? item.activeIconName : item.iconName">
+      </SvgIcon>
       <span>{{ item.label }}</span>
       <SvgIcon class="icon-arrow" name="arrow-line"></SvgIcon>
     </li>
-    <!-- <li class="toggle-tab-item active">
-      <SvgIcon class="icon" name="wallet-light"></SvgIcon>
-      <span>全球贸易收款</span>
-      <SvgIcon class="icon-arrow" name="arrow-line"></SvgIcon>
-    </li>
-    <li class="toggle-tab-item">
-      <SvgIcon class="icon" name="bag-deep"></SvgIcon>
-      <span>电商平台收款</span>
-    </li>
-    <li class="toggle-tab-item">
-      <SvgIcon class="icon" name="cross-deep"></SvgIcon>
-      <span>国际投融资</span>
-    </li> -->
   </ul>
 </template>
 
@@ -58,6 +48,7 @@ export default {
   display: inline-block;
   .toggle-tab-item {
     position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     margin-bottom: 24px;
@@ -73,6 +64,18 @@ export default {
     &:last-child {
       margin-bottom: 0;
     }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 0;
+      height: 100%;
+      border-radius: 10px;
+      background: @blank;
+      transition: all ease-in-out .5s;
+    }
     .icon {
       margin-right: 22px;
       font-size: 36px;
@@ -82,14 +85,28 @@ export default {
       top: 50%;
       right: 38px;
       transform: translateY(-50%);
-      display: none;
       font-size: 26px;
+      opacity: 0;
+      transition: all ease-in-out .5s;
+    }
+    &:hover {
+      color: @blank2;
+      .icon-arrow {
+        opacity: 1;
+      }
     }
     &.active {
       color: @topwhite;
-      background: @blank;
+      &::before {
+        width: 100%;
+      }
       .icon-arrow {
-        display: block;
+        opacity: 1;
+      }
+      &:hover {
+        .icon-arrow {
+          transform: translate(10px, -50%);
+        }
       }
     }
   }
