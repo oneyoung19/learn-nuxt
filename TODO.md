@@ -24,3 +24,8 @@
 
 - [ ] 引入格式化
 - [ ] `element-ui` 组件大写命名，（所有组件均要大写命名）
+
+## 待处理
+
+- `aos` 在 `tab` 切换时表现异常，**动画不正常显示**。即使将 [`v-show` 换成 `v-if`](https://github.com/michalsnik/aos/issues/169) 也有不正常的 `tab`。关于 `tab` 的众多 [issues](https://github.com/michalsnik/aos/issues?q=tab)。
+  

@@ -30,7 +30,7 @@ export default {
       }
     }
   },
-  emits: ['change'],
+  emits: ['update:modelValue', 'change'],
   data () {
     return {
     }
