@@ -228,7 +228,10 @@
           <p class="desc">在全球范围内都可使用的CBiBank企业借记卡，全球ATM取现，商场消费、POS刷卡和采购等。</p>
           <CardUseList class="use-list" :list="useList"></CardUseList>
           <Button type="blank" :arrow-config="{ moving: true }">获取卡片</Button>
-          <div class="cards-bg">
+          <div
+            class="cards-bg"
+            data-aos="fade-up-left"
+            data-aos-offset="400">
             <img src="@/assets/image/corporbank/cards-bg.png" alt="">
           </div>
         </div>
