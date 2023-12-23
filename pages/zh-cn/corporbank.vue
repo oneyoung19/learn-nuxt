@@ -66,19 +66,19 @@
             key="ecommerce">
             <div
               class="ecommerce-img ecommerce-wish"
-              data-aos="fade-up"
+              data-aos="fade-down"
               data-aos-delay="1000">
               <img src="@/assets/image/corporbank/wish.png" alt="">
             </div>
             <div
               class="ecommerce-img ecommerce-tiktok"
-              data-aos="fade-up"
+              data-aos="fade-left"
               data-aos-delay="1000">
               <img src="@/assets/image/corporbank/tiktok.png" alt="">
             </div>
             <div
               class="ecommerce-img ecommerce-ebay"
-              data-aos="fade-up"
+              data-aos="fade-up-left"
               data-aos-delay="1000">
               <img src="@/assets/image/corporbank/ebay.png" alt="">
             </div>
@@ -90,7 +90,7 @@
             </div>
             <div
               class="ecommerce-img ecommerce-shopify"
-              data-aos="fade-up"
+              data-aos="fade-right"
               data-aos-delay="1000">
               <img src="@/assets/image/corporbank/shopify.png" alt="">
             </div>
@@ -103,13 +103,13 @@
             key="internation">
             <div
               class="internation-amount"
-              data-aos="fade-up"
+              data-aos="fade-right"
               data-aos-delay="1000">
               <img src="@/assets/image/corporbank/internation-amount.png" alt="">
             </div>
             <div
               class="internation-arrow"
-              data-aos="fade-up"
+              data-aos="fade-up-left"
               data-aos-delay="1000">
               <img src="@/assets/image/corporbank/internation-arrow.png" alt="">
             </div>
@@ -144,54 +144,67 @@
           border>
         </SwitchTab>
         <ul class="letter-list">
-          <li class="letter-item" v-show="activeTab === 'credit'">
-            <div class="letter-item-left">
-              <p class="title">满足客户信用证结算需求</p>
-              <p class="desc">支持美元、欧元、人民币等主流币种的具有真实贸易背景的信用证相关服务，与全球主要高资信评级银行建立信用证合作关系。</p>
-              <Button type="blank" :arrow-config="{ moving: true }">了解详情</Button>
-            </div>
-            <div class="letter-item-right credit background">
-              <div class="letter-credit-img">
-                <img src="@/assets/image/corporbank/letter-credit-01.png" alt="">
+          <transition
+            mode="out-in"
+            :name="getFadeTransition('credit')">
+            <li class="letter-item" v-show="activeTab === 'credit'">
+              <div
+                class="letter-item-left">
+                <p class="title">满足客户信用证结算需求</p>
+                <p class="desc">支持美元、欧元、人民币等主流币种的具有真实贸易背景的信用证相关服务，与全球主要高资信评级银行建立信用证合作关系。</p>
+                <Button type="blank" :arrow-config="{ moving: true }">了解详情</Button>
               </div>
-              <div class="letter-credit-img">
-                <img src="@/assets/image/corporbank/letter-credit-02.png" alt="">
+              <div class="letter-item-right credit background">
+                <div class="letter-credit-img">
+                  <img src="@/assets/image/corporbank/letter-credit-01.png" alt="">
+                </div>
+                <div class="letter-credit-img">
+                  <img src="@/assets/image/corporbank/letter-credit-02.png" alt="">
+                </div>
+                <div class="letter-credit-img">
+                  <img src="@/assets/image/corporbank/letter-credit-03.png" alt="">
+                </div>
               </div>
-              <div class="letter-credit-img">
-                <img src="@/assets/image/corporbank/letter-credit-03.png" alt="">
+            </li>
+          </transition>
+          <transition
+            mode="out-in"
+            :name="getFadeTransition('documentary')">
+            <li class="letter-item" v-show="activeTab === 'documentary'">
+              <div class="letter-item-left">
+                <p class="title">协助客户完成进出口托收业务</p>
+                <p class="desc">支持美元、欧元、人民币等主流货币的进口代收、出口托收业务，接受或委托代理行为客户提供托收业务中涉及的单据提示、单据交付等服务。</p>
+                <Button type="blank" :arrow-config="{ moving: true }">了解详情</Button>
               </div>
-            </div>
-          </li>
-          <li class="letter-item" v-show="activeTab === 'documentary'">
-            <div class="letter-item-left">
-              <p class="title">协助客户完成进出口托收业务</p>
-              <p class="desc">支持美元、欧元、人民币等主流货币的进口代收、出口托收业务，接受或委托代理行为客户提供托收业务中涉及的单据提示、单据交付等服务。</p>
-              <Button type="blank" :arrow-config="{ moving: true }">了解详情</Button>
-            </div>
-            <div class="letter-item-right documentary background">
-              <div class="letter-documentary-img">
-                <img src="@/assets/image/corporbank/letter-documentary-01.png" alt="">
+              <div class="letter-item-right documentary background">
+                <div class="letter-documentary-img">
+                  <img src="@/assets/image/corporbank/letter-documentary-01.png" alt="">
+                </div>
+                <div class="letter-documentary-img">
+                  <img src="@/assets/image/corporbank/letter-documentary-02.png" alt="">
+                </div>
               </div>
-              <div class="letter-documentary-img">
-                <img src="@/assets/image/corporbank/letter-documentary-02.png" alt="">
+            </li>
+          </transition>
+          <transition
+            mode="out-in"
+            :name="getFadeTransition('guarantee')">
+            <li class="letter-item" v-show="activeTab === 'guarantee'">
+              <div class="letter-item-left">
+                <p class="title">解决客户保函业务需求</p>
+                <p class="desc">支持美元、欧元、人民币等主流货币的投标保函、预付款保函、履约保函、付款保函、融资保函等保函类服务。</p>
+                <Button type="blank" :arrow-config="{ moving: true }">了解详情</Button>
               </div>
-            </div>
-          </li>
-          <li class="letter-item" v-show="activeTab === 'guarantee'">
-            <div class="letter-item-left">
-              <p class="title">解决客户保函业务需求</p>
-              <p class="desc">支持美元、欧元、人民币等主流货币的投标保函、预付款保函、履约保函、付款保函、融资保函等保函类服务。</p>
-              <Button type="blank" :arrow-config="{ moving: true }">了解详情</Button>
-            </div>
-            <div class="letter-item-right guarantee">
-              <div class="letter-guarantee-img">
-                <img src="@/assets/image/corporbank/letter-guarantee-01.png" alt="">
+              <div class="letter-item-right guarantee">
+                <div class="letter-guarantee-img">
+                  <img src="@/assets/image/corporbank/letter-guarantee-01.png" alt="">
+                </div>
+                <div class="letter-guarantee-img">
+                  <img src="@/assets/image/corporbank/letter-guarantee-02.png" alt="">
+                </div>
               </div>
-              <div class="letter-guarantee-img">
-                <img src="@/assets/image/corporbank/letter-guarantee-02.png" alt="">
-              </div>
-            </div>
-          </li>
+            </li>
+          </transition>
         </ul>
       </div>
     </div>
@@ -320,6 +333,17 @@ export default {
       //     nuxtApp.AOS.refreshHard()
       //   })
       // }
+    },
+    getFadeTransition (tab) {
+      const { activeTab, tabList } = this
+      const activeIndex = tabList.findIndex(item => item.value === activeTab)
+      const index = tabList.findIndex(item => item.value === tab)
+      // TODO: 这里的逻辑有待修复 应根据当前正确索引返回transiton模式
+      if (index >= activeIndex) {
+        return 'fade-right'
+      } else {
+        return 'fade-left'
+      }
     }
   }
 }
