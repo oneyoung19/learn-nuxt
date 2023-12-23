@@ -12,11 +12,11 @@
       <div class="channel-container layout">
         <div class="channel-left">
           <p class="title" data-aos="fade-up">贸易无国界，</p>
-          <p class="title" data-aos="fade-up" data-aos-delay="500">轻松应对每一笔收付款</p>
+          <p class="title" data-aos="fade-up" data-aos-delay="300">轻松应对每一笔收付款</p>
           <ToggleTab
             class="channel-list"
             data-aos="fade-up"
-            data-aos-delay="1000"
+            data-aos-delay="600"
             v-model="activeChannel"
             :list="channelList"
             @change="handleToggleTab">
@@ -25,64 +25,92 @@
         <div
           class="channel-right background"
           data-aos="fade-up"
-          data-aos-delay="1000"
+          data-aos-delay="600"
           :class="activeChannel">
           <div
             class="global-bg background"
             data-aos="fade-up"
-            data-aos-delay="1000"
-            v-show="activeChannel === 'global'">
+            data-aos-delay="800"
+            v-if="activeChannel === 'global'"
+            key="global">
             <div
               class="global-img global-usd"
               data-aos="fade-right"
-              data-aos-delay="1500">
+              data-aos-delay="1000">
               <img src="@/assets/image/corporbank/global-usd.png" alt="">
             </div>
             <div
               class="global-img global-gbp"
               data-aos="fade-up"
-              data-aos-delay="1500">
+              data-aos-delay="1000">
               <img src="@/assets/image/corporbank/global-gbp.png" alt="">
             </div>
             <div
               class="global-img global-cad"
               data-aos="fade-up"
-              data-aos-delay="1500">
+              data-aos-delay="1000">
               <img src="@/assets/image/corporbank/global-cad.png" alt="">
             </div>
             <div
               class="global-img global-eur"
               data-aos="fade-left"
-              data-aos-delay="1500">
+              data-aos-delay="1000">
               <img src="@/assets/image/corporbank/global-eur.png" alt="">
             </div>
           </div>
           <div
             class="ecommerce-bg background"
-            v-show="activeChannel === 'ecommerce'">
-            <div class="ecommerce-img ecommerce-wish">
+            data-aos="fade-up"
+            data-aos-delay="800"
+            v-if="activeChannel === 'ecommerce'"
+            key="ecommerce">
+            <div
+              class="ecommerce-img ecommerce-wish"
+              data-aos="fade-up"
+              data-aos-delay="1000">
               <img src="@/assets/image/corporbank/wish.png" alt="">
             </div>
-            <div class="ecommerce-img ecommerce-tiktok">
+            <div
+              class="ecommerce-img ecommerce-tiktok"
+              data-aos="fade-up"
+              data-aos-delay="1000">
               <img src="@/assets/image/corporbank/tiktok.png" alt="">
             </div>
-            <div class="ecommerce-img ecommerce-ebay">
+            <div
+              class="ecommerce-img ecommerce-ebay"
+              data-aos="fade-up"
+              data-aos-delay="1000">
               <img src="@/assets/image/corporbank/ebay.png" alt="">
             </div>
-            <div class="ecommerce-img ecommerce-amazon">
+            <div
+              class="ecommerce-img ecommerce-amazon"
+              data-aos="fade-up"
+              data-aos-delay="1000">
               <img src="@/assets/image/corporbank/amazon.png" alt="">
             </div>
-            <div class="ecommerce-img ecommerce-shopify">
+            <div
+              class="ecommerce-img ecommerce-shopify"
+              data-aos="fade-up"
+              data-aos-delay="1000">
               <img src="@/assets/image/corporbank/shopify.png" alt="">
             </div>
           </div>
           <div
             class="internation-bg background"
-            v-show="activeChannel === 'internation'">
-            <div class="internation-amount">
+            data-aos="fade-up"
+            data-aos-delay="800"
+            v-if="activeChannel === 'internation'"
+            key="internation">
+            <div
+              class="internation-amount"
+              data-aos="fade-up"
+              data-aos-delay="1000">
               <img src="@/assets/image/corporbank/internation-amount.png" alt="">
             </div>
-            <div class="internation-arrow">
+            <div
+              class="internation-arrow"
+              data-aos="fade-up"
+              data-aos-delay="1000">
               <img src="@/assets/image/corporbank/internation-arrow.png" alt="">
             </div>
           </div>
@@ -282,9 +310,16 @@ export default {
   },
   methods: {
     handleToggleTab (value) {
-      const nuxtApp = useNuxtApp()
-      console.log(nuxtApp)
-      nuxtApp.AOS[3].refresh()
+      // const nuxtApp = useNuxtApp()
+      // console.log(nuxtApp.AOS, nuxtApp.aos)
+      // nuxtApp.AOS.refresh()
+      // if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      //   this.$nextTick(() => {
+      //     const nuxtApp = useNuxtApp()
+      //     console.log(nuxtApp)
+      //     nuxtApp.AOS.refreshHard()
+      //   })
+      // }
     }
   }
 }
