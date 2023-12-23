@@ -1,7 +1,16 @@
 <template>
   <div class="celebrities">
-    <ul class="celebrity-list">
-      <li
+    <Swiper
+      class="celebrity-list"
+      :spaceBetween="30"
+      :slidesPerView="3"
+      :scrollbar="{
+        hide: false,
+        draggable: true,
+        dragSize: 482
+      }"
+      :modules="swiperModules">
+      <SwiperSlide
         class="celebrity-item"
         v-for="(item, index) in celebrityList"
         :key="index">
@@ -16,12 +25,14 @@
         <div class="celebrity-avatar background">
           <img :src="item.avatar" alt="">
         </div>
-      </li>
-    </ul>
+      </SwiperSlide>
+    </Swiper>
   </div>
 </template>
 
 <script>
+import { Scrollbar } from 'swiper/modules'
+
 export default {
   data () {
     const getLocaltionImage = id => `/assets/image/celebrity/${id}.png`
@@ -29,6 +40,7 @@ export default {
       eager: true
     })
     return {
+      swiperModules: [Scrollbar],
       celebrityList: [
         {
           id: 'daikebin',
@@ -149,23 +161,28 @@ export default {
   overflow-x: scroll;
   .celebrity-list {
     display: flex;
-    /* 为动画和头像预留位置 padding-top会造成box-shadow外泄 所以使用margin-top */
-    margin-top: 10px;
-    padding-bottom: 34px;
+    padding-bottom: 90px;
+    :deep(.swiper-wrapper) {
+      /* 为动画和头像预留位置 padding-top会造成box-shadow外泄 所以使用margin-top */
+      margin-top: 10px;
+      padding-bottom: 34px;
+    }
+    :deep(.swiper-scrollbar) {
+      background-color: #E6E9F4;
+      .swiper-scrollbar-drag {
+        background-color: @blank;
+      }
+    }
     .celebrity-item {
       position: relative;
       width: 380px;
       min-width: 380px;
       height: 264px;
-      margin-right: 30px;
       padding: 25px 30px 0;
       background: @topwhite;
       box-shadow: 0px 10px 30px 0px rgba(50,50,71,0.08);
       border-radius: 9px;
       transition: all ease .5s;
-      &:last-child {
-        margin-right: 0;
-      }
       .celebrity-words {
         margin-bottom: 40px;
         height: 120px;
