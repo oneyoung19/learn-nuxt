@@ -43,8 +43,7 @@ export default defineNuxtConfig({
     '~/assets/styles/reset.less',
     '~/assets/styles/global.less',
     'animate.css/animate.css',
-    '~/assets/styles/animation/cover-animate.less',
-    '~/assets/styles/animation/custom.less',
+    '~/assets/styles/animation/index.js',
     'element-plus/dist/index.css',
     '~/assets/styles/element/index.js'
   ],
