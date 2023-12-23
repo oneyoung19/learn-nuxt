@@ -73,17 +73,17 @@
     <div class="efficiency">
       <div class="efficiency-container layout">
         <div class="efficiency-left background" data-aos="fade">
-          <div class="efficiency-img efficiency-usd" data-aos="fade-down" data-aos-delay="1000" data-aos-duration="1000">
+          <div class="efficiency-img efficiency-usd" data-aos="fade-down" data-aos-delay="1000">
             <img src="@/assets/image/corporbank/efficiency-usd.png" alt="">
           </div>
           <div class="efficiency-img efficiency-dashed-line">
             <img src="@/assets/image/corporbank/efficiency-dashed-line.png" alt="" data-aos="aos-c-animate-padding">
           </div>
-          <div class="efficiency-img efficiency-cad" data-aos="fade-up" data-aos-delay="2000" data-aos-duration="1500">
+          <div class="efficiency-img efficiency-cad" data-aos="fade-up" data-aos-delay="1800">
             <img src="@/assets/image/corporbank/efficiency-cad.png" alt="">
           </div>
         </div>
-        <div class="efficiency-right">
+        <div class="efficiency-right" data-aos="fade-left" data-aos-delay="3000">
           <p class="title">收款速度更快，为您节省更多时间</p>
           <p class="desc">通过智能风控系统实现款项到账即时完成相关风险排查，结合自动化风险评估体系，为您带来更快、更安全的收款体验。</p>
         </div>

@@ -6,7 +6,7 @@ export default defineNuxtPlugin(nuxtApp => {
     nuxtApp.AOS = new AOS.init({
       offset: 300,
       duration: 800,
-      easing: 'ease-in-sine',
+      easing: 'ease-in-out',
       delay: 100
     })
   }
