@@ -1,7 +1,7 @@
 <template>
   <div class="perbank">
     <div class="banner background">
-      <div class="banner-container layout">
+      <div class="banner-container layout" data-aos="fade-up">
         <div class="banner-left">
           <p class="title">一个APP，</p>
           <p class="title">解决全球汇款</p>
@@ -15,32 +15,47 @@
     <div class="cards">
       <div class="cards-container layout">
         <div class="cards-left">
-          <div class="cards-img union-pay-cards">
+          <div
+            class="cards-img union-pay-cards"
+            data-aos="fade-down-right"
+            data-aos-delay="400"
+            data-aos-duration="1000">
             <img src="@/assets/image/perbank/union-pay-card.png" alt="">
           </div>
-          <div class="cards-img visa-cards">
+          <div
+            class="cards-img visa-cards"
+            data-aos="fade-up-left"
+            data-aos-delay="400"
+            data-aos-duration="1000">
             <img src="@/assets/image/perbank/visa-card.png" alt="">
           </div>
         </div>
-        <div class="cards-right">
+        <div class="cards-right" data-aos="fade-up">
           <p class="title">在全球，以更优惠的汇率刷卡消费</p>
           <p class="desc">环球旅行，ATM取现，使用您的 CBiBank 实体卡在全球地区消费 ，CBiBank已与北美银联、Visa建立深度合作。</p>
-          <CardUseList class="use-list" :list="useList"></CardUseList>
-          <Button type="blank" :arrow-config="{ moving: true }">获取卡片</Button>
+          <CardUseList
+            class="use-list"
+            :list="useList">
+          </CardUseList>
+          <Button
+            type="blank"
+            :arrow-config="{ moving: true }">
+            获取卡片
+          </Button>
         </div>
       </div>
     </div>
     <div class="remit">
       <div class="remit-container layout">
         <div class="remit-left">
-          <p class="title">随时随地、多币种轻松汇款</p>
-          <p class="desc">美元、欧元、离岸人民币、港币等主流货币，全球范围内自由汇转。</p>
+          <p class="title" data-aos="fade-up">随时随地、多币种轻松汇款</p>
+          <p class="desc" data-aos="fade-up">美元、欧元、离岸人民币、港币等主流货币，全球范围内自由汇转。</p>
         </div>
         <div class="remit-right">
-          <div class="remit-bg">
+          <div class="remit-bg" data-aos="fade-up">
             <img src="@/assets/image/perbank/remit-bg.png" alt="">
           </div>
-          <div class="remit-data">
+          <div class="remit-data" data-aos="zoom-in">
             <img src="@/assets/image/perbank/remit-data.png" alt="">
           </div>
         </div>
@@ -49,40 +64,48 @@
     <div class="swap">
       <div class="swap-container layout">
         <div class="swap-left">
-          <div class="swap-steps">
+          <div class="swap-steps" data-aos="fade-up">
             <img src="@/assets/image/perbank/swap-steps.png" alt="">
           </div>
-          <div class="swap-select">
+          <div class="swap-select" data-aos="flip-up">
             <img src="@/assets/image/perbank/swap-select.png" alt="">
           </div>
-          <div class="swap-confirm">
+          <div class="swap-confirm" data-aos="zoom-in">
             <img src="@/assets/image/perbank/swap-confirm.png" alt="">
           </div>
         </div>
         <div class="swap-right">
-          <p class="title">以实时的汇率进行换汇</p>
-          <p class="desc">轻松换汇，您可以通过CBiBank快捷完成货币兑换，以实时汇率结算。</p>
+          <p class="title" data-aos="fade-up">以实时的汇率进行换汇</p>
+          <p class="desc" data-aos="fade-up">轻松换汇，您可以通过CBiBank快捷完成货币兑换，以实时汇率结算。</p>
         </div>
       </div>
     </div>
     <div class="express">
       <div class="express-container layout">
         <div class="express-left">
-          <p class="title">提供全球的速汇业务</p>
-          <p class="desc">为有跨国汇款需求的人群提供即时到账的速汇服务，资金即时汇转到您的当地银行卡。</p>
+          <p class="title" data-aos="fade-up">提供全球的速汇业务</p>
+          <p class="desc" data-aos="fade-up">为有跨国汇款需求的人群提供即时到账的速汇服务，资金即时汇转到您的当地银行卡。</p>
         </div>
-        <div class="express-right background"></div>
+        <div
+          class="express-right background"
+          data-aos="fade-up"
+          data-aos-offset="400">
+        </div>
       </div>
     </div>
     <div class="open-guide">
       <div class="open-guide-container layout">
-        <p class="title">如何拥有帐户</p>
-        <p class="sub-title">线上即刻开户，纵享全球服务</p>
+        <p class="title" data-aos="fade-up">如何拥有帐户</p>
+        <p class="sub-title" data-aos="fade-up">线上即刻开户，纵享全球服务</p>
         <GuideSteps
           class="guide-list"
+          data-aos="fade-up"
           :list="guideList">
         </GuideSteps>
-        <DownloadApp theme="blank"></DownloadApp>
+        <DownloadApp
+          data-aos="fade-up"
+          theme="blank">
+        </DownloadApp>
       </div>
     </div>
   </div>
