@@ -1,13 +1,21 @@
 // 由于动画animate__fadeInRight和animate__fadeInRight的duration一致 实际效果不合适 所以需要利用animate.css自定义动画
 .fade-left-enter-active {
-  animation: fadeInLeft 1s;
+  animation: fadeInLeft .8s;
 }
 .fade-left-leave-active {
   animation: fadeOutLeft .1s;
 }
+
 .fade-right-enter-active {
-  animation: fadeInRight 1s;
+  animation: fadeInRight .8s;
 }
 .fade-right-leave-active {
   animation: fadeOutRight .1s;
+}
+
+.fade-enter-active {
+  animation: fadeIn .8s;
+}
+.fade-leave-active {
+  animation: fadeOut .1s;
 }
