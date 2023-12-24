@@ -137,7 +137,7 @@
       </div>
     </div>
     <div class="letter">
-      <div class="letter-container layout">
+      <div class="letter-container layout" data-aos="fade-in">
         <SwitchTab
           v-model="activeTab"
           :list="tabList"
@@ -211,12 +211,12 @@
     </div>
     <div class="lock">
       <div class="lock-container layout">
-        <div class="lock-left background">
+        <div class="lock-left background" data-aos="fade-right">
           <div class="lock-img-01">
             <img src="@/assets/image/corporbank/lock-img-01.png" alt="">
           </div>
         </div>
-        <div class="lock-right">
+        <div class="lock-right" data-aos="fade-left">
           <p class="title">灵活锁汇，为您智慧避险</p>
           <p class="desc">我们提供灵活的“锁汇”即远期结售汇服务，极大限度的帮助企业规避汇率风险。</p>
         </div>
@@ -225,14 +225,25 @@
     <div class="cards">
       <div class="cards-container layout">
         <div class="cards-left">
-          <p class="title">全球随心刷，生活更简单</p>
-          <p class="desc">在全球范围内都可使用的CBiBank企业借记卡，全球ATM取现，商场消费、POS刷卡和采购等。</p>
-          <CardUseList class="use-list" :list="useList"></CardUseList>
-          <Button type="blank" :arrow-config="{ moving: true }">获取卡片</Button>
+          <p class="title" data-aos="fade-up">全球随心刷，生活更简单</p>
+          <p class="desc" data-aos="fade-up">在全球范围内都可使用的CBiBank企业借记卡，全球ATM取现，商场消费、POS刷卡和采购等。</p>
+          <CardUseList
+            class="use-list"
+            data-aos="fade-up"
+            :list="useList">
+          </CardUseList>
+          <Button
+            data-aos="fade-up"
+            type="blank"
+            :arrow-config="{ moving: true }">
+            获取卡片
+          </Button>
           <div
             class="cards-bg"
             data-aos="fade-up-left"
-            data-aos-offset="400">
+            data-aos-offset="400"
+            data-aos-delay="200"
+            data-aos-duration="1000">
             <img src="@/assets/image/corporbank/cards-bg.png" alt="">
           </div>
         </div>
@@ -241,21 +252,21 @@
     </div>
     <div class="salary">
       <div class="salary-container layout">
-        <div class="salary-left background">
-          <div class="salary-img">
+        <div class="salary-left background" data-aos="fade-in">
+          <div class="salary-img" data-aos="zoom-in" data-aos-delay="200">
             <img src="@/assets/image/corporbank/salary-img-01.png" alt="">
           </div>
-          <div class="salary-img">
+          <div class="salary-img" data-aos="zoom-in" data-aos-delay="400">
             <img src="@/assets/image/corporbank/salary-img-02.png" alt="">
           </div>
-          <div class="salary-img">
+          <div class="salary-img" data-aos="zoom-in" data-aos-delay="600">
             <img src="@/assets/image/corporbank/salary-img-03.png" alt="">
           </div>
-          <div class="salary-img">
+          <div class="salary-img" data-aos="zoom-in" data-aos-delay="800">
             <img src="@/assets/image/corporbank/salary-img-04.png" alt="">
           </div>
         </div>
-        <div class="salary-right">
+        <div class="salary-right" data-aos="fade-left">
           <p class="title">跨国企业向本地人进行工资发放</p>
           <p class="desc">全球地区支付员工薪资，无论员工选择在哪里工作，在几分钟内为世界各地的员工进行工资发放。</p>
         </div>

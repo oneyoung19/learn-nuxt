@@ -3,6 +3,10 @@ import 'aos/dist/aos.css'
 
 export default defineNuxtPlugin(nuxtApp => {
   if (typeof window !== 'undefined') {
+    /*
+      [Use animate.css with aos](https://github.com/michalsnik/aos/issues/7)
+      TODO: 即使按照文章所述添加了[data-aos]的visibility样式覆盖，animate.css依然有闪烁问题。aos与animate.css的实际搭配效果 并不是很理想。
+    */ 
     nuxtApp.AOS = AOS
     nuxtApp.aos = new AOS.init({
       // Global settings:
@@ -10,7 +14,7 @@ export default defineNuxtPlugin(nuxtApp => {
       startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
       initClassName: 'aos-init', // class applied after initialization
       animatedClassName: 'aos-animate', // class applied on animation
-      useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+      useClassNames: true, // if true, will add content of `data-aos` as classes on scroll
       disableMutationObserver: false, // disables automatic mutations' detections (advanced)
       debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
       throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
