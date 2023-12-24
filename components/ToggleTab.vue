@@ -89,7 +89,7 @@ export default {
       transform: translateY(-50%);
       font-size: 26px;
       opacity: 0;
-      transition: all ease-in-out .5s;
+      transition: all ease-in-out .8s;
     }
     &:hover {
       color: @blank2;
