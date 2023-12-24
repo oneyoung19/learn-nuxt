@@ -5,14 +5,20 @@
         <div class="quote">
           <Quote ref="quote"></Quote>
         </div>
-        <div class="location background"></div>
+        <div class="location background" data-aos="fade-left"></div>
       </div>
     </div>
     <div class="profession">
       <div class="profession-container layout">
         <div class="profession-left">
-          <img v-show="activeButton === 'mission'" src="@/assets/image/who-we-are/mission.png" alt="">
-          <img v-show="activeButton === 'vision'" src="@/assets/image/who-we-are/vision.png" alt="">
+          <img
+            v-show="activeButton === 'mission'"
+            src="@/assets/image/who-we-are/mission.png"
+            alt="">
+          <img
+            v-show="activeButton === 'vision'"
+            src="@/assets/image/who-we-are/vision.png"
+            alt="">
         </div>
         <div class="profession-right">
           <SwitchButton
@@ -34,26 +40,26 @@
     <div class="institution">
       <div class="institution-container layout">
         <div class="institution-left">
-          <p class="title">守护您的资金安全</p>
-          <p class="desc">CBiBank受美国金融监管机构监管，是美国银行家协会(ABA)、环球银行金融电信协会(SWIFT)、银联国际(UNIONPAY)、跨境人民币清算(CIPS)等多家机构成员、中国银行间市场交易商协会备案交易商、中国外汇交易中心外币市场会员。</p>
+          <p class="title" data-aos="fade-up">守护您的资金安全</p>
+          <p class="desc" data-aos="fade-up">CBiBank受美国金融监管机构监管，是美国银行家协会(ABA)、环球银行金融电信协会(SWIFT)、银联国际(UNIONPAY)、跨境人民币清算(CIPS)等多家机构成员、中国银行间市场交易商协会备案交易商、中国外汇交易中心外币市场会员。</p>
         </div>
         <div class="institution-right">
           <ul class="institution-list">
-            <li class="institution-item">
+            <li class="institution-item" data-aos="fade-left" data-aos-delay="50">
               <div class="img">
                 <img src="@/assets/image/who-we-are/ocif.png" alt="">
               </div>
               <p class="title">美国持牌商业银行</p>
               <p class="desc">受美国金融监管机构监督</p>
             </li>
-            <li class="institution-item">
+            <li class="institution-item" data-aos="fade-left" data-aos-delay="100">
               <div class="img">
                 <img src="@/assets/image/who-we-are/swift.png" alt="">
               </div>
               <p class="title">环球银行金融电信协会</p>
               <p class="desc">SWIFT：CBLBPRSJ</p>
             </li>
-            <li class="institution-item">
+            <li class="institution-item" data-aos="fade-left" data-aos-delay="150">
               <div class="img">
                 <img src="@/assets/image/who-we-are/aba.png" alt="">
               </div>
@@ -62,21 +68,21 @@
             </li>
           </ul>
           <ul class="institution-list">
-            <li class="institution-item">
+            <li class="institution-item" data-aos="fade-left" data-aos-delay="200">
               <div class="img">
                 <img src="@/assets/image/who-we-are/visa.png" alt="">
               </div>
               <p class="title">VISA成员</p>
               <p class="desc">国际金融机构VISA成员</p>
             </li>
-            <li class="institution-item">
+            <li class="institution-item" data-aos="fade-left" data-aos-delay="250">
               <div class="img">
                 <img src="@/assets/image/who-we-are/union-pay.png" alt="">
               </div>
               <p class="title">银联国际</p>
               <p class="desc">银联国际北美成员</p>
             </li>
-            <li class="institution-item">
+            <li class="institution-item" data-aos="fade-left" data-aos-delay="300">
               <div class="img">
                 <img src="@/assets/image/who-we-are/cips.png" alt="">
               </div>
@@ -85,21 +91,21 @@
             </li>
           </ul>
           <ul class="institution-list">
-            <li class="institution-item">
+            <li class="institution-item" data-aos="fade-left" data-aos-delay="350">
               <div class="img">
                 <img src="@/assets/image/who-we-are/cfets.png" alt="">
               </div>
               <p class="title">中国外汇交易中心</p>
               <p class="desc">外币市场会员</p>
             </li>
-            <li class="institution-item">
+            <li class="institution-item" data-aos="fade-left" data-aos-delay="400">
               <div class="img">
                 <img src="@/assets/image/who-we-are/csrc.png" alt="">
               </div>
               <p class="title">CSRC中国证监会</p>
               <p class="desc">合格境外投资者资格</p>
             </li>
-            <li class="institution-item">
+            <li class="institution-item" data-aos="fade-left" data-aos-delay="450">
               <div class="img">
                 <img src="@/assets/image/who-we-are/nafmii.png" alt="">
               </div>
@@ -112,7 +118,7 @@
     </div>
     <div class="partners">
       <div class="partners-container">
-        <p class="title">
+        <p class="title" data-aos="fade-up">
           合作伙伴
         </p>
         <Swiper
@@ -156,16 +162,21 @@
         </Swiper>
       </div>
     </div>
-    <div class="group background">
+    <div class="group background" data-aos="fade">
       <div class="group-bg">
         <div class="group-container layout">
-          <div class="mascot">
+          <div class="mascot" data-aos="fade-right" data-aos-offset="400" data-aos-duration="1000">
             <img src="@/assets/image/who-we-are/mascot.png" alt="">
           </div>
           <div class="group-right">
-            <p class="title">贸易无国界，投资更简单</p>
-            <p class="sub-title">让我们成为您的优选银行</p>
-            <Button type="blank" :arrow-config="{ moving: true }">开启CBiBank</Button>
+            <p class="title" data-aos="fade-up">贸易无国界，投资更简单</p>
+            <p class="sub-title" data-aos="fade-up">让我们成为您的优选银行</p>
+            <Button
+              data-aos="fade-up"
+              type="blank"
+              :arrow-config="{ moving: true }">
+              开启CBiBank
+            </Button>
           </div>
         </div>
       </div>
@@ -254,7 +265,7 @@ export default {
       strings: [
         '<p>CBiBank（中文名：富港银行），成立于2017年7月，是一家美国新兴商业银行，专注为出海企业提供一站式跨境金融服务，包括离岸账户开立、转账汇款、电商收款、企业理财等。</p><p>&nbsp;</p><p>CBiBank是经济全球化趋势下国际银行新模式的探索者，以合规经营和科技创新为立行基础，秉承国际化、数字化、专业化的立行理念，专注普惠金融，致力于让中小企业的国际收付款更方便、财富更加国际化且保值增值。</p>'
       ],
-      typeSpeed: 30,
+      typeSpeed: 20,
       fadeOut: true,
       showCursor: false
     })
