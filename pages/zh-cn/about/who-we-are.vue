@@ -2,13 +2,8 @@
   <div class="who-we-are">
     <div class="banner">
       <div class="banner-container layout">
-        <h1 ref="element" style="color: #fff;"></h1>
         <div class="quote">
-          <Quote>
-            <p>CBiBank（中文名：富港银行），成立于2017年7月，是一家美国新兴商业银行，专注为出海企业提供一站式跨境金融服务，包括离岸账户开立、转账汇款、电商收款、企业理财等。</p>
-            <p>&nbsp;</p>
-            <p>CBiBank是经济全球化趋势下国际银行新模式的探索者，以合规经营和科技创新为立行基础，秉承国际化、数字化、专业化的立行理念，专注普惠金融，致力于让中小企业的国际收付款更方便、财富更加国际化且保值增值。</p>
-          </Quote>
+          <Quote ref="quote"></Quote>
         </div>
         <div class="location background"></div>
       </div>
@@ -254,11 +249,15 @@ export default {
     }
   },
   mounted () {
-    // const { Typed } = useNuxtApp()
-    // new Typed(this.$refs.element, {
-    //   strings: ['<i>First</i> sentence.'],
-    //   typeSpeed: 50,
-    // })
+    const { Typed } = useNuxtApp()
+    new Typed(this.$refs.quote.$el, {
+      strings: [
+        '<p>CBiBank（中文名：富港银行），成立于2017年7月，是一家美国新兴商业银行，专注为出海企业提供一站式跨境金融服务，包括离岸账户开立、转账汇款、电商收款、企业理财等。</p><p>&nbsp;</p><p>CBiBank是经济全球化趋势下国际银行新模式的探索者，以合规经营和科技创新为立行基础，秉承国际化、数字化、专业化的立行理念，专注普惠金融，致力于让中小企业的国际收付款更方便、财富更加国际化且保值增值。</p>'
+      ],
+      typeSpeed: 30,
+      fadeOut: true,
+      showCursor: false
+    })
   },
   methods: {
     handleToggleQa (item) {
