@@ -28,5 +28,7 @@
 
 ## 待处理
 
-- `aos` 在 `tab` 切换时表现异常，**动画不正常显示**。即使将 [`v-show` 换成 `v-if`](https://github.com/michalsnik/aos/issues/169) 也有不正常的 `tab`。关于 `tab` 的众多 [issues](https://github.com/michalsnik/aos/issues?q=tab)。
+- `aos` 在 `tab` 切换时表现异常，**动画不正常显示**。即使将 [`v-show` 换成 `v-if`](https://github.com/michalsnik/aos/issues/169) 也有表现正常与不正常的 `tab`。关于 `tab` 的众多 [issues](https://github.com/michalsnik/aos/issues?q=tab)。
+
+- `@formkit/auto-animate` 注入的 `v-auto-animate` 设置 `v-show` 不起作用，设置 `v-if` 有点浪费性能，有没有优化空间。
   

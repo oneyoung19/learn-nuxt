@@ -188,6 +188,7 @@
         <p class="title">关于CBiBank常见问题</p>
         <ul class="qa-list">
           <li
+            v-auto-animate
             class="qa-item"
             :class="item.active ? 'active' : ''"
             v-for="(item, index) in qaList"
@@ -197,7 +198,7 @@
               <SvgIcon class="icon" name="arrow-right"></SvgIcon>
               <span>{{ item.question }}</span>
             </p>
-            <p class="answer">{{ item.answer }}</p>
+            <p class="answer" v-if="item.active">{{ item.answer }}</p>
           </li>
         </ul>
       </div>
@@ -496,11 +497,11 @@ export default {
               transform: translateY(-50%);
               font-size: 26px;
               color: @blank;
-              transition: all ease-in-out .5s;
+              transition: all ease-in .2s;
             }
           }
           .answer {
-            display: none;
+            // display: none;
             font-size: 16px;
             color: @blank2;
             line-height: 30px;
@@ -513,7 +514,7 @@ export default {
               }
             }
             .answer {
-              display: block;
+              // display: block;
             }
           }
         }
