@@ -222,35 +222,35 @@
     </div>
     <div class="global-net">
       <div class="global-net-container layout">
-        <p class="title">完善的国际清算网络</p>
-        <p class="desc">CBiBank业务覆盖全球163个国家和地区，轻松助您开启全球商机之门。</p>
+        <p class="title" data-aos="fade-up">完善的国际清算网络</p>
+        <p class="desc" data-aos="fade-up">CBiBank业务覆盖全球163个国家和地区，轻松助您开启全球商机之门。</p>
         <div class="global-net-main">
-          <div class="global-net-bg background">
-            <div class="global-net-img">
+          <div class="global-net-bg background" data-aos="fade">
+            <div class="global-net-img" data-aos="zoom-in" data-aos-delay="200">
               <img src="@/assets/image/home/global-net-img-01.png" alt="">
             </div>
-            <div class="global-net-img">
+            <div class="global-net-img" data-aos="zoom-in" data-aos-delay="400">
               <img src="@/assets/image/home/global-net-img-02.png" alt="">
             </div>
-            <div class="global-net-img">
+            <div class="global-net-img" data-aos="zoom-in" data-aos-delay="600">
               <img src="@/assets/image/home/global-net-img-03.png" alt="">
             </div>
-            <div class="global-net-img">
+            <div class="global-net-img" data-aos="zoom-in" data-aos-delay="800">
               <img src="@/assets/image/home/global-net-img-04.png" alt="">
             </div>
           </div>
           <ul class="global-net-list">
-            <li class="global-net-item">
-              <span class="text-bold">163+</span>
-              <span class="text">覆盖国际和地区</span>
+            <li class="global-net-item" data-aos="aos-c-animate-before-width">
+              <span class="text-bold" data-aos="fade">163+</span>
+              <span class="text" data-aos="fade">覆盖国际和地区</span>
             </li>
-            <li class="global-net-item">
-              <span class="text-bold">120+</span>
-              <span class="text">合作银行与金融机构</span>
+            <li class="global-net-item" data-aos="aos-c-animate-before-width">
+              <span class="text-bold" data-aos="fade">120+</span>
+              <span class="text" data-aos="fade">合作银行与金融机构</span>
             </li>
-            <li class="global-net-item">
-              <span class="text-bold">20+</span>
-              <span class="text">全球主流电商平台和支付网关</span>
+            <li class="global-net-item" data-aos="aos-c-animate-before-width">
+              <span class="text-bold" data-aos="fade">20+</span>
+              <span class="text" data-aos="fade">全球主流电商平台和支付网关</span>
             </li>
           </ul>
         </div>
@@ -957,14 +957,23 @@ onMounted(() => {
         .global-net-list {
           flex: 1;
           .global-net-item {
+            position: relative;
             display: flex;
             align-items: center;
             height: 86px;
             margin-bottom: 35px;
             color: @topwhite;
-            border-top: 1px solid @topwhite;
             &:last-child {
               margin-bottom: 0;
+            }
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              // width: 100%;
+              height: 1px;
+              background-color: @topwhite;
             }
             .text-bold {
               width: 92px;
