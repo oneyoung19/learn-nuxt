@@ -1,7 +1,7 @@
 <template>
   <div class="corporbank">
     <div class="banner background">
-      <div class="banner-container layout">
+      <div class="banner-container layout" data-aos="fade-up">
         <p class="title">快至<span class="point-text">1</span>天，</p>
         <p class="title">即可使用您的企业账户</p>
         <p class="desc">省时、高效、安全，为企业量身定制的银行帐户</p>
@@ -137,7 +137,7 @@
       </div>
     </div>
     <div class="letter">
-      <div class="letter-container layout" data-aos="fade-in">
+      <div class="letter-container layout" data-aos="fade-up" data-aos-offset="800">
         <SwitchTab
           v-model="activeTab"
           :list="tabList"
@@ -252,7 +252,7 @@
     </div>
     <div class="salary">
       <div class="salary-container layout">
-        <div class="salary-left background" data-aos="fade-in">
+        <div class="salary-left background" data-aos="fade-right">
           <div class="salary-img" data-aos="zoom-in" data-aos-delay="200">
             <img src="@/assets/image/corporbank/salary-img-01.png" alt="">
           </div>
@@ -275,14 +275,14 @@
     <div class="fund">
       <div class="fund-container layout">
         <div class="fund-left">
-          <p class="title">更高效的多类型企业资产管理</p>
-          <p class="desc">提供高灵活度的存款产品“余额宝”与高投资性的美元基金产品，帮助您实现资产增值。</p>
+          <p class="title" data-aos="fade-up">更高效的多类型企业资产管理</p>
+          <p class="desc" data-aos="fade-up">提供高灵活度的存款产品“余额宝”与高投资性的美元基金产品，帮助您实现资产增值。</p>
         </div>
         <div class="fund-right">
-          <div class="fund-bg">
+          <div class="fund-bg" data-aos="fade-up">
             <img src="@/assets/image/corporbank/fund-bg.png" alt="">
           </div>
-          <div class="fund-img">
+          <div class="fund-img" data-aos="zoom-in">
             <img src="@/assets/image/corporbank/fund-img-01.png" alt="">
           </div>
         </div>
@@ -290,14 +290,20 @@
     </div>
     <div class="open-guide">
       <div class="open-guide-container layout">
-        <p class="title">我们该如何申请</p>
-        <p class="sub-title">完成流程后，仅需1~3天即可开始使用</p>
+        <p class="title" data-aos="fade-up">我们该如何申请</p>
+        <p class="sub-title" data-aos="fade-up">完成流程后，仅需1~3天即可开始使用</p>
         <GuideSteps
           class="guide-list"
+          data-aos="fade-up"
           theme="white"
           :list="guideList">
         </GuideSteps>
-        <Button type="blank" :arrow-config="{ moving: true }">立即申请</Button>
+        <Button
+          data-aos="fade-up"
+          type="blank"
+          :arrow-config="{ moving: true }">
+          立即申请
+        </Button>
       </div>
     </div>
   </div>
