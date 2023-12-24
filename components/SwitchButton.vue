@@ -1,5 +1,5 @@
 <template>
-  <div class="switch-button" :class="theme">
+  <div class="switch-button" :class="type">
     <ul
       class="switch-button-list"
       ref="buttonList">
@@ -26,6 +26,10 @@
 <script>
 export default {
   props: {
+    type: {
+      type: String,
+      default: 'gray'
+    },
     modelValue: {
       type: String,
       default: ''
@@ -35,10 +39,6 @@ export default {
       default () {
         return []
       }
-    },
-    theme: {
-      type: String,
-      default: 'default'
     }
   },
   data () {
@@ -144,10 +144,8 @@ export default {
     display: flex;
     align-items: center;
     width: 100%;
-    background-color: @gray3;
     border-radius: 26px;
     font-size: 16px;
-    color: @gray4;
     .switch-button-item {
       position: relative;
       z-index: 2;
@@ -172,7 +170,6 @@ export default {
     z-index: 1;
     width: 0;
     height: 0;
-    background-color: @gray4;
     border-radius: 26px;
     transition: top 0.5s ease, left 0.5s ease;
   }

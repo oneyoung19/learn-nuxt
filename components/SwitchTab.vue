@@ -154,9 +154,12 @@ export default {
       text-align: center;
       color: @blank;
       cursor: pointer;
-      transition: all ease .5s;
+      transition: all ease-in-out .5s;
+      &:hover {
+        background: linear-gradient(180deg, #F3F5F8 3%, rgba(255,255,255,0) 100%);
+      }
       &.active {
-        background: #FFFFFF linear-gradient(180deg, #F3F5F8 3%, rgba(255,255,255,0) 100%);
+        background: linear-gradient(180deg, #F3F5F8 3%, rgba(255,255,255,0) 100%);
       }
       &:first-child {
         border-radius: 10px 0 0 0;

@@ -69,6 +69,7 @@
     <div class="cards">
       <div class="cards-container layout">
         <SwitchButton
+          type="gray"
           class="switch-button"
           v-model="currentSwitchCard"
           :list="cardsSwitchList">

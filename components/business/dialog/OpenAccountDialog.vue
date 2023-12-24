@@ -7,7 +7,11 @@
       <SvgIcon class="icon-close" name="close" @click="handleClose"></SvgIcon>
       <div class="open-account-banner background">
         <p class="title">CBiBank富港银行开户</p>
-        <SwitchButton theme="gray" v-model="activeButton" :list="buttonList"></SwitchButton>
+        <SwitchButton
+          type="gray"
+          v-model="activeButton"
+          :list="buttonList">
+        </SwitchButton>
       </div>
       <ul class="open-account-list">
         <li class="open-account-item enterprise" v-show="activeButton === 'enterprise'">

@@ -24,8 +24,8 @@
         </div>
         <div class="profession-right">
           <SwitchButton
+            type="blank"
             v-model="activeButton"
-            theme="blank"
             :list="buttonList">
           </SwitchButton>
           <div class="mission-content" v-if="activeButton === 'mission'">

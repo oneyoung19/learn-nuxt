@@ -137,7 +137,7 @@
       </div>
     </div>
     <div class="letter">
-      <div class="letter-container layout" data-aos="fade-up" data-aos-offset="800">
+      <div class="letter-container layout" data-aos="fade-up" data-aos-offset="200">
         <SwitchTab
           v-model="activeTab"
           :list="tabList"
