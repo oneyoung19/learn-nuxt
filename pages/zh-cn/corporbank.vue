@@ -141,12 +141,13 @@
         <SwitchTab
           v-model="activeTab"
           :list="tabList"
-          border>
+          border
+          @beforeChange="handleLetterTabBeforeChange">
         </SwitchTab>
         <ul class="letter-list">
           <transition
             mode="out-in"
-            :name="getFadeTransition('credit')">
+            :name="letterFadeTransitionList[0]">
             <li class="letter-item" v-show="activeTab === 'credit'">
               <div
                 class="letter-item-left">
@@ -169,7 +170,7 @@
           </transition>
           <transition
             mode="out-in"
-            :name="getFadeTransition('documentary')">
+            :name="letterFadeTransitionList[1]">
             <li class="letter-item" v-show="activeTab === 'documentary'">
               <div class="letter-item-left">
                 <p class="title">协助客户完成进出口托收业务</p>
@@ -188,7 +189,7 @@
           </transition>
           <transition
             mode="out-in"
-            :name="getFadeTransition('guarantee')">
+            :name="letterFadeTransitionList[2]">
             <li class="letter-item" v-show="activeTab === 'guarantee'">
               <div class="letter-item-left">
                 <p class="title">解决客户保函业务需求</p>
@@ -307,6 +308,7 @@ export default {
         { value: 'documentary', label: '跟单托收业务', labelEn: '(Documentary Collections)' },
         { value: 'guarantee', label: '保函业务', labelEn: '(Letter of Guarantee)' }
       ],
+      letterFadeTransitionList: [],
       useList: [
         { label: 'ATM取现' },
         { label: '商场消费' },
@@ -323,6 +325,7 @@ export default {
     }
   },
   mounted () {
+    this.letterFadeTransitionList = this.tabList.map(item => 'fade-left')
   },
   methods: {
     handleToggleTab (value) {
@@ -337,16 +340,16 @@ export default {
       //   })
       // }
     },
-    getFadeTransition (tab) {
+    handleLetterTabBeforeChange (tab) {
       const { activeTab, tabList } = this
       const activeIndex = tabList.findIndex(item => item.value === activeTab)
-      const index = tabList.findIndex(item => item.value === tab)
-      // TODO: 这里的逻辑有待修复 应根据当前正确索引返回transiton模式
-      if (index >= activeIndex) {
-        return 'fade-right'
-      } else {
-        return 'fade-left'
-      }
+      this.letterFadeTransitionList = tabList.map((item, index) => {
+        if (index >= activeIndex) {
+          return 'fade-right'
+        } else {
+          return 'fade-left'
+        }
+      })
     }
   }
 }

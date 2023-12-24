@@ -46,6 +46,7 @@ export default {
       default: false
     }
   },
+  emits: ['update:modelValue', 'beforeChange', 'change'],
   data () {
     return {
       // 目标元素的位置数据
@@ -124,7 +125,9 @@ export default {
     },
     // 切换button
     handleSwitchButton ({ value }) {
+      this.$emit('beforeChange', value)
       this.$emit('update:modelValue', value)
+      this.$emit('change', value)
     }
   }
 }
