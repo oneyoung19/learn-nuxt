@@ -23,6 +23,7 @@
     "aos": "^3.0.0-beta.6",
     "click-outside-vue3": "^4.0.1",
     "element-plus": "^2.4.4",
-    "swiper": "^11.0.5"
+    "swiper": "^11.0.5",
+    "typed.js": "^2.1.0"
   }
 }

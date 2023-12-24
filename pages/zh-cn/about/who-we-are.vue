@@ -2,6 +2,7 @@
   <div class="who-we-are">
     <div class="banner">
       <div class="banner-container layout">
+        <h1 ref="element" style="color: #fff;"></h1>
         <div class="quote">
           <Quote>
             <p>CBiBank（中文名：富港银行），成立于2017年7月，是一家美国新兴商业银行，专注为出海企业提供一站式跨境金融服务，包括离岸账户开立、转账汇款、电商收款、企业理财等。</p>
@@ -251,6 +252,13 @@ export default {
         { question: '银行是如何收费的？', answer: 'CBiBank无隐藏费用，费用公开透明，详情请查阅我们的最新收费标准《CBiBank收费标准》。' }
       ]
     }
+  },
+  mounted () {
+    // const { Typed } = useNuxtApp()
+    // new Typed(this.$refs.element, {
+    //   strings: ['<i>First</i> sentence.'],
+    //   typeSpeed: 50,
+    // })
   },
   methods: {
     handleToggleQa (item) {
