@@ -1,11 +1,14 @@
 <template>
   <div class="perbank">
     <div class="banner background">
-      <div class="banner-container layout" data-aos="fade-up">
+      <div class="banner-container layout">
         <div class="banner-left">
-          <p class="title">一个APP，</p>
-          <p class="title">解决全球汇款</p>
-          <DownloadApp class="download-app"></DownloadApp>
+          <p class="title" data-aos="fade-up">一个APP，</p>
+          <p class="title" data-aos="fade-up">解决全球汇款</p>
+          <DownloadApp
+            class="download-app"
+            data-aos="fade-up">
+          </DownloadApp>
         </div>
         <div class="banner-right">
           <img src="@/assets/image/perbank/phone.png" alt="">
