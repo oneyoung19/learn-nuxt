@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "@formkit/auto-animate": "^0.8.1",
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
+    "@pinia/nuxt": "^0.5.1",
     "animate.css": "^4.1.1",
     "aos": "^3.0.0-beta.6",
     "click-outside-vue3": "^4.0.1",

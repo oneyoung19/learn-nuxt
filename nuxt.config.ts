@@ -55,7 +55,7 @@ export default defineNuxtConfig({
     }
   ],
   // https://element-plus.org/zh-CN/guide/quickstart.html#%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5
-  modules: ['@element-plus/nuxt', '@formkit/auto-animate/nuxt'],
+  modules: ['@element-plus/nuxt', '@formkit/auto-animate/nuxt', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt'],
   elementPlus: {
     // https://github.com/element-plus/element-plus-nuxt/issues/77
     importStyle: false
