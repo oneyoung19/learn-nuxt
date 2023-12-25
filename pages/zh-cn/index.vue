@@ -38,31 +38,65 @@
     </div>
     <div class="video-apply">
       <div class="video-apply-container layout">
-        <div class="video-apply-demo">
-          <div class="certificate-img">
+        <div
+          class="video-apply-demo"
+          @mouseenter="handleMouseEnterVideoDemo">
+          <div class="certificate-img" data-aos="fade-up">
             <img src="~assets/image/home/certificate.png" alt="">
           </div>
           <div class="activated figure-img">
-            <img src="~assets/image/home/figure.png" alt="">
-            <div class="activated-tip first">
+            <img
+              data-aos="fade-up"
+              data-aos-delay="100"
+              src="~assets/image/home/figure.png"
+              alt="">
+            <div
+              class="activated-tip first"
+              data-aos="fade-up"
+              data-aos-delay="200">
               <div class="icon-box">
                 <SvgIcon name="apply"></SvgIcon>
               </div>
               <span>在线申请</span>
             </div>
-            <div class="activated-tip second">
+            <div
+              class="activated-tip second"
+              data-aos="fade-up"
+              data-aos-delay="200">
               <div class="icon-box">
                 <SvgIcon name="cert"></SvgIcon>
               </div>
               <span>线上开户</span>
             </div>
-            <div class="timeout">3s</div>
+            <div
+              class="timeout"
+              data-aos="fade-up"
+              data-aos-delay="400">
+              <ElProgress
+                :class="timeoutActive ? 'active' : ''"
+                type="circle"
+                :percentage="(4 - timeout) * 25">
+                <div>
+                  <span class="timeout-text">{{ `${timeout}s` }}</span>
+                  <img
+                    class="timeout-img-binggo"
+                    src="@/assets/image/home/binggo.png"
+                    alt="">
+                </div>
+              </ElProgress>
+            </div>
           </div>
         </div>
         <div class="video-apply-tip">
-          <p class="title">线上快速获取银行帐户</p>
-          <p class="desc">全程线上申请、视频面签，无需邮寄纸质材料、无需临柜，业务全流程实现线上办理，省时、省心、省力。</p>
-          <Button type="blue" plain :arrow-config="{ moving: true }">开始体验</Button>
+          <p class="title" data-aos="fade-up">线上快速获取银行帐户</p>
+          <p class="desc" data-aos="fade-up">全程线上申请、视频面签，无需邮寄纸质材料、无需临柜，业务全流程实现线上办理，省时、省心、省力。</p>
+          <Button
+            data-aos="fade-up"
+            type="blue"
+            plain
+            :arrow-config="{ moving: true }">
+            开始体验
+          </Button>
         </div>
       </div>
     </div>
@@ -444,6 +478,21 @@ useHead({
   // },
   // script: [ { innerHTML: 'console.log(\'Hello world\')' } ]
 })
+const timeout = ref(3)
+const timeoutActive = ref(false)
+let timer = null
+const handleMouseEnterVideoDemo = () => {
+  if (timeout.value <= 0 ) return
+  timer = window.setInterval(() => {
+    if (timeout.value <= 0) {
+      window.clearInterval(timer)
+      timeoutActive.value = true
+      return
+    }
+    timeout.value -= 1
+  }, 1000)
+}
+
 const currentSwitchCard = ref('corporbank')
 const cardsSwitchList = ref([
   { label: '企业卡', value: 'corporbank' },
@@ -497,6 +546,16 @@ const swiperModules = ref([Autoplay])
 </script>
 
 <style scoped lang="less">
+@keyframes aos-animate-padding-binggo {
+  0% {
+    opacity: 0;
+    padding-right: 35px;
+  }
+  100% {
+    opacity: 1;
+    padding-right: 0;
+  }
+}
 .home {
   // padding-top: @headerHeight;
   .banner {
@@ -629,19 +688,68 @@ const swiperModules = ref([Autoplay])
             .timeout {
               position: absolute;
               top: 35px;
-              right: 0;
-              transform: translateX(50%);
+              right: -42px;
               width: 84px;
               height: 84px;
               line-height: 84px;
               text-align: center;
-              background: rgba(255,255,255,0.9);
-              box-shadow: 0px 8px 21px 0px rgba(0,0,0,0.1);
-              font-size: 20px;
-              font-family: Poppins, Poppins;
-              font-weight: 500;
-              color: @blue;
               border-radius: 50%;
+              box-shadow: 0px 8px 21px 0px rgba(0,0,0,0.1);
+              :deep(.el-progress) {
+                width: 100%;
+                height: 100%;
+                background: rgba(255,255,255,0.9);
+                border-radius: 50%;
+                transition: all ease-in-out .8s;
+                .el-progress-circle {
+                  width: 100%!important;
+                  height: 100%!important;
+                  .el-progress-circle__track {
+                    stroke: #fff;
+                  }
+                  .el-progress-circle__path {
+                    stroke: @blue;
+                  }
+                }
+                .el-progress__text {
+                  font-size: 20px;
+                  font-family: Poppins, Poppins;
+                  font-weight: 500;
+                  color: @blue;
+                  .timeout-text {
+                    display: block;
+                  }
+                  .timeout-img-binggo {
+                    display: none;
+                    width: 35px;
+                    height: 24px;
+                    margin: 0 auto;
+                    // 图片揭露
+                    padding-right: 35px;
+                    object-fit: cover;
+                    object-position: left;
+                  }
+                }
+                &.active {
+                  background-color: @green;
+                  .el-progress-circle {
+                    display: none;
+                  }
+                  .el-progress__text {
+                    .timeout-text {
+                      display: none;
+                    }
+                    .timeout-img-binggo {
+                      display: block;
+                      animation-name: aos-animate-padding-binggo;
+                      animation-duration: .5s;
+                      animation-timing-function: ease-in-out;
+                      animation-delay: .2s;
+                      animation-fill-mode: forwards;
+                    }
+                  }
+                }
+              }
             }
           }
         }
