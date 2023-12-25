@@ -4,20 +4,37 @@
       <div class="layout">
         <p class="title">富港银行 提供一站式全球金融服务</p>
         <p class="sub-title">CB International Bank 快速开启国际银行帐户</p>
-        <ul class="carousel-list">
-          <li class="carousel-item">
+        <Swiper
+          class="carousel-list"
+          :modules="swiperModules"
+          :autoplay="{
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false
+          }"
+          :loop="true"
+          :speed="3000"
+          :spaceBetween="80"
+          slidesPerView="auto">
+          <SwiperSlide class="carousel-item">
             <Button type="blue" class="carousel-item-btn">立即申请</Button>
             <div class="carousel-item-img">
               <img src="~assets/image/home/carousel-01.png" alt="">
             </div>
-          </li>
-        </ul>
+          </SwiperSlide>
+          <SwiperSlide class="carousel-item">
+            <Button type="blue" class="carousel-item-btn">获取卡片</Button>
+            <div class="carousel-item-img">
+              <img src="~assets/image/home/carousel-01.png" alt="">
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
     <div class="partners">
       <Swiper
         class="partners-list"
-        :modules="swiperModules"
+        :modules="swiperPartnersModules"
         :autoplay="{
           delay: 0,
           disableOnInteraction: false,
@@ -30,7 +47,7 @@
         <SwiperSlide
           class="partners-item"
           :class="item.id"
-          v-for="(item, index) in swiperImgList"
+          v-for="(item, index) in swiperPartnersImgList"
           :key="index">
           <img :src="item.src" alt="">
         </SwiperSlide>
@@ -532,8 +549,10 @@ const tabList = ref([
   { label: '国际投融资企业', value: 'customer-invest', iconName: 'strip-deep', activeIconName: 'strip-light' }
 ])
 
-/* swiper */
-const imgList = [
+/* Top swiper */
+const swiperModules = ref([Autoplay])
+/* Partners swiper */
+const partnersImgList = [
   { id: 'cips', src: cipsImg },
   { id: 'union-pay', src: unionPayImg },
   { id: 'swift', src: swiftImg },
@@ -541,8 +560,8 @@ const imgList = [
   { id: 'aba', src: abaImg },
   { id: 'ocif', src: ocifImg }
 ]
-const swiperImgList = imgList.concat(imgList)
-const swiperModules = ref([Autoplay])
+const swiperPartnersImgList = partnersImgList.concat(partnersImgList)
+const swiperPartnersModules = ref([Autoplay])
 </script>
 
 <style scoped lang="less">
