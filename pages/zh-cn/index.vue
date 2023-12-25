@@ -228,10 +228,38 @@
           <p class="desc" data-aos="fade-up">投资组合实现帐户资产稳健增值，灵活的存款产品，帮助您实现资产保值。</p>
         </div>
         <div class="fund-right background">
-          <div class="fund-img">
+          <div class="fund-line-bg">
+            <img
+              data-aos="aos-animate-padding"
+              src="@/assets/image/home/fund-line-bg.png"
+              alt="">
+            <div class="fund-img-dashed blue">
+              <img
+                data-aos="aos-animate-padding"
+                data-aos-delay="200"
+                src="@/assets/image/home/fund-img-dashed-01.png"
+                alt="">
+            </div>
+            <div class="fund-img-dashed green">
+              <img
+                data-aos="aos-animate-padding"
+                data-aos-delay="200"
+                src="@/assets/image/home/fund-img-dashed-02.png"
+                alt="">
+            </div>
+          </div>
+          <div
+            class="fund-img top-left"
+            data-aos="fade"
+            data-aos-offset="400"
+            data-aos-delay="400">
             <img src="@/assets/image/home/fund-img-01.png" alt="">
           </div>
-          <div class="fund-img">
+          <div
+            class="fund-img top-right"
+            data-aos="fade"
+            data-aos-offset="400"
+            data-aos-delay="400">
             <img src="@/assets/image/home/fund-img-02.png" alt="">
           </div>
         </div>
@@ -848,17 +876,71 @@ onMounted(() => {
         width: 510px;
         height: 368px;
         background-image: url('@/assets/image/home/fund-bg.png');
+        .fund-line-bg {
+          position: relative;
+          width: 490px;
+          height: 234px;
+          margin-top: 68px;
+          margin-left: 11px;
+          > img {
+            &[data-aos="aos-animate-padding"] {
+              padding-right: 490px;
+              object-fit: cover;
+              object-position: left;
+              &.aos-animate {
+                padding-right: 0;
+              }
+            }
+          }
+          .fund-img-dashed {
+            position: absolute;
+            &.blue {
+              top: 42px;
+              left: 88px;
+              width: 48px;
+              height: 78px;
+              > img {
+                &[data-aos="aos-animate-padding"] {
+                  padding-top: 78px;
+                  object-fit: cover;
+                  object-position: bottom;
+                  &.aos-animate {
+                    padding-top: 0;
+                  }
+                }
+              }
+            }
+            &.green {
+              top: 42px;
+              right: 86px;
+              width: 190px;
+              height: 94px;
+              > img {
+                &[data-aos="aos-animate-padding"] {
+                  padding-top: 94px;
+                  object-fit: cover;
+                  object-position: bottom;
+                  &.aos-animate {
+                    padding-top: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
         .fund-img {
           position: absolute;
-          width: 356px;
-          height: 286px;
-          &:nth-child(1) {
-            top: -60px;
-            left: -75px;
+          width: 284px;
+          height: 142px;
+          box-shadow: 0px 4px 20px -6px rgba(0,0,0,0.15);
+          border-radius: 20px;
+          &.top-left {
+            top: -34px;
+            left: -43px;
           }
-          &:nth-child(2) {
-            top: -60px;
-            right: -75px;
+          &.top-right {
+            top: -34px;
+            right: -43px;
           }
         }
       }
