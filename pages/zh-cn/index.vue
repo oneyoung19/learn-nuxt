@@ -77,18 +77,38 @@
         <ul class="cards-list">
           <li class="cards-item">
             <div class="cards-item-left">
-              <p class="title">无论您走到哪里，都可以刷卡消费</p>
-              <p class="desc">像当地人一样在全球范围内使用CBiBank企业借记卡消费，在当地ATM取现，试用商场、酒店、网购等等各类场景。</p>
-              <ul class="feature-list">
+              <p class="title" data-aos="fade-up">无论您走到哪里，都可以刷卡消费</p>
+              <p class="desc" data-aos="fade-up">像当地人一样在全球范围内使用CBiBank企业借记卡消费，在当地ATM取现，试用商场、酒店、网购等等各类场景。</p>
+              <ul
+                class="feature-list"
+                v-if="currentSwitchCard === 'corporbank'"
+                key="corporbank">
                 <li
                   class="feature-item"
-                  v-for="(item, index) in featureList.value"
-                  :key="index">
+                  data-aos="zoom-in"
+                  :data-aos-delay="`${(index + 1) * 50}`"
+                  v-for="(item, index) in corporFeatureList"
+                  :key="`corporbank${index}`">
+                  <SvgIcon class="feature-item-icon" name="selected"></SvgIcon>
+                  <span class="feature-item-text">{{ item.label }}</span>
+                </li>
+              </ul>
+              <ul
+                class="feature-list"
+                v-if="currentSwitchCard === 'perbank'"
+                key="perbank">
+                <li
+                  class="feature-item"
+                  data-aos="zoom-in"
+                  :data-aos-delay="`${(index + 1) * 50}`"
+                  v-for="(item, index) in perFeatureList"
+                  :key="`perbank${index}`">
                   <SvgIcon class="feature-item-icon" name="selected"></SvgIcon>
                   <span class="feature-item-text">{{ item.label }}</span>
                 </li>
               </ul>
               <Button
+                data-aos="fade-up"
                 type="blue"
                 plain
                 :arrow-config="{ moving: true }"
@@ -96,18 +116,55 @@
                 获取卡片
               </Button>
             </div>
-            <div class="cards-item-right background">
-              <div class="card" :class="currentSwitchCard === 'perbank' ?'card-above' : ''">
-                <img src="~assets/image/home/visa-card.png" alt="">
-              </div>
-              <div class="card card-bottom" :class="currentSwitchCard === 'corporbank' ?'card-above' : ''">
-                <img src="~assets/image/home/union-pay-card.png" alt="">
-              </div>
-              <div class="card-tip">
-                <div class="card-tip-icon">
-                  <img src="~assets/image/home/sawtooth-selected.png" alt="">
+            <div
+              class="cards-item-right background"
+              data-aos="fade-up"
+              data-aos-offset="300">
+              <div v-if="currentSwitchCard === 'perbank'" key="perbank">
+                <div
+                  key="perbank"
+                  class="card card-above"
+                  data-aos="fade-down-left">
+                  <img src="~assets/image/home/visa-card.png" alt="">
                 </div>
-                <p class="card-tip-text">消费成功</p>
+                <div
+                  key="perbank"
+                  class="card card-bottom"
+                  data-aos="fade-up-right">
+                  <img src="~assets/image/home/union-pay-card.png" alt="">
+                </div>
+                <div
+                  key="perbank"
+                  class="card-tip"
+                  data-aos="fade-up">
+                  <div class="card-tip-icon">
+                    <img src="~assets/image/home/sawtooth-selected.png" alt="">
+                  </div>
+                  <p class="card-tip-text">消费成功</p>
+                </div>
+              </div>
+              <div v-if="currentSwitchCard === 'corporbank'" key="corporbank">
+                <div
+                  key="corporbank"
+                  class="card"
+                  data-aos="fade-down-left">
+                  <img src="~assets/image/home/visa-card.png" alt="">
+                </div>
+                <div
+                  key="corporbank"
+                  class="card card-bottom card-above"
+                  data-aos="fade-up-right">
+                  <img src="~assets/image/home/union-pay-card.png" alt="">
+                </div>
+                <div
+                  key="corporbank"
+                  class="card-tip"
+                  data-aos="fade-up">
+                  <div class="card-tip-icon">
+                    <img src="~assets/image/home/sawtooth-selected.png" alt="">
+                  </div>
+                  <p class="card-tip-text">消费成功</p>
+                </div>
               </div>
             </div>
           </li>
@@ -167,8 +224,8 @@
     <div class="fund">
       <div class="fund-container layout">
         <div class="fund-left">
-          <p class="title">量身定制的财富管理服务</p>
-          <p class="desc">投资组合实现帐户资产稳健增值，灵活的存款产品，帮助您实现资产保值。</p>
+          <p class="title" data-aos="fade-up">量身定制的财富管理服务</p>
+          <p class="desc" data-aos="fade-up">投资组合实现帐户资产稳健增值，灵活的存款产品，帮助您实现资产保值。</p>
         </div>
         <div class="fund-right background">
           <div class="fund-img">
@@ -182,28 +239,44 @@
     </div>
     <div class="letter">
       <div class="letter-container layout">
-        <div class="letter-left background">
-          <div class="letter-img">
+        <div
+          class="letter-left background"
+          data-aos="fade"
+          data-aos-offset="300">
+          <div
+            class="letter-img"
+            data-aos="fade-down-left"
+            data-aos-delay="200"
+            data-aos-duration="1000"
+            data-aos-offset="300">
             <img src="@/assets/image/home/letter-img-01.png" alt="">
           </div>
-          <div class="letter-img">
+          <div
+            class="letter-img"
+            data-aos="fade-up"
+            data-aos-offset="200">
             <img src="@/assets/image/home/letter-img-02.png" alt="">
           </div>
           <div class="letter-img">
           </div>
-          <div class="letter-img">
+          <div
+            class="letter-img"
+            data-aos="aos-c-animate-child-transform">
           </div>
-          <div class="letter-img">
+          <div
+            class="letter-img"
+            data-aos="aos-c-animate-child-transform">
             <img src="@/assets/image/home/letter-img-03.png" alt="">
           </div>
         </div>
         <div class="letter-right">
-          <p class="title">提供完备的银行单证服务</p>
-          <p class="desc">支持美元、欧元、人民币等主流币种的多种单证类业务，包括：</p>
-          <p class="desc-item">托收业务；</p>
-          <p class="desc-item">保函业务；</p>
-          <p class="desc-item mb100">信用证业务等。</p>
+          <p class="title" data-aos="fade-up">提供完备的银行单证服务</p>
+          <p class="desc" data-aos="fade-up">支持美元、欧元、人民币等主流币种的多种单证类业务，包括：</p>
+          <p class="desc-item" data-aos="fade-up">托收业务；</p>
+          <p class="desc-item" data-aos="fade-up">保函业务；</p>
+          <p class="desc-item mb100" data-aos="fade-up">信用证业务等。</p>
           <Button
+            data-aos="fade-up"
             type="blank"
             :arrow-config="{ moving: true }">
             了解详情
@@ -341,9 +414,9 @@ const perFeatureList = ref([
   { label: '订酒店' },
   { label: '超时购物' }
 ])
-const featureList = computed(() => {
-  return currentSwitchCard.value === 'corporbank' ? corporFeatureList : perFeatureList
-})
+// const featureList = computed(() => {
+//   return currentSwitchCard.value === 'corporbank' ? corporFeatureList : perFeatureList
+// })
 const debitCardCorporDialogVisible = ref(false)
 const debitCardPersonDialogVisible = ref(false)
 const handleApplyCards = () => {
@@ -831,17 +904,35 @@ onMounted(() => {
             transition: all ease .5s;
           }
         }
-        &:hover {
-          .letter-img {
+        [data-aos="aos-c-animate-child-transform"] {
+          &:nth-child(4) {
+            transition: all ease-in-out .8s;
+          }
+          &.aos-animate {
             &:nth-child(4) {
               transform: translate(14px, 14px);
             }
+          }
+          &:nth-child(5) {
+            transition: all ease-in-out .8s;
+          }
+          &.aos-animate {
             &:nth-child(5) {
-              z-index: 2;
               transform: translate(28px, 28px);
             }
           }
         }
+        // &:hover {
+        //   .letter-img {
+        //     &:nth-child(4) {
+        //       transform: translate(14px, 14px);
+        //     }
+        //     &:nth-child(5) {
+        //       z-index: 2;
+        //       transform: translate(28px, 28px);
+        //     }
+        //   }
+        // }
       }
       .letter-right {
         flex: 1;
