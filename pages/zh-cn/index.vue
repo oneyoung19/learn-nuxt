@@ -700,7 +700,7 @@ const swiperModules = ref([Autoplay])
                 height: 100%;
                 background: rgba(255,255,255,0.9);
                 border-radius: 50%;
-                transition: all ease-in-out .8s;
+                transition: all ease-in-out .5s;
                 .el-progress-circle {
                   width: 100%!important;
                   height: 100%!important;

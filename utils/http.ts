@@ -52,10 +52,11 @@ class HttpRequest {
         // 将数据设置为newOptions的body属性
         newOptions.body = data
       }
-      // 发送请求
-      useFetch(url, newOptions)
+      //TODO: [当使用useFetch时 刷新页面 接口初次调用 返回的是null](https://github.com/nuxt/nuxt/issues/22103)
+      $fetch(url, newOptions)
         .then((res) => {
-          const { value: { body, retCode, retMsg } } = res.data
+          // const { value: { body, retCode, retMsg } } = res.data
+          const { body, retCode, retMsg } = res
           if (retCode === '0000') {
             resolve(body)
           } else {
