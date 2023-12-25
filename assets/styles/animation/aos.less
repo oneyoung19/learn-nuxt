@@ -4,7 +4,7 @@
 // [data-aos].aos-animate, [data-aos].animate__animated {
 //   visibility: visible;
 // }
-
+// 图片揭露
 @keyframes c-animate-padding {
   0% {
     padding-right: 306px;
@@ -20,7 +20,64 @@
   animation-delay: 3s;
   animation-fill-mode: forwards;
 }
+// 环形平移
+@keyframes spinUpRight {
+  0% {
+    transform: translateX(75px) rotate(-270deg) translateY(75px) rotate(270deg);
+  }
+  100% {
+    transform: translateX(75px) rotate(-90deg) translateY(75px) rotate(90deg);
+  }
+}
+@keyframes spinDownLeft {
+  0% {
+    transform: translateX(-75px) rotate(-90deg) translateY(75px)
+      rotate(90deg);
+  }
+  100% {
+    transform: translateX(-75px) rotate(90deg) translateY(75px)
+      rotate(-90deg);
+  }
+}
+[data-aos="aos-animate-spin-up-right"] {
+  &.aos-animate {
+    animation-name: spinUpRight;
+    animation-duration: .8s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
+}
+[data-aos="aos-animate-spin-down-left"] {
+  &.aos-animate {
+    animation-name: spinDownLeft;
+    animation-duration: .8s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
+}
 
+// 旋转
+@keyframes rotate180 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+[data-aos="aos-animate-rotate"] {
+  &.aos-animate {
+    animation-name: rotate180;
+    animation-duration: .8s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
+}
+
+// 宽度渐变
 [data-aos="aos-c-animate-before-width"] {
   &::before {
     width: 0;

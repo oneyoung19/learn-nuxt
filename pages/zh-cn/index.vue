@@ -198,12 +198,15 @@
           <div
             class="exchange-currency"
             data-aos="fade"
-            data-aos-delay="1000">
+            data-aos-delay="500">
             <SvgIcon class="icon-logo" name="cbibank"></SvgIcon>
             <div
               class="exchange-box">
               <div class="currency-box">
-                <div class="icon-currency">
+                <div
+                  class="icon-currency"
+                  data-aos="aos-animate-spin-up-right"
+                  data-aos-delay="3000">
                   <img src="@/assets/image/home/eur.png" alt="">
                 </div>
                 <div class="icon-arrow-bottom">
@@ -213,7 +216,10 @@
               </div>
               <SvgIcon class="icon-arrow-circle" name="arrow-circle"></SvgIcon>
               <div class="currency-box">
-                <div class="icon-currency">
+                <div
+                  class="icon-currency"
+                  data-aos="aos-animate-spin-down-left"
+                  data-aos-delay="3000">
                   <img src="@/assets/image/home/usd.png" alt="">
                 </div>
                 <div class="icon-arrow-bottom">
@@ -777,14 +783,6 @@ const swiperModules = ref([Autoplay])
           left: -117px;
           width: 400px;
           height: 472px;
-          > img {
-            &[data-aos="aos-animate-rotate"] {
-              transform: rotate(0);
-              &.aos-animate {
-                transform: rotate(180deg);
-              }
-            }
-          }
         }
         .exchange-currency {
           position: absolute;
