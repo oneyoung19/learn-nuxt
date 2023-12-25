@@ -55,7 +55,12 @@ class HttpRequest {
       // 发送请求
       useFetch(url, newOptions)
         .then((res) => {
-          resolve(res.data.value)
+          const { value: { body, retCode, retMsg } } = res.data
+          if (retCode === '0000') {
+            resolve(body)
+          } else {
+            reject(retMsg)
+          }
         })
         .catch((error) => {
           reject(error)

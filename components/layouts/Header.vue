@@ -42,7 +42,9 @@
         </div>
       </div>
     </div>
-    <OpenAccountDialog v-model="openAccountDialogVisible"></OpenAccountDialog>
+    <OpenAccountDialog
+      v-model="openAccountDialogVisible">
+    </OpenAccountDialog>
   </div>
 </template>
 

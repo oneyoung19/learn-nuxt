@@ -41,7 +41,7 @@
                     class="el-select-hidden-cover"
                     v-model="value">
                     <el-option
-                      v-for="item in options"
+                      v-for="item in countryCodeList"
                       :key="item.value"
                       :label="item.label"
                       :value="item.value"/>
@@ -69,6 +69,8 @@
 </template>
 
 <script>
+import { getCountryCodeList } from '@/api'
+
 export default {
   props: {
     visible: {
@@ -98,31 +100,19 @@ export default {
         ]
       },
       value: '+86',
-      options: [
-        {
-          value: 'Option1',
-          label: 'Option1',
-        },
-        {
-          value: 'Option2',
-          label: 'Option2',
-        },
-        {
-          value: 'Option3',
-          label: 'Option3',
-        },
-        {
-          value: 'Option4',
-          label: 'Option4',
-        },
-        {
-          value: 'Option5',
-          label: 'Option5',
-        },
-      ]
+      countryCodeList: []
     }
   },
+  created () {
+    this.getCountryCodeList()
+  },
   methods: {
+    getCountryCodeList () {
+      return getCountryCodeList({
+      }).then(res => {
+        this.countryCodeList = res
+      })
+    },
     handleClose () {
       this.$emit('update:modelValue', false)
     },
@@ -130,9 +120,13 @@ export default {
       this.$emit('update:modelValue', visible)
     },
     handleSubmit () {
-      this.$refs.form.validate(valid => {
-        console.log(valid)
-      })
+      // this.$refs.form.validate(valid => {
+      //   console.log(valid)
+      // })
+      // const { pending, data: posts } = useFetch('http://sit1.cbi-catcher-gateway.sitcbi.com/cbi-catcher-app/catcher/front/clues/registerAreaList', {
+      //   server: false
+      // })
+      // console.log(unref(pending), unref(posts))
     }
   }
 }
