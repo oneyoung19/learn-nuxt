@@ -179,20 +179,29 @@
     </DebitCardPersonDialog>
     <div class="swap">
       <div class="swap-container layout">
-        <div class="swap-left" data-aos="fade-up" data-aos-delay="1000" ref="swapLeft">
-          <div class="swap-bg">
+        <div class="swap-left" ref="swapLeft">
+          <div
+            class="swap-bg"
+            data-aos="fade-up">
             <img src="~assets/image/home/swap-bg.png" alt="">
           </div>
           <div
             class="circle-arrow"
-            :class="swapLeftTransitionend ? 'animate__animated animate__rotateIn' : ''">
-            <img src="~assets/image/home/circle-arrow.png" alt="">
+            data-aos="fade"
+            data-aos-delay="1000">
+            <img
+              data-aos="aos-animate-rotate"
+              data-aos-delay="2000"
+              src="~assets/image/home/circle-arrow.png"
+              alt="">
           </div>
-          <div class="exchange-currency">
+          <div
+            class="exchange-currency"
+            data-aos="fade"
+            data-aos-delay="1000">
             <SvgIcon class="icon-logo" name="cbibank"></SvgIcon>
             <div
-              class="exchange-box"
-              :class="swapLeftTransitionend ? 'animate__animated rotate-deg' : ''">
+              class="exchange-box">
               <div class="currency-box">
                 <div class="icon-currency">
                   <img src="@/assets/image/home/eur.png" alt="">
@@ -473,16 +482,6 @@ const imgList = [
 ]
 const swiperImgList = imgList.concat(imgList)
 const swiperModules = ref([Autoplay])
-
-/* 动画 */
-const swapLeftTransitionend = ref(false)
-onMounted(() => {
-  const { swapLeft } = getCurrentInstance().ctx.$refs
-  swapLeft.addEventListener('transitionend', () => {
-    swapLeftTransitionend.value = true
-    console.log('transitionend')
-  })
-})
 </script>
 
 <style scoped lang="less">
@@ -778,6 +777,14 @@ onMounted(() => {
           left: -117px;
           width: 400px;
           height: 472px;
+          > img {
+            &[data-aos="aos-animate-rotate"] {
+              transform: rotate(0);
+              &.aos-animate {
+                transform: rotate(180deg);
+              }
+            }
+          }
         }
         .exchange-currency {
           position: absolute;
