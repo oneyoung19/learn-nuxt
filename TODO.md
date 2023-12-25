@@ -30,5 +30,7 @@
 
 - `aos` 在 `tab` 切换时表现异常，**动画不正常显示**。即使将 [`v-show` 换成 `v-if`](https://github.com/michalsnik/aos/issues/169) 也有表现正常与不正常的 `tab`。关于 `tab` 的众多 [issues](https://github.com/michalsnik/aos/issues?q=tab)。
 
+- `aos` 对于 `svg` 元素，在初始化时，就会添加上 `aos-animate` 类，以造成 `svg` 动画失效。**可以搜索该项目中的 `icon-arrow-circle` 类名以查看具体代码**。
+
 - `@formkit/auto-animate` 注入的 `v-auto-animate` 设置 `v-show` 不起作用，设置 `v-if` 有点浪费性能，有没有优化空间。
   

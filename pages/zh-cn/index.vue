@@ -191,7 +191,6 @@
             data-aos-delay="1000">
             <img
               data-aos="aos-animate-rotate"
-              data-aos-delay="2000"
               src="~assets/image/home/circle-arrow.png"
               alt="">
           </div>
@@ -205,8 +204,7 @@
               <div class="currency-box">
                 <div
                   class="icon-currency"
-                  data-aos="aos-animate-spin-up-right"
-                  data-aos-delay="3000">
+                  data-aos="aos-animate-spin-up-right">
                   <img src="@/assets/image/home/eur.png" alt="">
                 </div>
                 <div class="icon-arrow-bottom">
@@ -214,12 +212,20 @@
                 </div>
                 <!-- <SvgIcon class="icon-arrow-bottom" name="arrow-bottom"></SvgIcon> -->
               </div>
-              <SvgIcon class="icon-arrow-circle" name="arrow-circle"></SvgIcon>
+              <div
+                class="icon-arrow-circle"
+                data-aos="aos-animate-rotate">
+                <img src="@/assets/image/home/icon-arrow-circle.png" alt="">
+              </div>
+              <!-- <SvgIcon
+                class="icon-arrow-circle"
+                data-aos="aos-animate-rotate"
+                name="arrow-circle">
+              </SvgIcon> -->
               <div class="currency-box">
                 <div
                   class="icon-currency"
-                  data-aos="aos-animate-spin-down-left"
-                  data-aos-delay="3000">
+                  data-aos="aos-animate-spin-down-left">
                   <img src="@/assets/image/home/usd.png" alt="">
                 </div>
                 <div class="icon-arrow-bottom">
@@ -810,6 +816,8 @@ const swiperModules = ref([Autoplay])
             height: 4px;
           }
           .icon-arrow-circle {
+            width: 30px;
+            height: 30px;
             font-size: 30px;
             color: #d0d0d2;
             margin: 0 29px;
