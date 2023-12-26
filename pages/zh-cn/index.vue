@@ -19,7 +19,7 @@
           @slideChangeTransitionStart="handleSlideChangeTransitionStart">
           <SwiperSlide class="carousel-item">
             <Button type="blue" class="carousel-item-btn">立即申请</Button>
-            <div class="carousel-item-container">
+            <div class="carousel-item-container carousel-01">
               <img src="~assets/image/home/carousel-01.png" alt="">
             </div>
           </SwiperSlide>
@@ -64,14 +64,14 @@
           <SwiperSlide class="carousel-item">
             <Button type="blue" class="carousel-item-btn">获取卡片</Button>
             <div class="carousel-item-container" :class="swiperIndex === 2 ? 'active' : ''">
-              <div class="carousel-02-card-img carousel-02-card-01">
-                <img src="@/assets/image/home/carousel-02-card-01.png" alt="">
+              <div class="carousel-03-card-img carousel-03-card-01">
+                <img src="@/assets/image/home/carousel-03-card-01.png" alt="">
               </div>
-              <div class="carousel-02-card-img carousel-02-card-02">
-                <img src="@/assets/image/home/carousel-02-card-02.png" alt="">
+              <div class="carousel-03-card-img carousel-03-card-02">
+                <img src="@/assets/image/home/carousel-03-card-02.png" alt="">
               </div>
-              <div class="carousel-02-card-img carousel-02-card-03">
-                <img src="@/assets/image/home/carousel-02-card-03.png" alt="">
+              <div class="carousel-03-card-img carousel-03-card-03">
+                <img src="@/assets/image/home/carousel-03-card-03.png" alt="">
               </div>
             </div>
           </SwiperSlide>
@@ -744,7 +744,7 @@ const swiperPartnersModules = ref([Autoplay])
               height: 173px;
             }
           }
-          .carousel-02-card-img {
+          .carousel-03-card-img {
             position: absolute;
             bottom: 64px;
             left: 50%;
@@ -755,13 +755,13 @@ const swiperPartnersModules = ref([Autoplay])
             box-shadow: 112px 90px 74px 0px rgba(0,0,0,0.35);
             border-radius: 27px;
             transition: all ease-in-out .8s;
-            &.carousel-02-card-01 {
+            &.carousel-03-card-01 {
               z-index: 3;
             }
-            &.carousel-02-card-02 {
+            &.carousel-03-card-02 {
               z-index: 2;
             }
-            &.carousel-02-card-03 {
+            &.carousel-03-card-03 {
               z-index: 1;
             }
           }
@@ -772,13 +772,13 @@ const swiperPartnersModules = ref([Autoplay])
             }
           }
           &.active {
-            .carousel-02-card-01 {
+            .carousel-03-card-01 {
               left: calc(20% - 10px);
             }
-            .carousel-02-card-02 {
+            .carousel-03-card-02 {
               left: 50%;
             }
-            .carousel-02-card-03 {
+            .carousel-03-card-03 {
               left: calc(80% + 10px);
             }
           }
