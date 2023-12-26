@@ -1,13 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
+
 export default defineNuxtConfig({
   app: {
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-    },
-    pageTransition: { name: 'page', mode: 'out-in' }
+    }
+    // pageTransition: { name: 'page', mode: 'out-in' }
   },
   devtools: { enabled: true },
   vite: {
@@ -59,5 +60,9 @@ export default defineNuxtConfig({
   elementPlus: {
     // https://github.com/element-plus/element-plus-nuxt/issues/77
     importStyle: false
+  },
+  build: {
+    // https://www.npmjs.com/package/vue-countup-v3
+    transpile: ['vue-countup-v3']
   }
 })

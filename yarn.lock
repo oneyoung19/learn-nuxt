@@ -2246,6 +2246,11 @@ cors@^2.8.5:
     object-assign "^4"
     vary "^1"
 
+countup.js@^2.6.2:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/countup.js/-/countup.js-2.8.0.tgz#64951f2df3ede28839413d654d8fef28251c32a8"
+  integrity sha512-f7xEhX0awl4NOElHulrl4XRfKoNH3rB+qfNSZZyjSZhaAoUk6elvhH+MNxMmlmuUJ2/QNTWPSA7U4mNtIAKljQ==
+
 crc-32@^1.2.0:
   version "1.2.2"
   resolved "https://npm.prodcbi.com/crc-32/-/crc-32-1.2.2.tgz#3cad35a934b8bf71f25ca524b6da51fb7eace2ff"
@@ -6539,6 +6544,13 @@ vue-bundle-renderer@^2.0.0:
   integrity sha512-oYATTQyh8XVkUWe2kaKxhxKVuuzK2Qcehe+yr3bGiaQAhK3ry2kYE4FWOfL+KO3hVFwCdLmzDQTzYhTi9C+R2A==
   dependencies:
     ufo "^1.2.0"
+
+vue-countup-v3@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/vue-countup-v3/-/vue-countup-v3-1.4.0.tgz#cc1658fdea791409ea3cb0222e71e817277bb4f9"
+  integrity sha512-Tt5c28V/9J8Y34uJeHfyFqbsQfUcMoHgwG3OVJ8Sj1PKMpk0i0zqy0gmHCqvZJE/zp26IUNdEmrS08cKGENHrA==
+  dependencies:
+    countup.js "^2.6.2"
 
 vue-demi@*, vue-demi@>=0.14.5:
   version "0.14.6"

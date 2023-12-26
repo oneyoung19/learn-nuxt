@@ -40,7 +40,8 @@
               <div
                 class="carousel-01-container-right">
                 <div class="carousel-01-container-right-header">
-                  <span class="text">$158,521.50</span>
+                  <!-- <span class="text">$158,521.50</span> -->
+                  <CountUp class="text" :end-val="2000"></CountUp>
                   <div
                     class="img"
                     data-aos="fade"
