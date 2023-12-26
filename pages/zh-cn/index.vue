@@ -15,7 +15,8 @@
           :loop="true"
           :speed="2500"
           :spaceBetween="80"
-          slidesPerView="auto">
+          slidesPerView="auto"
+          @slideChangeTransitionStart="handleSlideChangeTransitionStart">
           <SwiperSlide class="carousel-item">
             <Button type="blue" class="carousel-item-btn">立即申请</Button>
             <div class="carousel-item-container">
@@ -24,7 +25,7 @@
           </SwiperSlide>
           <SwiperSlide class="carousel-item">
             <Button type="blue" class="carousel-item-btn">立即申请</Button>
-            <div class="carousel-item-container">
+            <div class="carousel-item-container" :class="swiperIndex === 1 ? '' : 'inactive'">
               <div class="carousel-02-bg carousel-02-phone1-bg background" data-aos="fade-up">
                 <div class="carousel-02-widget-img carousel-02-phone1-01" data-aos="fade-up">
                   <img src="@/assets/image/home/carousel-02-phone1-01.png" alt="">
@@ -62,7 +63,7 @@
           </SwiperSlide>
           <SwiperSlide class="carousel-item">
             <Button type="blue" class="carousel-item-btn">获取卡片</Button>
-            <div class="carousel-item-container active">
+            <div class="carousel-item-container" :class="swiperIndex === 2 ? 'active' : ''">
               <div class="carousel-02-card-img carousel-02-card-01">
                 <img src="@/assets/image/home/carousel-02-card-01.png" alt="">
               </div>
@@ -597,6 +598,12 @@ const tabList = ref([
 
 /* Top swiper */
 const swiperModules = ref([Autoplay])
+const swiperIndex = ref(0)
+const handleSlideChangeTransitionStart = (slideInfo) => {
+  // 当加上loop:true时，activeIndex会有问题。应该使用realIndex。
+  const { realIndex } = slideInfo
+  swiperIndex.value = realIndex
+}
 /* Partners swiper */
 const partnersImgList = [
   { id: 'cips', src: cipsImg },
