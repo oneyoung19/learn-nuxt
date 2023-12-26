@@ -2,8 +2,6 @@
   <div class="home">
     <div class="banner">
       <div class="layout">
-        <p class="title">富港银行 提供一站式全球金融服务</p>
-        <p class="sub-title">CB International Bank 快速开启国际银行帐户</p>
         <!-- :autoplay="{
             delay: 0,
             disableOnInteraction: false,
@@ -18,6 +16,8 @@
           slidesPerView="auto"
           @slideChangeTransitionStart="handleSlideChangeTransitionStart">
           <SwiperSlide class="carousel-item">
+            <p class="title">富港银行 提供一站式全球金融服务</p>
+            <p class="sub-title">CB International Bank 快速开启国际银行帐户</p>
             <Button type="blue" class="carousel-item-btn">立即申请</Button>
             <div class="carousel-item-container carousel-01-container" :class="swiperIndex === 0 ? '' : 'inactive'">
               <div
@@ -210,44 +210,84 @@
             </div>
           </SwiperSlide>
           <SwiperSlide class="carousel-item">
+            <p class="title">让每个人随时享受专业的国际银行服务</p>
+            <p class="sub-title">一个APP，解決全球个人汇款</p>
             <Button type="blue" class="carousel-item-btn">立即申请</Button>
             <div class="carousel-item-container" :class="swiperIndex === 1 ? '' : 'inactive'">
               <div class="carousel-02-bg carousel-02-phone1-bg background" data-aos="fade-up">
-                <div class="carousel-02-widget-img carousel-02-phone1-01" data-aos="fade-up">
+                <div
+                  class="carousel-02-widget-img carousel-02-phone1-01"
+                  data-aos="fade-up"
+                  data-aos-offset="0"
+                  data-aos-delay="400">
                   <img src="@/assets/image/home/carousel-02-phone1-01.png" alt="">
                 </div>
-                <div class="carousel-02-widget-img carousel-02-phone1-02" data-aos="fade-up">
+                <div
+                  class="carousel-02-widget-img carousel-02-phone1-02"
+                  data-aos="fade-up"
+                  data-aos-offset="0"
+                  data-aos-delay="600">
                   <img src="@/assets/image/home/carousel-02-phone1-02.png" alt="">
                 </div>
-                <div class="carousel-02-widget-img carousel-02-phone1-03" data-aos="fade-up">
+                <div
+                  class="carousel-02-widget-img carousel-02-phone1-03"
+                  data-aos="fade-up"
+                  data-aos-offset="0"
+                  data-aos-delay="800">
                   <img src="@/assets/image/home/carousel-02-phone1-03.png" alt="">
                 </div>
               </div>
               <div class="carousel-02-bg carousel-02-phone2-bg background" data-aos="fade-up">
-                <div class="carousel-02-widget-img carousel-02-phone2-01" data-aos="fade-up">
+                <div
+                  class="carousel-02-widget-img carousel-02-phone2-01"
+                  data-aos="fade-up"
+                  data-aos-offset="0"
+                  data-aos-delay="400">
                   <img src="@/assets/image/home/carousel-02-phone2-01.png" alt="">
                 </div>
-                <div class="carousel-02-widget-img carousel-02-phone2-02" data-aos="fade-up">
+                <div
+                  class="carousel-02-widget-img carousel-02-phone2-02"
+                  data-aos="fade-up"
+                  data-aos-offset="0"
+                  data-aos-delay="600">
                   <img src="@/assets/image/home/carousel-02-phone2-02.png" alt="">
                 </div>
-                <div class="carousel-02-widget-img carousel-02-phone2-03" data-aos="fade-up">
+                <div
+                  class="carousel-02-widget-img carousel-02-phone2-03"
+                  data-aos="fade-up"
+                  data-aos-offset="0"
+                  data-aos-delay="800">
                   <img src="@/assets/image/home/carousel-02-phone2-03.png" alt="">
                 </div>
-                <div class="carousel-02-widget-img carousel-02-phone2-04" data-aos="fade-up">
+                <div
+                  class="carousel-02-widget-img carousel-02-phone2-04"
+                  data-aos="fade-up"
+                  data-aos-offset="0"
+                  data-aos-delay="800">
                   <img src="@/assets/image/home/carousel-02-phone2-04.png" alt="">
                 </div>
               </div>
               <div class="carousel-02-bg carousel-02-phone3-bg background" data-aos="fade-up">
-                <div class="carousel-02-widget-img carousel-02-phone3-01" data-aos="fade-up">
+                <div
+                  class="carousel-02-widget-img carousel-02-phone3-01"
+                  data-aos="fade-up"
+                  data-aos-offset="0"
+                  data-aos-delay="400">
                   <img src="@/assets/image/home/carousel-02-phone3-01.png" alt="">
                 </div>
-                <div class="carousel-02-phone3-02">
+                <div
+                  class="carousel-02-phone3-02"
+                  data-aos="slide-up"
+                  data-aos-offset="0"
+                  data-aos-delay="600">
                   <img src="@/assets/image/home/carousel-02-phone3-02.png" alt="">
                 </div>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide class="carousel-item">
+            <p class="title">行之所至，畅通无忧</p>
+            <p class="sub-title">实时汇率、无隐藏费用，用CBiBank借记卡、VISA卡走遍全球</p>
             <Button type="blue" class="carousel-item-btn">获取卡片</Button>
             <div class="carousel-item-container" :class="swiperIndex === 2 ? 'active' : ''">
               <div class="carousel-03-card-img carousel-03-card-01">
@@ -782,6 +822,7 @@ const tabList = ref([
   { label: '国际投融资企业', value: 'customer-invest', iconName: 'strip-deep', activeIconName: 'strip-light' }
 ])
 
+/* 计数器 */
 let countUp1 = undefined
 const handleInit1 = (ctx) => {
   countUp1 = ctx
@@ -829,6 +870,7 @@ const handleInit6 = (ctx) => {
 const handleTransitionEnd6 = (a, b, c) => {
   countUp6.start()
 }
+
 /* Top swiper */
 const swiperModules = ref([Autoplay])
 const swiperIndex = ref(0)
@@ -877,19 +919,19 @@ const swiperPartnersModules = ref([Autoplay])
     color: @topwhite;
     background-color: @blank;
     text-align: center;
-    .title {
-      margin-bottom: 40px;
-      font-size: 60px;
-    }
-    .sub-title {
-      margin-bottom: 114px;
-      font-size: 24px;
-      color: #BBC0D8;
-    }
     .carousel-list {
       width: 100%;
       .carousel-item {
         width: 100%;
+        .title {
+          margin-bottom: 40px;
+          font-size: 60px;
+        }
+        .sub-title {
+          margin-bottom: 114px;
+          font-size: 24px;
+          color: #BBC0D8;
+        }
         .carousel-item-btn {
           width: 187px;
           height: 52px;
@@ -1187,6 +1229,9 @@ const swiperPartnersModules = ref([Autoplay])
             [data-aos="fade-up"] {
               opacity: 0!important;
               transform: translate3d(0, 100px, 0)!important;
+            }
+            [data-aos="slide-up"] {
+              transform: translate3d(0,100%,0)!important;
             }
           }
           &.active {
