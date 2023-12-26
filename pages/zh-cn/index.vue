@@ -43,6 +43,7 @@
                   <CountUp
                     class="text"
                     data-aos="fade"
+                    data-aos-offset="0"
                     data-aos-delay="1800"
                     :end-val="158521.50"
                     :duration="1.5"
@@ -84,6 +85,21 @@
                         data-aos="fade"
                         data-aos-delay="600"
                         data-aos-duration="1800">
+                        <CountUp
+                          class="amount-text"
+                          data-aos="fade"
+                          data-aos-offset="0"
+                          data-aos-delay="1800"
+                          :end-val="12621.00"
+                          :duration="1.5"
+                          :decimalPlaces="2"
+                          :autoplay="false"
+                          @init="handleInit2"
+                          @transitionend="handleTransitionEnd2">
+                          <template #prefix>
+                            <span>$</span>
+                          </template>
+                        </CountUp>
                       </div>
                     </div>
                     <div
@@ -120,6 +136,36 @@
                       data-aos-duration="1500"
                       data-aos-offset="0"
                       data-aos-delay="600">
+                      <CountUp
+                        class="amount-text"
+                        data-aos="fade"
+                        data-aos-offset="0"
+                        data-aos-delay="1800"
+                        :end-val="45230.00"
+                        :duration="1.5"
+                        :decimalPlaces="2"
+                        :autoplay="false"
+                        @init="handleInit3"
+                        @transitionend="handleTransitionEnd3">
+                        <template #prefix>
+                          <span>$</span>
+                        </template>
+                      </CountUp>
+                      <CountUp
+                        class="amount-text"
+                        data-aos="fade"
+                        data-aos-offset="0"
+                        data-aos-delay="1800"
+                        :end-val="113291.00"
+                        :duration="1.5"
+                        :decimalPlaces="2"
+                        :autoplay="false"
+                        @init="handleInit4"
+                        @transitionend="handleTransitionEnd4">
+                        <template #prefix>
+                          <span>$</span>
+                        </template>
+                      </CountUp>
                     </div>
                     <div
                       class="content-right-footer background"
@@ -127,6 +173,36 @@
                       data-aos-duration="1500"
                       data-aos-offset="0"
                       data-aos-delay="600">
+                      <CountUp
+                        class="amount-text"
+                        data-aos="fade"
+                        data-aos-offset="0"
+                        data-aos-delay="1800"
+                        :end-val="1339.00"
+                        :duration="1.5"
+                        :decimalPlaces="2"
+                        :autoplay="false"
+                        @init="handleInit5"
+                        @transitionend="handleTransitionEnd5">
+                        <template #prefix>
+                          <span>-$</span>
+                        </template>
+                      </CountUp>
+                      <CountUp
+                        class="amount-text"
+                        data-aos="fade"
+                        data-aos-offset="0"
+                        data-aos-delay="1800"
+                        :end-val="20000.00"
+                        :duration="1.5"
+                        :decimalPlaces="2"
+                        :autoplay="false"
+                        @init="handleInit6"
+                        @transitionend="handleTransitionEnd6">
+                        <template #prefix>
+                          <span>-$</span>
+                        </template>
+                      </CountUp>
                     </div>
                   </div>
                 </div>
@@ -706,14 +782,6 @@ const tabList = ref([
   { label: '国际投融资企业', value: 'customer-invest', iconName: 'strip-deep', activeIconName: 'strip-light' }
 ])
 
-/* Top swiper */
-const swiperModules = ref([Autoplay])
-const swiperIndex = ref(0)
-const handleSlideChangeTransitionStart = (slideInfo) => {
-  // 当加上loop:true时，activeIndex会有问题。应该使用realIndex。
-  const { realIndex } = slideInfo
-  swiperIndex.value = realIndex
-}
 let countUp1 = undefined
 const handleInit1 = (ctx) => {
   countUp1 = ctx
@@ -721,6 +789,62 @@ const handleInit1 = (ctx) => {
 const handleTransitionEnd1 = (a, b, c) => {
   countUp1.start()
 }
+
+let countUp2 = undefined
+const handleInit2 = (ctx) => {
+  countUp2 = ctx
+}
+const handleTransitionEnd2 = (a, b, c) => {
+  countUp2.start()
+}
+
+let countUp3 = undefined
+const handleInit3 = (ctx) => {
+  countUp3 = ctx
+}
+const handleTransitionEnd3 = (a, b, c) => {
+  countUp3.start()
+}
+
+let countUp4 = undefined
+const handleInit4 = (ctx) => {
+  countUp4 = ctx
+}
+const handleTransitionEnd4 = (a, b, c) => {
+  countUp4.start()
+}
+
+let countUp5 = undefined
+const handleInit5 = (ctx) => {
+  countUp5 = ctx
+}
+const handleTransitionEnd5 = (a, b, c) => {
+  countUp5.start()
+}
+
+let countUp6 = undefined
+const handleInit6 = (ctx) => {
+  countUp6 = ctx
+}
+const handleTransitionEnd6 = (a, b, c) => {
+  countUp6.start()
+}
+/* Top swiper */
+const swiperModules = ref([Autoplay])
+const swiperIndex = ref(0)
+const handleSlideChangeTransitionStart = (slideInfo) => {
+  // 当加上loop:true时，activeIndex会有问题。应该使用realIndex。
+  const { realIndex } = slideInfo
+  swiperIndex.value = realIndex
+  // 重置计数
+  countUp1.reset()
+  countUp2.reset()
+  countUp3.reset()
+  countUp4.reset()
+  countUp5.reset()
+  countUp6.reset()
+}
+
 /* Partners swiper */
 const partnersImgList = [
   { id: 'cips', src: cipsImg },
@@ -850,9 +974,20 @@ const swiperPartnersModules = ref([Autoplay])
                       background-image: url('@/assets/image/home/carousel-01-visa.png');
                     }
                     >.fund-bg {
+                      position: relative;
                       width: 205px;
                       height: 133px;
                       background-image: url('@/assets/image/home/carousel-01-fund.png');
+                      font-size: 24px;
+                      font-family: Poppins, Poppins;
+                      font-weight: 600;
+                      color: @blank2;
+                      line-height: 36px;
+                      >.amount-text {
+                        position: absolute;
+                        top: 48px;
+                        left: 18px;
+                      }
                     }
                   }
                   .content-left-footer {
@@ -893,16 +1028,45 @@ const swiperPartnersModules = ref([Autoplay])
                   }
                 }
                 .content-right {
+                  font-size: 11px;
+                  font-family: Poppins, Poppins;
+                  font-weight: 600;
+                  color: @blank;
+                  line-height: 11px;
                   .content-right-header {
+                    position: relative;
                     width: 388px;
                     height: 133px;
                     margin-bottom: 20px;
                     background-image: url('@/assets/image/home/carousel-01-cards.png');
+                    >.amount-text {
+                      position: absolute;
+                      &:nth-child(1) {
+                        top: 35px;
+                        right: 18px;
+                      }
+                      &:nth-child(2) {
+                        bottom: 30px;
+                        right: 18px;
+                      }
+                    }
                   }
                   .content-right-footer {
+                    position: relative;
                     width: 388px;
                     height: 167px;
                     background-image: url('@/assets/image/home/carousel-01-transactions.png');
+                    >.amount-text {
+                      position: absolute;
+                      &:nth-child(1) {
+                        top: 88px;
+                        right: 18px;
+                      }
+                      &:nth-child(2) {
+                        bottom: 18px;
+                        right: 18px;
+                      }
+                    }
                   }
                 }
               }
