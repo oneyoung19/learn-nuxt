@@ -25,33 +25,33 @@
           <SwiperSlide class="carousel-item">
             <Button type="blue" class="carousel-item-btn">立即申请</Button>
             <div class="carousel-item-container">
-              <div class="carousel-02-phone1-bg background" data-aos="fade-up">
-                <div class="carousel-02-phone1-01">
+              <div class="carousel-02-bg carousel-02-phone1-bg background" data-aos="fade-up">
+                <div class="carousel-02-widget-img carousel-02-phone1-01" data-aos="fade-up">
                   <img src="@/assets/image/home/carousel-02-phone1-01.png" alt="">
                 </div>
-                <div class="carousel-02-phone1-02">
+                <div class="carousel-02-widget-img carousel-02-phone1-02" data-aos="fade-up">
                   <img src="@/assets/image/home/carousel-02-phone1-02.png" alt="">
                 </div>
-                <div class="carousel-02-phone1-03">
+                <div class="carousel-02-widget-img carousel-02-phone1-03" data-aos="fade-up">
                   <img src="@/assets/image/home/carousel-02-phone1-03.png" alt="">
                 </div>
               </div>
-              <div class="carousel-02-phone2-bg background" data-aos="fade-up">
-                <div class="carousel-02-phone2-01">
+              <div class="carousel-02-bg carousel-02-phone2-bg background" data-aos="fade-up">
+                <div class="carousel-02-widget-img carousel-02-phone2-01" data-aos="fade-up">
                   <img src="@/assets/image/home/carousel-02-phone2-01.png" alt="">
                 </div>
-                <div class="carousel-02-phone2-02">
+                <div class="carousel-02-widget-img carousel-02-phone2-02" data-aos="fade-up">
                   <img src="@/assets/image/home/carousel-02-phone2-02.png" alt="">
                 </div>
-                <div class="carousel-02-phone2-03">
+                <div class="carousel-02-widget-img carousel-02-phone2-03" data-aos="fade-up">
                   <img src="@/assets/image/home/carousel-02-phone2-03.png" alt="">
                 </div>
-                <div class="carousel-02-phone2-04">
+                <div class="carousel-02-widget-img carousel-02-phone2-04" data-aos="fade-up">
                   <img src="@/assets/image/home/carousel-02-phone2-04.png" alt="">
                 </div>
               </div>
-              <div class="carousel-02-phone3-bg background" data-aos="fade-up">
-                <div class="carousel-02-phone3-01">
+              <div class="carousel-02-bg carousel-02-phone3-bg background" data-aos="fade-up">
+                <div class="carousel-02-widget-img carousel-02-phone3-01" data-aos="fade-up">
                   <img src="@/assets/image/home/carousel-02-phone3-01.png" alt="">
                 </div>
                 <div class="carousel-02-phone3-02">
@@ -756,6 +756,12 @@ const swiperPartnersModules = ref([Autoplay])
             }
             &.carousel-02-card-03 {
               z-index: 1;
+            }
+          }
+          &.inactive {
+            [data-aos="fade-up"] {
+              opacity: 0;
+              transform: translate3d(0, 100px, 0);
             }
           }
           &.active {
