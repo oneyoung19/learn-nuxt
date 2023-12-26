@@ -12,7 +12,7 @@
           :modules="swiperModules"
           :pagination="swiperPaginationOptions"
           :loop="true"
-          :speed="2500"
+          :speed="2000"
           :spaceBetween="80"
           slidesPerView="auto"
           @slideChangeTransitionStart="handleSlideChangeTransitionStart">
@@ -1216,7 +1216,8 @@ const swiperPartnersModules = ref([Autoplay])
             height: 268px;
             box-shadow: 112px 90px 74px 0px rgba(0,0,0,0.35);
             border-radius: 27px;
-            transition: all ease-in-out .8s;
+            transition: all ease-in-out 1s;
+            transition-delay: .5s;
             &.carousel-03-card-01 {
               z-index: 3;
             }
