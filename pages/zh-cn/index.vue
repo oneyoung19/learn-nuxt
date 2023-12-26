@@ -10,6 +10,7 @@
         <Swiper
           class="carousel-list"
           :modules="swiperModules"
+          :pagination="swiperPaginationOptions"
           :loop="true"
           :speed="2500"
           :spaceBetween="80"
@@ -757,7 +758,7 @@ import swiftImg from '@/assets/image/home/swift.png'
 import visaImg from '@/assets/image/home/visa.png'
 import abaImg from '@/assets/image/home/aba.png'
 import ocifImg from '@/assets/image/home/ocif.png'
-import { Autoplay } from 'swiper/modules'
+import { Autoplay, Pagination } from 'swiper/modules'
 useHead({
   title: 'CBiBank',
   // meta: [
@@ -872,7 +873,13 @@ const handleTransitionEnd6 = (a, b, c) => {
 }
 
 /* Top swiper */
-const swiperModules = ref([Autoplay])
+const swiperModules = ref([Autoplay, Pagination])
+const swiperPaginationOptions = {
+  clickable: true,
+  renderBullet: function (index, className) {
+    return `<span class="${className}"></span>`
+  }
+}
 const swiperIndex = ref(0)
 const handleSlideChangeTransitionStart = (slideInfo) => {
   // 当加上loop:true时，activeIndex会有问题。应该使用realIndex。
@@ -920,6 +927,7 @@ const swiperPartnersModules = ref([Autoplay])
     background-color: @blank;
     text-align: center;
     .carousel-list {
+      position: relative;
       width: 100%;
       .carousel-item {
         width: 100%;
@@ -1244,6 +1252,23 @@ const swiperPartnersModules = ref([Autoplay])
             .carousel-03-card-03 {
               left: calc(80% + 10px);
             }
+          }
+        }
+      }
+      :deep(.swiper-pagination) {
+        position: absolute;
+        top: 184px;
+        bottom: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .swiper-pagination-bullet {
+          width: 20px;
+          height: 4px;
+          background: @gray01;
+          border-radius: 18px;
+          &.swiper-pagination-bullet-active {
+            background: @topwhite;
           }
         }
       }
