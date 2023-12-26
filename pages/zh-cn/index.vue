@@ -4,28 +4,60 @@
       <div class="layout">
         <p class="title">富港银行 提供一站式全球金融服务</p>
         <p class="sub-title">CB International Bank 快速开启国际银行帐户</p>
-        <Swiper
-          class="carousel-list"
-          :modules="swiperModules"
-          :autoplay="{
+        <!-- :autoplay="{
             delay: 0,
             disableOnInteraction: false,
             pauseOnMouseEnter: false
-          }"
+          }" -->
+        <Swiper
+          class="carousel-list"
+          :modules="swiperModules"
           :loop="true"
           :speed="3000"
           :spaceBetween="80"
           slidesPerView="auto">
           <SwiperSlide class="carousel-item">
             <Button type="blue" class="carousel-item-btn">立即申请</Button>
-            <div class="carousel-item-img">
+            <div class="carousel-item-container">
               <img src="~assets/image/home/carousel-01.png" alt="">
             </div>
           </SwiperSlide>
           <SwiperSlide class="carousel-item">
             <Button type="blue" class="carousel-item-btn">获取卡片</Button>
-            <div class="carousel-item-img">
-              <img src="~assets/image/home/carousel-01.png" alt="">
+            <div class="carousel-item-container">
+              <div class="carousel-02-phone1-bg background">
+                <div class="carousel-02-phone1-01">
+                  <img src="@/assets/image/home/carousel-02-phone1-01.png" alt="">
+                </div>
+                <div class="carousel-02-phone1-02">
+                  <img src="@/assets/image/home/carousel-02-phone1-02.png" alt="">
+                </div>
+                <div class="carousel-02-phone1-03">
+                  <img src="@/assets/image/home/carousel-02-phone1-03.png" alt="">
+                </div>
+              </div>
+              <div class="carousel-02-phone2-bg background">
+                <div class="carousel-02-phone2-01">
+                  <img src="@/assets/image/home/carousel-02-phone2-01.png" alt="">
+                </div>
+                <div class="carousel-02-phone2-02">
+                  <img src="@/assets/image/home/carousel-02-phone2-02.png" alt="">
+                </div>
+                <div class="carousel-02-phone2-03">
+                  <img src="@/assets/image/home/carousel-02-phone2-03.png" alt="">
+                </div>
+                <div class="carousel-02-phone2-04">
+                  <img src="@/assets/image/home/carousel-02-phone2-04.png" alt="">
+                </div>
+              </div>
+              <div class="carousel-02-phone3-bg background">
+                <div class="carousel-02-phone3-01">
+                  <img src="@/assets/image/home/carousel-02-phone3-01.png" alt="">
+                </div>
+                <div class="carousel-02-phone3-02">
+                  <img src="@/assets/image/home/carousel-02-phone3-02.png" alt="">
+                </div>
+              </div>
             </div>
           </SwiperSlide>
         </Swiper>
@@ -601,8 +633,96 @@ const swiperPartnersModules = ref([Autoplay])
           height: 52px;
           margin-bottom: 49px;
         }
-        .carousel-item-img {
+        .carousel-item-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
           width: 100%;
+          height: 461px;
+          .carousel-02-phone1-bg {
+            position: relative;
+            width: 348px;
+            height: 364px;
+            background-image: url('@/assets/image/home/carousel-02-phone1-bg.png');
+            box-shadow: 117px 38px 77px 0px rgba(0,0,0,0.25);
+            .carousel-02-phone1-01 {
+              position: absolute;
+              top: 45px;
+              left: 20px;
+              width: 306px;
+              height: 22px;
+            }
+            .carousel-02-phone1-02 {
+              position: absolute;
+              top: 87px;
+              left: 0;
+              width: 348px;
+              height: 93px;
+            }
+            .carousel-02-phone1-03 {
+              position: relative;
+              top: 180px;
+              left: 18px;
+              width: 310px;
+              height: 173px;
+            }
+          }
+          .carousel-02-phone2-bg {
+            position: relative;
+            width: 348px;
+            height: 448px;
+            background-image: url('@/assets/image/home/carousel-02-phone2-bg.png');
+            box-shadow: 117px 38px 77px 0px rgba(0,0,0,0.25);
+            .carousel-02-phone2-01 {
+              position: absolute;
+              top: 46px;
+              left: 23px;
+              width: 301px;
+              height: 30px;
+            }
+            .carousel-02-phone2-02 {
+              position: absolute;
+              top: 102px;
+              left: 19px;
+              width: 309px;
+              height: 180px;
+            }
+            .carousel-02-phone2-03 {
+              position: absolute;
+              bottom: 51px;
+              left: 19px;
+              width: 310px;
+              height: 98px;
+            }
+            .carousel-02-phone2-04 {
+              position: absolute;
+              bottom: 0;
+              left: 19px;
+              width: 310px;
+              height: 38px;
+            }
+          }
+          .carousel-02-phone3-bg {
+            position: relative;
+            width: 348px;
+            height: 364px;
+            background-image: url('@/assets/image/home/carousel-02-phone3-bg.png');
+            box-shadow: 117px 38px 77px 0px rgba(0,0,0,0.25);
+            .carousel-02-phone3-01 {
+              position: absolute;
+              top: 67px;
+              left: 40px;
+              width: 266px;
+              height: 94px;
+            }
+            .carousel-02-phone3-02 {
+              position: absolute;
+              bottom: 0;
+              left: 4px;
+              width: 340px;
+              height: 173px;
+            }
+          }
         }
       }
     }
