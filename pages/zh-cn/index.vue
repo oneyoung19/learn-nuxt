@@ -13,7 +13,7 @@
           class="carousel-list"
           :modules="swiperModules"
           :loop="true"
-          :speed="3000"
+          :speed="2500"
           :spaceBetween="80"
           slidesPerView="auto">
           <SwiperSlide class="carousel-item">
@@ -23,9 +23,9 @@
             </div>
           </SwiperSlide>
           <SwiperSlide class="carousel-item">
-            <Button type="blue" class="carousel-item-btn">获取卡片</Button>
+            <Button type="blue" class="carousel-item-btn">立即申请</Button>
             <div class="carousel-item-container">
-              <div class="carousel-02-phone1-bg background">
+              <div class="carousel-02-phone1-bg background" data-aos="fade-up">
                 <div class="carousel-02-phone1-01">
                   <img src="@/assets/image/home/carousel-02-phone1-01.png" alt="">
                 </div>
@@ -36,7 +36,7 @@
                   <img src="@/assets/image/home/carousel-02-phone1-03.png" alt="">
                 </div>
               </div>
-              <div class="carousel-02-phone2-bg background">
+              <div class="carousel-02-phone2-bg background" data-aos="fade-up">
                 <div class="carousel-02-phone2-01">
                   <img src="@/assets/image/home/carousel-02-phone2-01.png" alt="">
                 </div>
@@ -50,13 +50,27 @@
                   <img src="@/assets/image/home/carousel-02-phone2-04.png" alt="">
                 </div>
               </div>
-              <div class="carousel-02-phone3-bg background">
+              <div class="carousel-02-phone3-bg background" data-aos="fade-up">
                 <div class="carousel-02-phone3-01">
                   <img src="@/assets/image/home/carousel-02-phone3-01.png" alt="">
                 </div>
                 <div class="carousel-02-phone3-02">
                   <img src="@/assets/image/home/carousel-02-phone3-02.png" alt="">
                 </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide class="carousel-item">
+            <Button type="blue" class="carousel-item-btn">获取卡片</Button>
+            <div class="carousel-item-container active">
+              <div class="carousel-02-card-img carousel-02-card-01">
+                <img src="@/assets/image/home/carousel-02-card-01.png" alt="">
+              </div>
+              <div class="carousel-02-card-img carousel-02-card-02">
+                <img src="@/assets/image/home/carousel-02-card-02.png" alt="">
+              </div>
+              <div class="carousel-02-card-img carousel-02-card-03">
+                <img src="@/assets/image/home/carousel-02-card-03.png" alt="">
               </div>
             </div>
           </SwiperSlide>
@@ -721,6 +735,38 @@ const swiperPartnersModules = ref([Autoplay])
               left: 4px;
               width: 340px;
               height: 173px;
+            }
+          }
+          .carousel-02-card-img {
+            position: absolute;
+            bottom: 64px;
+            left: 50%;
+            transform: translate(-50%, 0) rotate(-54deg);
+            transform-origin: center center;
+            width: 440px;
+            height: 268px;
+            box-shadow: 112px 90px 74px 0px rgba(0,0,0,0.35);
+            border-radius: 27px;
+            transition: all ease-in-out .8s;
+            &.carousel-02-card-01 {
+              z-index: 3;
+            }
+            &.carousel-02-card-02 {
+              z-index: 2;
+            }
+            &.carousel-02-card-03 {
+              z-index: 1;
+            }
+          }
+          &.active {
+            .carousel-02-card-01 {
+              left: calc(20% - 10px);
+            }
+            .carousel-02-card-02 {
+              left: 50%;
+            }
+            .carousel-02-card-03 {
+              left: calc(80% + 10px);
             }
           }
         }
