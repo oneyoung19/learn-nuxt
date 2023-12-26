@@ -3,6 +3,10 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
 
 export default defineNuxtConfig({
+  devServer: {
+    port: 3000,
+    host: '0.0.0.0'
+  },
   app: {
     head: {
       charset: 'utf-8',
