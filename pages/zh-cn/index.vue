@@ -19,8 +19,53 @@
           @slideChangeTransitionStart="handleSlideChangeTransitionStart">
           <SwiperSlide class="carousel-item">
             <Button type="blue" class="carousel-item-btn">立即申请</Button>
-            <div class="carousel-item-container carousel-01">
-              <img src="~assets/image/home/carousel-01.png" alt="">
+            <div class="carousel-item-container carousel-01-container">
+              <div class="carousel-01-container-left">
+                <div class="logo">
+                  <img src="@/assets/image/home/carousel-01-logo.png" alt="">
+                </div>
+                <div class="menus">
+                  <img src="@/assets/image/home/carousel-01-menus.png" alt="">
+                </div>
+                <div class="active-menu">
+                  <img src="@/assets/image/home/carousel-01-menu-active.png" alt="">
+                </div>
+              </div>
+              <div class="carousel-01-container-right">
+                <div class="carousel-01-container-right-header">
+                  <span class="text">$158,521.50</span>
+                  <div class="img">
+                    <img src="@/assets/image/home/carousel-01-search.png" alt="">
+                  </div>
+                </div>
+                <div class="carousel-01-container-right-subtitle">
+                  <img src="@/assets/image/home/carousel-01-subtitle.png" alt="">
+                </div>
+                <div class="carousel-01-container-right-content">
+                  <div class="content-left">
+                    <div class="content-left-header">
+                      <div class="visa-bg background"></div>
+                      <div class="fund-bg background"></div>
+                    </div>
+                    <div class="content-left-footer background">
+                      <div class="carousel-01-polyline">
+                        <img src="@/assets/image/home/carousel-01-polyline.png" alt="">
+                        <div class="carousel-01-dot">
+                          <img src="@/assets/image/home/carousel-01-dot.png" alt="">
+                          <div class="carousel-01-dot-amount">
+                            <img src="@/assets/image/home/carousel-01-dot-amount.png" alt="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content-right">
+                    <div class="content-right-header background">
+                    </div>
+                    <div class="content-right-footer background"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide class="carousel-item">
@@ -660,6 +705,126 @@ const swiperPartnersModules = ref([Autoplay])
           align-items: flex-end;
           width: 100%;
           height: 461px;
+          &.carousel-01-container {
+            align-items: flex-start;
+            text-align: left;
+            background: @topwhite;
+            padding: 6px 30px 0 6px;
+            box-shadow: inset 0px 0px 12px 0px rgba(0,0,0,0.14);
+            border-radius: 30px 30px 0 0;
+            font-family: Poppins, Poppins;
+            font-weight: 600;
+            .carousel-01-container-left {
+              position: relative;
+              width: 220px;
+              height: 100%;
+              margin-right: 64px;
+              padding: 28px 0 0 25px;
+              background-color: #E3E7F0;
+              border-radius: 30px 30px 0 0;
+              >.logo {
+                width: 120px;
+                height: 38px;
+                margin-bottom: 40px;
+              }
+              >.menus {
+                width: 167px;
+                height: 302px;
+              }
+              >.active-menu {
+                position: absolute;
+                top: 97px;
+                right: 0;
+                width: 209px;
+                height: 38px;
+              }
+            }
+            .carousel-01-container-right {
+              flex: 1;
+              padding-top: 37px;
+              .carousel-01-container-right-header {
+                position: relative;
+                margin-bottom: 10px;
+                line-height: 36px;
+                >.text {
+                  font-size: 36px;
+                  color: @blank;
+                }
+                >.img {
+                  position: absolute;
+                  top: -6px;
+                  right: 12px;
+                  width: 561px;
+                  height: 36px;
+                }
+              }
+              .carousel-01-container-right-subtitle {
+                // width: 228px;
+                width: 242px;
+                height: 12px;
+                margin-bottom: 20px;
+              }
+              .carousel-01-container-right-content {
+                display: flex;
+                .content-left {
+                  margin-right: 38px;
+                  .content-left-header {
+                    display: flex;
+                    margin-bottom: 20px;
+                    >.visa-bg {
+                      width: 230px;
+                      height: 133px;
+                      margin-right: 20px;
+                      background-image: url('@/assets/image/home/carousel-01-visa.png');
+                    }
+                    >.fund-bg {
+                      width: 205px;
+                      height: 133px;
+                      background-image: url('@/assets/image/home/carousel-01-fund.png');
+                    }
+                  }
+                  .content-left-footer {
+                    width: 456px;
+                    height: 167px;
+                    padding: 15px 0 0 52px;
+                    background-image: url('@/assets/image/home/carousel-01-axis.png');
+                    .carousel-01-polyline {
+                      position: relative;
+                      width: 385px;
+                      height: 108px;
+                      .carousel-01-dot {
+                        position: absolute;
+                        top: 0;
+                        right: 75px;
+                        width: 36px;
+                        height: 36px;
+                        .carousel-01-dot-amount {
+                          position: absolute;
+                          top: 20px;
+                          left: -35px;
+                          width: 105px;
+                          height: 52px;
+                        }
+                      }
+                    }
+                  }
+                }
+                .content-right {
+                  .content-right-header {
+                    width: 388px;
+                    height: 133px;
+                    margin-bottom: 20px;
+                    background-image: url('@/assets/image/home/carousel-01-cards.png');
+                  }
+                  .content-right-footer {
+                    width: 388px;
+                    height: 167px;
+                    background-image: url('@/assets/image/home/carousel-01-transactions.png');
+                  }
+                }
+              }
+            }
+          }
           .carousel-02-phone1-bg {
             position: relative;
             width: 348px;
