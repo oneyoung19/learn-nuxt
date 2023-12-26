@@ -40,8 +40,20 @@
               <div
                 class="carousel-01-container-right">
                 <div class="carousel-01-container-right-header">
-                  <!-- <span class="text">$158,521.50</span> -->
-                  <CountUp class="text" :end-val="2000"></CountUp>
+                  <CountUp
+                    class="text"
+                    data-aos="fade"
+                    data-aos-delay="1800"
+                    :end-val="158521.50"
+                    :duration="1.5"
+                    :decimalPlaces="2"
+                    :autoplay="false"
+                    @init="handleInit1"
+                    @transitionend="handleTransitionEnd1">
+                    <template #prefix>
+                      <span>$</span>
+                    </template>
+                  </CountUp>
                   <div
                     class="img"
                     data-aos="fade"
@@ -82,7 +94,7 @@
                       <div class="carousel-01-polyline">
                         <img
                           data-aos="aos-animate-padding-polyline"
-                          data-aos-duration="1800"
+                          data-aos-duration="2000"
                           data-aos-offset="0"
                           data-aos-delay="1800"
                           src="@/assets/image/home/carousel-01-polyline.png"
@@ -701,6 +713,13 @@ const handleSlideChangeTransitionStart = (slideInfo) => {
   // 当加上loop:true时，activeIndex会有问题。应该使用realIndex。
   const { realIndex } = slideInfo
   swiperIndex.value = realIndex
+}
+let countUp1 = undefined
+const handleInit1 = (ctx) => {
+  countUp1 = ctx
+}
+const handleTransitionEnd1 = (a, b, c) => {
+  countUp1.start()
 }
 /* Partners swiper */
 const partnersImgList = [
