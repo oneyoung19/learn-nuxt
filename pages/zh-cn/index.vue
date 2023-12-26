@@ -19,38 +19,79 @@
           @slideChangeTransitionStart="handleSlideChangeTransitionStart">
           <SwiperSlide class="carousel-item">
             <Button type="blue" class="carousel-item-btn">立即申请</Button>
-            <div class="carousel-item-container carousel-01-container">
-              <div class="carousel-01-container-left">
+            <div class="carousel-item-container carousel-01-container" :class="swiperIndex === 0 ? '' : 'inactive'">
+              <div
+                class="carousel-01-container-left"
+                data-aos="fade"
+                data-aos-duration="400">
                 <div class="logo">
                   <img src="@/assets/image/home/carousel-01-logo.png" alt="">
                 </div>
                 <div class="menus">
                   <img src="@/assets/image/home/carousel-01-menus.png" alt="">
                 </div>
-                <div class="active-menu">
+                <div
+                  class="active-menu"
+                  data-aos="fade"
+                  data-aos-delay="400">
                   <img src="@/assets/image/home/carousel-01-menu-active.png" alt="">
                 </div>
               </div>
-              <div class="carousel-01-container-right">
+              <div
+                class="carousel-01-container-right">
                 <div class="carousel-01-container-right-header">
                   <span class="text">$158,521.50</span>
-                  <div class="img">
+                  <div
+                    class="img"
+                    data-aos="fade"
+                    data-aos-delay="400"
+                    data-aos-duration="1500">
                     <img src="@/assets/image/home/carousel-01-search.png" alt="">
                   </div>
                 </div>
-                <div class="carousel-01-container-right-subtitle">
+                <div
+                  class="carousel-01-container-right-subtitle"
+                  data-aos="fade"
+                  data-aos-duration="1200"
+                  data-aos-offset="0"
+                  data-aos-delay="1800">
                   <img src="@/assets/image/home/carousel-01-subtitle.png" alt="">
                 </div>
                 <div class="carousel-01-container-right-content">
                   <div class="content-left">
                     <div class="content-left-header">
-                      <div class="visa-bg background"></div>
-                      <div class="fund-bg background"></div>
+                      <div
+                        class="visa-bg background"
+                        data-aos="fade"
+                        data-aos-delay="400"
+                        data-aos-duration="1500">
+                      </div>
+                      <div
+                        class="fund-bg background"
+                        data-aos="fade"
+                        data-aos-delay="600"
+                        data-aos-duration="1800">
+                      </div>
                     </div>
-                    <div class="content-left-footer background">
+                    <div
+                      class="content-left-footer background"
+                      data-aos="fade"
+                      data-aos-delay="600"
+                      data-aos-duration="1800">
                       <div class="carousel-01-polyline">
-                        <img src="@/assets/image/home/carousel-01-polyline.png" alt="">
-                        <div class="carousel-01-dot">
+                        <img
+                          data-aos="aos-animate-padding-polyline"
+                          data-aos-duration="1800"
+                          data-aos-offset="0"
+                          data-aos-delay="1800"
+                          src="@/assets/image/home/carousel-01-polyline.png"
+                          alt="">
+                        <div
+                          class="carousel-01-dot"
+                          data-aos="fade"
+                          data-aos-duration="1000"
+                          data-aos-delay="3000"
+                          data-aos-offset="0">
                           <img src="@/assets/image/home/carousel-01-dot.png" alt="">
                           <div class="carousel-01-dot-amount">
                             <img src="@/assets/image/home/carousel-01-dot-amount.png" alt="">
@@ -60,9 +101,20 @@
                     </div>
                   </div>
                   <div class="content-right">
-                    <div class="content-right-header background">
+                    <div
+                      class="content-right-header background"
+                      data-aos="fade"
+                      data-aos-duration="1500"
+                      data-aos-offset="0"
+                      data-aos-delay="600">
                     </div>
-                    <div class="content-right-footer background"></div>
+                    <div
+                      class="content-right-footer background"
+                      data-aos="fade"
+                      data-aos-duration="1500"
+                      data-aos-offset="0"
+                      data-aos-delay="600">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -791,11 +843,22 @@ const swiperPartnersModules = ref([Autoplay])
                     .carousel-01-polyline {
                       position: relative;
                       width: 385px;
-                      height: 108px;
+                      height: 110px;
+                      > img {
+                        padding-right: 385px;
+                        object-fit: cover;
+                        object-position: left;
+                        &[data-aos="aos-animate-padding-polyline"] {
+                          padding-right: 385px;
+                          &.aos-animate {
+                            padding-right: 0;
+                          }
+                        }
+                      }
                       .carousel-01-dot {
                         position: absolute;
-                        top: 0;
-                        right: 75px;
+                        top: 1px;
+                        right: 72px;
                         width: 36px;
                         height: 36px;
                         .carousel-01-dot-amount {
@@ -931,9 +994,15 @@ const swiperPartnersModules = ref([Autoplay])
             }
           }
           &.inactive {
+            [data-aos="fade"] {
+              opacity: 0!important;
+            }
+            [data-aos="aos-animate-padding-polyline"] {
+              padding-right: 385px!important;
+            }
             [data-aos="fade-up"] {
-              opacity: 0;
-              transform: translate3d(0, 100px, 0);
+              opacity: 0!important;
+              transform: translate3d(0, 100px, 0)!important;
             }
           }
           &.active {
