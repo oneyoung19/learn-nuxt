@@ -79,6 +79,8 @@
       </ul>
     </div>
   </ElDialog>
+
+  <CookieTip />
 </template>
 
 <script>
@@ -86,8 +88,12 @@ import {
   getCountryCodeList,
   cluesSubmit
 } from '@/api'
+import CookieTip from '@/components/business/CookieTip'
 
 export default {
+  components: {
+    CookieTip
+  },
   props: {
     visible: {
       type: Boolean,
