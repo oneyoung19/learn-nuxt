@@ -39,12 +39,19 @@
                 <template #prefix>
                   <el-select
                     class="el-select-hidden-cover"
-                    v-model="value">
+                    v-model="formData.countryCode"
+                    filterable
+                  >
                     <el-option
                       v-for="item in countryCodeList"
                       :key="item.value"
                       :label="item.label"
-                      :value="item.value"/>
+                      :value="item.value">
+                      <div class="country-code-item">
+                        <span>+{{ item.value }}</span>
+                        <p>{{ item.name }}</p>
+                      </div>
+                    </el-option>
                   </el-select>
                   <div class="prefix-icon">
                     <SvgIcon name="tele" class="icon"></SvgIcon>
@@ -54,7 +61,13 @@
             </ElFormItem>
           </ElForm>
           <div class="submit-btn">
-            <Button type="blank" @click="handleSubmit">提交</Button>
+            <Button
+              :loading="submitLoading"
+              type="blank"
+              @click="handleSubmit"
+            >
+              提交
+            </Button>
           </div>
         </li>
         <li class="open-account-item person" v-show="activeButton === 'person'">
@@ -69,7 +82,10 @@
 </template>
 
 <script>
-import { getCountryCodeList } from '@/api'
+import {
+  getCountryCodeList,
+  cluesSubmit
+} from '@/api'
 
 export default {
   props: {
@@ -78,6 +94,7 @@ export default {
       default: false
     }
   },
+
   data () {
     return {
       activeButton: 'enterprise',
@@ -85,10 +102,11 @@ export default {
         { label: '企业开户', value: 'enterprise' },
         { label: '个人开户', value: 'person' }
       ],
+      submitLoading: false,
       // 表单
       formData: {
         name: '',
-        phoneCode: '',
+        countryCode: '+86',
         phone: ''
       },
       rules: {
@@ -99,7 +117,6 @@ export default {
           { required: true, message: '请输入手机号码', trigger: 'blur' }
         ]
       },
-      value: '+86',
       countryCodeList: []
     }
   },
@@ -120,9 +137,34 @@ export default {
       this.$emit('update:modelValue', visible)
     },
     handleSubmit () {
-      // this.$refs.form.validate(valid => {
-      //   console.log(valid)
-      // })
+      this.$refs.form.validate(valid => {
+        if (valid) {
+          const {
+            name: customerName,
+            countryCode,
+            phone
+          } = this.formData
+          const data = {
+            customerName,
+            countryCode,
+            phone,
+            pageType: 2,
+            channelNum: 'GW8306',
+            channeLink: location.href,
+            platform: '3'
+          }
+          this.submitLoading = true
+          cluesSubmit(data).then(res => {
+            this.submitLoading = false
+            if (res) {
+              // 提交成功，需要增加confirm确认
+            }
+          }).catch(err => {
+            this.submitLoading = false
+            console.error(err)
+          })
+        }
+      })
       // const { pending, data: posts } = useFetch('http://sit1.cbi-catcher-gateway.sitcbi.com/cbi-catcher-app/catcher/front/clues/registerAreaList', {
       //   server: false
       // })
@@ -136,9 +178,29 @@ export default {
 .el-dialog-cover {
   width: 468px;
 }
+.open-account {
+  .el-select__popper {
+    width: 310px;
+  }
+}
 </style>
 
 <style scoped lang="less">
+.country-code-item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  color: @blank;
+  span {
+    display: block;
+    width: 90px;
+    flex-shrink: 0;
+  }
+  p {
+    flex: 1;
+    text-align: right;
+  }
+}
 .open-account {
   position: relative;
   .icon-close {

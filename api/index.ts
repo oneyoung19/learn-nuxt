@@ -6,3 +6,9 @@ export const getCountryCodeList = (data: unknown) => {
     server: false
   })
 }
+
+export const cluesSubmit = (data: unknown) => {
+  return httpRequest.post(`${CBI_CATCHER_APP}/catcher/front/clues/submit`, data, {
+    server: false
+  })
+}

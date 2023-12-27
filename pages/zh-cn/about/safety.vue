@@ -185,15 +185,14 @@
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-    }
-  },
-  methods: {
-  }
-}
+<script setup>
+useHead({
+  title: '安全合规 - CBiBank',
+  meta: [
+    { name: 'keywords', content: '客户身份安全,交易安全,系统和数据安全,KYC与反洗钱' },
+    { name: 'description', content: '我们通过多种身份验证方式,确保客户身份安全,建立了多重安全机制并使用专业的加密技术保证客户的交易安全,采用多种安全设备用以构建IT安全体系,并通过多种数据备份方案,确保客户的数据安全,我们有经验丰富的合规运营团队,通过专业的反洗钱模型确保银行安全合规运营。' }
+  ]
+})
 </script>
 
 <style scoped lang="less">

@@ -206,6 +206,15 @@
   </div>
 </template>
 
+<script setup>
+useHead({
+  title: '我们是谁 - CBiBank',
+  meta: [
+    { name: 'keywords', content: 'CBiBank富港银行介绍' },
+    { name: 'description', content: 'CBiBank（富港银行）是经济全球化趋势下国际银行新模式的探索者，专注为国际企业提供一站式跨境金融服务，包括离岸账户开立、转账汇款、电商收款、企业理财等。' }
+  ]
+})
+</script>
 <script>
 import dimVisa from '@/assets/image/who-we-are/dim-visa.png'
 import dimCips from '@/assets/image/who-we-are/dim-cips.png'
