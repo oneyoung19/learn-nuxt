@@ -3,6 +3,7 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
 
 export default defineNuxtConfig({
+  ssr: true,
   devServer: {
     port: 3000,
     host: '0.0.0.0'
@@ -15,6 +16,22 @@ export default defineNuxtConfig({
     // pageTransition: { name: 'page', mode: 'out-in' }
   },
   devtools: { enabled: true },
+  nitro: {
+    devProxy: {
+      '/cbi-catcher-app': {
+        target: 'http://sit1.cbi-catcher-gateway.sitcbi.com/cbi-catcher-app',
+        changeOrigin: true,
+        // TODO: Nutx是真垃圾 设置了不管用 https://github.com/http-party/node-http-proxy?tab=readme-ov-file#options
+        // prependPath: true
+      },
+    },
+    // 该配置用于服务端请求转发
+    routeRules: {
+      '/cbi-catcher-app/**': {
+        proxy: 'http://sit1.cbi-catcher-gateway.sitcbi.com/**'
+      }
+    }
+  },
   vite: {
     css: {
       preprocessorOptions: {

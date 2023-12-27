@@ -1,1 +1,1 @@
-export const CBI_CATCHER_APP = 'http://sit1.cbi-catcher-gateway.sitcbi.com/cbi-catcher-app'
+export const CBI_CATCHER_APP = '/cbi-catcher-app'
