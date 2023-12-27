@@ -749,9 +749,11 @@
       </div>
     </div>
   </div>
+  <CookieTip />
 </template>
 
 <script setup>
+import CookieTip from '@/components/business/CookieTip'
 import cipsImg from '@/assets/image/home/cips.png'
 import unionPayImg from '@/assets/image/home/union-pay.png'
 import swiftImg from '@/assets/image/home/swift.png'
