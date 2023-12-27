@@ -19,7 +19,9 @@
           <SvgIcon class="celebrity-introduce-icon" name="quotes"></SvgIcon>
           <div class="celebrity-introduce-text">
             <p class="celebrity-name">{{ item.name }}</p>
-            <p class="celebrity-position text-overflow">{{ item.position }}</p>
+            <p class="celebrity-position text-overflow">
+              {{ item.position }}
+            </p>
           </div>
         </div>
         <div class="celebrity-avatar background">
@@ -58,7 +60,7 @@ export default {
           id: 'fenglun',
           name: '冯仑',
           position: '万通控股董事长',
-          words: '神州数字集团是科技金融的理想主义者，有著丰富且成熟的新金融经验和支付履历。CBiBank是神州数字在这一领域的全新探索，秉承神州数字的品牌理想，CBiBank将为出海中小企业提供专业、便捷和贴心的国际银行服务，协力创业企业、出海商神州数字集团是科技金融的理想主义者，有著丰富且成熟的新金融经验和支付履历。CBiBank是神州数字在这一领域的全新探索，秉承神州数字的品牌理想，CBiBank将为出海中小企业提供专业、便捷和贴心的国际银行服务，协力创业企业、出海商'
+          words: '神州数字集团是科技金融的理想主义者，有着丰富且成熟的新金融经验和支付履历。CBiBank是神州数字在这一领域的全新探索，秉承神州数字的品牌理想，CBiBank将为出海中小企业提供专业、便捷和贴心的国际银行服务，协力创业企业、出海商贸、出海服务及境外投融资企业发展。祝贺CBiBank盛大开业！'
         },
         {
           id: 'yangguang',
@@ -81,25 +83,26 @@ export default {
         {
           id: 'xuejun',
           name: '薛军',
-          position: '启迪创投创始合伙人<br/>清控银杏创始合伙人',
+          position: '启迪创投创始合伙人\n清控银杏创始合伙人',
           words: 'CBiBank已经成功运营多月，我对于其团队表现出的专业度和敬业度印象深刻。CBiBank专注于出海中小企业的国际银行服务，安全、快速、便捷的境外开户、转账和支付是出海中小企业的不二之选，能在很大程度上提升后者财务效率。出海中小企业国际银行，我推荐CBiBank！'
         },
         {
           id: 'moxiaoqi',
           name: '莫小奇',
-          position: '知名演员<br/>准了App创始人',
+          position: '知名演员\n准了App创始人',
           words: '一台好戏需要专业团队精心编排，一个好产品需要专业团队用心打磨。CBiBank最专业的团队为出海中小企业提供快速、便捷和安全的国际银行服务! 祝贺CBiBank开业迎宾!'
         },
         {
           id: 'xiaodun',
           name: '肖盾',
-          position: '<span>一起教育（股票代码：YQ）<br/>联合创始人</span>',
+          // position: '一起教育（股票代码：YQ）\n联合创始人',
+          position: '一起教育（股票代码：YQ）联合创始人',
           words: '一起教育科技解决的是教学效率低下的问题，CBiBank则解决的是出海中小企业金融效率低下的问题。依赖CBiBank专业的银行团队，出海中小企业可以在国际银行服务领域畅享安全、快速和便捷的跨境开户和转账服务，提升整体业务和盈利水平。'
         },
         {
           id: 'heqingyuan',
           name: '何庆源',
-          position: '香港星展银行独立董事<br/>中国移动通信集团董事',
+          position: '香港星展银行独立董事\n中国移动通信集团董事',
           words: '我欢迎新金融加入金融行业，完善金融市场的多元化发展。 CBiBank作为立足美国的全球首批民营互联网银行，其团队专业度值得信赖，其快速、便捷和安全的国际银行服务将为出海中小企业解决境外开户、跨境转账等切实需求。'
         },
         {
@@ -111,7 +114,7 @@ export default {
         {
           id: 'ruliyun',
           name: '茹立云',
-          position: '葡萄智学创始人兼CEO<br/>搜狗公司战略顾问',
+          position: '葡萄智学创始人兼CEO\n搜狗公司战略顾问',
           words: '祝贺CBiBank开业迎宾！过硬的产品、专业的团队、贴心的服务是所有企业走向成功的基石，CBiBank就是这样一家源自美国的银行，其安全、便捷和专业的国际银行服务，是出海中小企业的国际银行服务新通路。'
         },
         {
@@ -210,6 +213,7 @@ export default {
             font-size: 14px;
             color: #87878F;
             line-height: 20px;
+            white-space: pre-wrap;
           }
         }
       }
