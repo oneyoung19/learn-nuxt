@@ -114,6 +114,16 @@
   </div>
 </template>
 
+<script setup>
+useHead({
+  title: 'CBiBank个人网银APP下载，致力于为个人用户提供国际化银行服务 - CBiBank',
+  meta: [
+    { name: 'keywords', content: 'CBiBank下载,美元账户,美元汇款,欧元汇款,跨境汇转,离岸人民币,美国银行,货币兑换' },
+    { name: 'description', content: 'CBiBank APP下载，在线注册，视频面签，最快1天完成开户，产品涵盖美国银行账户开立、visa卡、借记卡、换汇结汇、港美股快速出入金、跨境汇转、美元理财等等银行服务。' }
+  ]
+})
+</script>
+
 <script>
 export default {
   data () {

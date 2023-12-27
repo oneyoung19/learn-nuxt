@@ -309,6 +309,16 @@
   </div>
 </template>
 
+<script setup>
+useHead({
+  title: '企业网银 - CBiBank',
+  meta: [
+    { name: 'keywords', content: '企业离岸账户,银行卡商户收单,在线跨境收款,在线银行账户开立' },
+    { name: 'description', content: 'CBiBank企业银行服务,可快速申请开立境外银行账户,随时随地在线操作,丰富的投资组合,实现账户资产稳健增值,快速的跨境转账,全球主流货币的收付款,银行卡商户收单,支持商户借记卡贷记卡收款清算,灵活掌握资金使用。' }
+  ]
+})
+</script>
+
 <script>
 export default {
   data () {

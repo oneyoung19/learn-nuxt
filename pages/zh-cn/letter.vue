@@ -177,6 +177,15 @@
   </div>
 </template>
 
+<script setup>
+useHead({
+  title: '银行单证服务 - CBiBank',
+  meta: [
+    { name: 'keywords', content: '银行单证,信用证业务,保函业务,托收业务,信用证办理,保函办理,托收办理' },
+    { name: 'description', content: '提供完善的银行单证服务，支持美元、欧元、人民币等主流币种的多种单证类业务，包含信用证业务、保函业务、托收业务等等。' }
+  ]
+})
+</script>
 <script>
 export default {
   data () {
