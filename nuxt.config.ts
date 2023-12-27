@@ -43,14 +43,23 @@ export default defineNuxtConfig({
       // }
     ]
   },
-  // 全局样式
+  // 全局样式 TODO: 这里的样式不应该作枚举 应该动态化导入
   css: [
     '~/assets/styles/reset.less',
     '~/assets/styles/global.less',
     'animate.css/animate.css',
-    '~/assets/styles/animation/index.js',
     'element-plus/dist/index.css',
-    '~/assets/styles/element/index.js'
+
+    '~/assets/styles/animation/aos.less',
+    '~/assets/styles/animation/cover-animate.less',
+    '~/assets/styles/animation/custom.less',
+    '~/assets/styles/animation/vue-transition.less',
+
+    '~/assets/styles/element/color.less',
+    '~/assets/styles/element/dialog.less',
+    '~/assets/styles/element/form-item.less',
+    '~/assets/styles/element/input.less',
+    '~/assets/styles/element/select.less'
   ],
   // 配置pathPrefix 以使组件名不采用路径
   components: [
