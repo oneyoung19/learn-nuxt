@@ -98,7 +98,7 @@ export default {
             { text: '费用说明', url: 'https://help.cbibank.com/341b' },
             // TODO: lang参数不生效
             { text: '尽调查册缴费', url: 'https://pay.cbibank.com/?lang=zh-CN#/' },
-            { text: '百科全书', url: '/wiki' }
+            { text: '百科全书', url: 'https://www.cbibank.com/wiki' }
           ]
         },
         {
