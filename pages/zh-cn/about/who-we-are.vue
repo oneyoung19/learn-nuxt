@@ -13,12 +13,12 @@
         <div class="profession-left">
           <img
             v-if="activeButton === 'mission'"
-            data-aos="fade-left"
+            data-aos="fade"
             src="@/assets/image/who-we-are/mission.png"
             alt="">
           <img
             v-if="activeButton === 'vision'"
-            data-aos="fade-right"
+            data-aos="fade"
             src="@/assets/image/who-we-are/vision.png"
             alt="">
         </div>
@@ -29,12 +29,12 @@
             :list="buttonList">
           </SwitchButton>
           <div class="mission-content" v-if="activeButton === 'mission'">
-            <p class="title" data-aos="fade-left" data-aos-offset="10">助力全球互联互通，为中小企业创造更多贸易及投资机会</p>
-            <p class="desc" data-aos="fade-left" data-aos-delay="200" data-aos-offset="10">我们正在建立安全便捷的银行体系——让它更快、更方便的为企业和个人服务：收款、支付、获得报酬、消费，无论您身在何处，都可以使用我们的银行服务，我们正在推动全球贸易及投资便利化，打造最受信赖的国际商业银行。</p>
+            <p class="title" data-aos="fade" data-aos-offset="10">助力全球互联互通，为中小企业创造更多贸易及投资机会</p>
+            <p class="desc" data-aos="fade" data-aos-delay="200" data-aos-offset="10">我们正在建立安全便捷的银行体系——让它更快、更方便的为企业和个人服务：收款、支付、获得报酬、消费，无论您身在何处，都可以使用我们的银行服务，我们正在推动全球贸易及投资便利化，打造最受信赖的国际商业银行。</p>
           </div>
           <div class="vision-content" v-if="activeButton === 'vision'">
-            <p class="title" data-aos="fade-right" data-aos-offset="10">推动全球贸易及投资便利化，打造最受信赖的国际商业银行</p>
-            <p class="desc" data-aos="fade-right" data-aos-delay="200" data-aos-offset="10">在深刻理解国际贸易企业需求的基础上，打造差异化的产品服务，持续提升国际间贸易收付结算的便利化水平，为广大投资者提供多元、稳健、可预期的投资产品。</p>
+            <p class="title" data-aos="fade" data-aos-offset="10">推动全球贸易及投资便利化，打造最受信赖的国际商业银行</p>
+            <p class="desc" data-aos="fade" data-aos-delay="200" data-aos-offset="10">在深刻理解国际贸易企业需求的基础上，打造差异化的产品服务，持续提升国际间贸易收付结算的便利化水平，为广大投资者提供多元、稳健、可预期的投资产品。</p>
           </div>
         </div>
       </div>
@@ -153,7 +153,7 @@
           }"
           :loop="true"
           :speed="3000"
-          :spaceBetween="80"
+          :spaceBetween="100"
           slidesPerView="auto">
           <SwiperSlide
             class="partners-item"
@@ -492,6 +492,9 @@ export default {
           &:last-child {
             border-bottom: 1px solid @blank;
           }
+          &:hover {
+            background-color: @topwhite!important;
+          }
           .question {
             position: relative;
             margin-bottom: 10px;
@@ -516,7 +519,7 @@ export default {
             line-height: 30px;
           }
           &.active {
-            background-color: @topwhite;
+            background-color: rgba(255, 255, 255, .5);
             .question {
               .icon {
                 transform: translateY(-50%) rotate(90deg);

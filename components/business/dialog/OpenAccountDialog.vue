@@ -40,8 +40,7 @@
                   <el-select
                     class="el-select-hidden-cover"
                     v-model="formData.countryCode"
-                    filterable
-                  >
+                    filterable>
                     <el-option
                       v-for="item in countryCodeList"
                       :key="item.value"
@@ -203,6 +202,7 @@ export default {
 }
 .open-account {
   position: relative;
+  color: @blank;
   .icon-close {
     position: absolute;
     top: 20px;
