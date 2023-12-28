@@ -87,8 +87,8 @@ export default {
             { text: '单证业务', url: '/zh-cn/letter' },
             { text: '我们是谁', url: '/zh-cn/about/who-we-are' },
             { text: '安全合规', url: '/zh-cn/about/safety' },
-            // TODO: 跳转到/zh-cn/about/safety的反洗钱
-            { text: '反洗钱', url: '' }
+            // TODO: 跳转到/zh-cn/about/safety的反洗钱 滚动效果待优化
+            { text: '反洗钱', url: '/zh-cn/about/safety#finance' }
           ]
         },
         {

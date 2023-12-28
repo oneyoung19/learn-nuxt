@@ -44,7 +44,7 @@
     </div>
     <div class="finance">
       <div class="finance-container layout">
-        <p class="title" data-aos="fade-up">反洗钱</p>
+        <a id="finance" class="title" data-aos="fade-up">反洗钱</a>
         <p class="sub-title" data-aos="fade-up">诚信的金融环境，切实保障用户权益
         </p>
         <ul class="finance-list">
@@ -521,6 +521,7 @@ useHead({
   .notice {
     height: 650px;
     background-color: @topwhite;
+    overflow: hidden;
     .notice-container {
       position: relative;
       padding-top: 140px;
