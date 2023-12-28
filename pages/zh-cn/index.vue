@@ -1,17 +1,17 @@
 <template>
   <div class="home">
     <div class="banner">
-      <!-- :autoplay="{
-          delay: 0,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: false
-        }" -->
       <Swiper
         class="carousel-list"
         :modules="swiperModules"
         :pagination="swiperPaginationOptions"
+        :autoplay="{
+          delay: 6000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false
+        }"
         :loop="true"
-        :speed="2000"
+        :speed="1500"
         :spaceBetween="80"
         slidesPerView="auto"
         @slideChangeTransitionStart="handleSlideChangeTransitionStart">
