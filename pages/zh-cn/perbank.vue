@@ -93,6 +93,12 @@
           class="express-right background"
           data-aos="fade-up"
           data-aos-offset="400">
+          <div class="express-right-payment" data-aos="fade-up" data-aos-delay="200">
+            <p class="title">Payment</p>
+            <div class="icon">
+              <img src="@/assets/image/perbank/express-binggo.png" alt="">
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -315,7 +321,7 @@ export default {
     overflow: hidden;
     .express-container {
       display: flex;
-      padding-top: 116px;
+      padding-top: 153px;
       .express-left {
         flex: 1;
         padding-top: 146px;
@@ -332,11 +338,36 @@ export default {
         }
       }
       .express-right {
-        margin-left: 90px;
-        margin-right: 40px;
-        width: 510px;
-        height: 584px;
+        position: relative;
+        margin-left: 178px;
+        margin-right: 33px;
+        width: 428px;
+        height: 547px;
         background-image: url('@/assets/image/perbank/express-bg.png');
+        .express-right-payment {
+          position: absolute;
+          left: -154px;
+          bottom: 152px;
+          width: 202px;
+          background: rgba(255,255,255,0.8);
+          box-shadow: 0px 14px 30px 0px rgba(22,31,91,0.102);
+          border-radius: 20px;
+          padding: 25px 0;
+          >.title {
+            font-size: 18px;
+            font-family: Poppins, Poppins;
+            font-weight: 600;
+            color: #131523;
+            line-height: 18px;
+            margin-bottom: 13px;
+            text-align: center;
+          }
+          >.icon {
+            width: 52px;
+            height: 52px;
+            margin: 0 auto;
+          }
+        }
       }
     }
   }
