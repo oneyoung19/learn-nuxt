@@ -1,31 +1,34 @@
 <template>
-  <!-- 增加cookie提示，暂时只放在了首页中，将来要放到全局提示 -->
-  <div class="cookie-tip" v-if="showCookieTip">
-    <div class="content layout">
-      <div class="">
-        <h3>Cookie 为您提供个性化体验</h3>
-        <p>
-          Cookie帮助我们优化您的网站使用体验，我们使用Cookie进行网站分析和个性化内容展示，
-          如果您继续访问本网站，代表您同意相关用途。更多信息，请查看我们的
-          <a class="link" href="https://www.cbibank.com/privacy.html" target="__blank">《隐私权协议》</a>
-        </p>
-      </div>
-      <div class="btns">
-        <Button
-          type="blank"
-          size="small"
-          @click="handleAcceptCookie">
-          接受Cookie
-        </Button>
+  <transition
+    enter-active-class="animate__animated animate__slideInUp"
+    leave-active-class="animate__animated animate__slideOutDown">
+    <div class="cookie-tip" v-if="showCookieTip">
+      <div class="content layout">
+        <div class="">
+          <h3>Cookie 为您提供个性化体验</h3>
+          <p>
+            Cookie帮助我们优化您的网站使用体验，我们使用Cookie进行网站分析和个性化内容展示，
+            如果您继续访问本网站，代表您同意相关用途。更多信息，请查看我们的
+            <a class="link" href="https://www.cbibank.com/privacy.html" target="__blank">《隐私权协议》</a>
+          </p>
+        </div>
+        <div class="btns">
+          <Button
+            type="blank"
+            size="small"
+            @click="handleAcceptCookie">
+            接受Cookie
+          </Button>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script lang="ts" setup>
 const showCookieTip = ref(false)
 onMounted(() => {
-  if (!window.localStorage.getItem('cookieConsent')) {
+  if (!window.localStorage.getItem('cookieAccept')) {
     showCookieTip.value = true
   }
 })
@@ -39,9 +42,8 @@ function handleAcceptCookie() {
 <style lang="less" scoped>
 .cookie-tip {
   position: fixed;
-  left: 50%;
+  left: 0;
   bottom: 0;
-  transform: translateX(-50%);
   z-index: 99;
   width: 100%;
   padding: 24px 60px;
