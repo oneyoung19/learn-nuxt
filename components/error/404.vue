@@ -5,13 +5,15 @@
       <img src="@/assets/image/404/404-bg.png" alt="" srcset="">
       <h1>糟糕，您访问的页面飞走了</h1>
       <p>该页面不存在或者页面出现了错误</p>
-      <Button>返回首页</Button>
+      <Button @click="handleToHome">返回首页</Button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-
+function handleToHome() {
+  navigateTo('/')
+}
 </script>
 
 <style scoped lang="less">
@@ -67,7 +69,7 @@
       z-index: 2;
       left: -320px;
       top: 432px;
-      background: url('../assets/image/404/404-dashed.png') no-repeat;
+      background: url('../../assets/image/404/404-dashed.png') no-repeat;
       background-size: 100% 100%;
     }
 
@@ -79,7 +81,7 @@
       z-index: 2;
       right: -230px;
       top: 621px;
-      background: url('../assets/image/404/404-dashed.png') no-repeat;
+      background: url('../../assets/image/404/404-dashed.png') no-repeat;
       background-size: 100% 100%;
     }
   }
