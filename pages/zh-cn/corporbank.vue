@@ -141,71 +141,63 @@
         <SwitchTab
           v-model="activeTab"
           :list="tabList"
-          border
-          @beforeChange="handleLetterTabBeforeChange">
+          border>
         </SwitchTab>
         <ul class="letter-list">
-          <transition
-            mode="out-in"
-            :name="letterFadeTransitionList[0]">
-            <li class="letter-item" v-show="activeTab === 'credit'">
-              <div
-                class="letter-item-left">
-                <p class="title">满足客户信用证结算需求</p>
-                <p class="desc">支持美元、欧元、人民币等主流币种的具有真实贸易背景的信用证相关服务，与全球主要高资信评级银行建立信用证合作关系。</p>
-                <Button type="blank" :arrow-config="{ moving: true }">了解详情</Button>
+          <li class="letter-item" v-if="activeTab === 'credit'">
+            <div
+              class="letter-item-left"
+              data-aos="fade">
+              <p class="title">满足客户信用证结算需求</p>
+              <p class="desc">支持美元、欧元、人民币等主流币种的具有真实贸易背景的信用证相关服务，与全球主要高资信评级银行建立信用证合作关系。</p>
+              <Button type="blank" :arrow-config="{ moving: true }">了解详情</Button>
+            </div>
+            <div class="letter-item-right credit background" data-aos="fade" key="credit">
+              <div class="letter-credit-img" data-aos="fade-down" data-aos-delay="400">
+                <img src="@/assets/image/corporbank/letter-credit-01.png" alt="">
               </div>
-              <div class="letter-item-right credit background">
-                <div class="letter-credit-img">
-                  <img src="@/assets/image/corporbank/letter-credit-01.png" alt="">
-                </div>
-                <div class="letter-credit-img">
-                  <img src="@/assets/image/corporbank/letter-credit-02.png" alt="">
-                </div>
-                <div class="letter-credit-img">
-                  <img src="@/assets/image/corporbank/letter-credit-03.png" alt="">
-                </div>
+              <div class="letter-credit-img" data-aos="fade-up" data-aos-delay="200">
+                <img src="@/assets/image/corporbank/letter-credit-02.png" alt="">
               </div>
-            </li>
-          </transition>
-          <transition
-            mode="out-in"
-            :name="letterFadeTransitionList[1]">
-            <li class="letter-item" v-show="activeTab === 'documentary'">
-              <div class="letter-item-left">
-                <p class="title">协助客户完成进出口托收业务</p>
-                <p class="desc">支持美元、欧元、人民币等主流货币的进口代收、出口托收业务，接受或委托代理行为客户提供托收业务中涉及的单据提示、单据交付等服务。</p>
-                <Button type="blank" :arrow-config="{ moving: true }">了解详情</Button>
+              <div class="letter-credit-img" data-aos="fade-up" data-aos-delay="400">
+                <img src="@/assets/image/corporbank/letter-credit-03.png" alt="">
               </div>
-              <div class="letter-item-right documentary background">
-                <div class="letter-documentary-img">
-                  <img src="@/assets/image/corporbank/letter-documentary-01.png" alt="">
-                </div>
-                <div class="letter-documentary-img">
-                  <img src="@/assets/image/corporbank/letter-documentary-02.png" alt="">
-                </div>
+            </div>
+          </li>
+          <li class="letter-item" v-if="activeTab === 'documentary'">
+            <div
+              class="letter-item-left"
+              data-aos="fade">
+              <p class="title">协助客户完成进出口托收业务</p>
+              <p class="desc">支持美元、欧元、人民币等主流货币的进口代收、出口托收业务，接受或委托代理行为客户提供托收业务中涉及的单据提示、单据交付等服务。</p>
+              <Button type="blank" :arrow-config="{ moving: true }">了解详情</Button>
+            </div>
+            <div class="letter-item-right documentary background" data-aos="fade" key="documentary">
+              <div class="letter-documentary-img">
+                <img src="@/assets/image/corporbank/letter-documentary-01.png" alt="">
               </div>
-            </li>
-          </transition>
-          <transition
-            mode="out-in"
-            :name="letterFadeTransitionList[2]">
-            <li class="letter-item" v-show="activeTab === 'guarantee'">
-              <div class="letter-item-left">
-                <p class="title">解决客户保函业务需求</p>
-                <p class="desc">支持美元、欧元、人民币等主流货币的投标保函、预付款保函、履约保函、付款保函、融资保函等保函类服务。</p>
-                <Button type="blank" :arrow-config="{ moving: true }">了解详情</Button>
+              <div class="letter-documentary-img">
+                <img src="@/assets/image/corporbank/letter-documentary-02.png" alt="">
               </div>
-              <div class="letter-item-right guarantee">
-                <div class="letter-guarantee-img">
-                  <img src="@/assets/image/corporbank/letter-guarantee-01.png" alt="">
-                </div>
-                <div class="letter-guarantee-img">
-                  <img src="@/assets/image/corporbank/letter-guarantee-02.png" alt="">
-                </div>
+            </div>
+          </li>
+          <li class="letter-item" v-if="activeTab === 'guarantee'">
+            <div
+              class="letter-item-left"
+              data-aos="fade">
+              <p class="title">解决客户保函业务需求</p>
+              <p class="desc">支持美元、欧元、人民币等主流货币的投标保函、预付款保函、履约保函、付款保函、融资保函等保函类服务。</p>
+              <Button type="blank" :arrow-config="{ moving: true }">了解详情</Button>
+            </div>
+            <div class="letter-item-right guarantee" data-aos="fade" key="guarantee">
+              <div class="letter-guarantee-img">
+                <img src="@/assets/image/corporbank/letter-guarantee-01.png" alt="">
               </div>
-            </li>
-          </transition>
+              <div class="letter-guarantee-img">
+                <img src="@/assets/image/corporbank/letter-guarantee-02.png" alt="">
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -335,7 +327,6 @@ export default {
         { value: 'documentary', label: '跟单托收业务', labelEn: '(Documentary Collections)' },
         { value: 'guarantee', label: '保函业务', labelEn: '(Letter of Guarantee)' }
       ],
-      letterFadeTransitionList: [],
       useList: [
         { label: 'ATM取现' },
         { label: '商场消费' },
@@ -352,7 +343,6 @@ export default {
     }
   },
   mounted () {
-    this.letterFadeTransitionList = this.tabList.map(item => 'fade-left')
   },
   methods: {
     handleToggleTab (value) {
@@ -366,17 +356,6 @@ export default {
       //     nuxtApp.AOS.refreshHard()
       //   })
       // }
-    },
-    handleLetterTabBeforeChange (tab) {
-      const { activeTab, tabList } = this
-      const activeIndex = tabList.findIndex(item => item.value === activeTab)
-      this.letterFadeTransitionList = tabList.map((item, index) => {
-        if (index >= activeIndex) {
-          return 'fade-right'
-        } else {
-          return 'fade-left'
-        }
-      })
     }
   }
 }
@@ -625,45 +604,60 @@ export default {
               background-image: url('@/assets/image/corporbank/letter-credit-bg.png');
               .letter-credit-img {
                 position: absolute;
+                &[data-aos="fade-down"] {
+                  transform: translate3d(0, -30px, 0);
+                  &.aos-animate {
+                    transform: none;
+                  }
+                }
+                &[data-aos="fade-up"] {
+                  transform: translate3d(0, 50px, 0);
+                  &.aos-animate {
+                    transform: none;
+                  }
+                }
                 &:nth-child(1) {
-                  top: 58px;
-                  right: 30px;
-                  width: 267px;
-                  height: 152px;
+                  top: 83px;
+                  right: 62px;
+                  width: 250px;
+                  height: 100px;
+                  box-shadow: 0px -10px 25px -6px rgba(22,31,91,0.15);
                 }
                 &:nth-child(2) {
-                  top: 159px;
-                  right: 68px;
-                  width: 459px;
-                  height: 251px;
+                  top: 197px;
+                  right: 104px;
+                  width: 387px;
+                  height: 213px;
+                  box-shadow: 0px 6px 25px -6px rgba(22,31,91,0.15);
                 }
                 &:nth-child(3) {
-                  left: -22px;
-                  bottom: 0;
-                  width: 246px;
-                  height: 311px;
+                  left: 8px;
+                  bottom: 38px;
+                  width: 186px;
+                  height: 234px;
+                  box-shadow: 0px 6px 25px -6px rgba(22,31,91,0.15);
                 }
               }
             }
             &.documentary {
               width: 607px;
-              height: 493px;
+              height: 395px;
               margin-left: 45px;
-              margin-top: 54px;
+              margin-top: 100px;
               background-image: url('@/assets/image/corporbank/letter-documentary-bg.png');
               .letter-documentary-img {
                 position: absolute;
                 &:nth-child(1) {
-                  top: 44px;
+                  top: 0;
                   right: 0;
                   width: 464px;
-                  height: 272px;
+                  height: 240px;
                 }
                 &:nth-child(2) {
-                  top: 289px;
-                  right: 164px;
-                  width: 28px;
-                  height: 58px;
+                  bottom: 90px;
+                  right: 150px;
+                  width: 45px;
+                  height: 64px;
                 }
               }
             }
