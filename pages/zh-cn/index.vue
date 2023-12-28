@@ -1,309 +1,307 @@
 <template>
   <div class="home">
     <div class="banner">
-      <div class="layout">
-        <!-- :autoplay="{
-            delay: 0,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false
-          }" -->
-        <Swiper
-          class="carousel-list"
-          :modules="swiperModules"
-          :pagination="swiperPaginationOptions"
-          :loop="true"
-          :speed="2000"
-          :spaceBetween="80"
-          slidesPerView="auto"
-          @slideChangeTransitionStart="handleSlideChangeTransitionStart">
-          <SwiperSlide class="carousel-item">
-            <p class="title">富港银行 提供一站式全球金融服务</p>
-            <p class="sub-title">CB International Bank 快速开启国际银行帐户</p>
-            <Button type="blue" class="carousel-item-btn">立即申请</Button>
-            <div class="carousel-item-container carousel-01-container" :class="swiperIndex === 0 ? '' : 'inactive'">
+      <!-- :autoplay="{
+          delay: 0,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false
+        }" -->
+      <Swiper
+        class="carousel-list"
+        :modules="swiperModules"
+        :pagination="swiperPaginationOptions"
+        :loop="true"
+        :speed="2000"
+        :spaceBetween="80"
+        slidesPerView="auto"
+        @slideChangeTransitionStart="handleSlideChangeTransitionStart">
+        <SwiperSlide class="carousel-item">
+          <p class="title">富港银行 提供一站式全球金融服务</p>
+          <p class="sub-title">CB International Bank 快速开启国际银行帐户</p>
+          <Button type="blue" class="carousel-item-btn">立即申请</Button>
+          <div class="carousel-item-container layout carousel-01-container" :class="swiperIndex === 0 ? '' : 'inactive'">
+            <div
+              class="carousel-01-container-left"
+              data-aos="fade"
+              data-aos-duration="400">
+              <div class="logo">
+                <img src="@/assets/image/home/carousel-01-logo.png" alt="">
+              </div>
+              <div class="menus">
+                <img src="@/assets/image/home/carousel-01-menus.png" alt="">
+              </div>
               <div
-                class="carousel-01-container-left"
+                class="active-menu"
                 data-aos="fade"
-                data-aos-duration="400">
-                <div class="logo">
-                  <img src="@/assets/image/home/carousel-01-logo.png" alt="">
-                </div>
-                <div class="menus">
-                  <img src="@/assets/image/home/carousel-01-menus.png" alt="">
-                </div>
-                <div
-                  class="active-menu"
+                data-aos-delay="400">
+                <img src="@/assets/image/home/carousel-01-menu-active.png" alt="">
+              </div>
+            </div>
+            <div
+              class="carousel-01-container-right">
+              <div class="carousel-01-container-right-header">
+                <CountUp
+                  class="text"
                   data-aos="fade"
-                  data-aos-delay="400">
-                  <img src="@/assets/image/home/carousel-01-menu-active.png" alt="">
+                  data-aos-offset="0"
+                  data-aos-delay="1800"
+                  :end-val="158521.50"
+                  :duration="1.5"
+                  :decimalPlaces="2"
+                  :autoplay="false"
+                  @init="handleInit1"
+                  @transitionend="handleTransitionEnd1">
+                  <template #prefix>
+                    <span>$</span>
+                  </template>
+                </CountUp>
+                <div
+                  class="img"
+                  data-aos="fade"
+                  data-aos-delay="400"
+                  data-aos-duration="1500">
+                  <img src="@/assets/image/home/carousel-01-search.png" alt="">
                 </div>
               </div>
               <div
-                class="carousel-01-container-right">
-                <div class="carousel-01-container-right-header">
-                  <CountUp
-                    class="text"
-                    data-aos="fade"
-                    data-aos-offset="0"
-                    data-aos-delay="1800"
-                    :end-val="158521.50"
-                    :duration="1.5"
-                    :decimalPlaces="2"
-                    :autoplay="false"
-                    @init="handleInit1"
-                    @transitionend="handleTransitionEnd1">
-                    <template #prefix>
-                      <span>$</span>
-                    </template>
-                  </CountUp>
-                  <div
-                    class="img"
-                    data-aos="fade"
-                    data-aos-delay="400"
-                    data-aos-duration="1500">
-                    <img src="@/assets/image/home/carousel-01-search.png" alt="">
-                  </div>
-                </div>
-                <div
-                  class="carousel-01-container-right-subtitle"
-                  data-aos="fade"
-                  data-aos-duration="1200"
-                  data-aos-offset="0"
-                  data-aos-delay="1800">
-                  <img src="@/assets/image/home/carousel-01-subtitle.png" alt="">
-                </div>
-                <div class="carousel-01-container-right-content">
-                  <div class="content-left">
-                    <div class="content-left-header">
-                      <div
-                        class="visa-bg background"
-                        data-aos="fade"
-                        data-aos-delay="400"
-                        data-aos-duration="1500">
-                      </div>
-                      <div
-                        class="fund-bg background"
-                        data-aos="fade"
-                        data-aos-delay="600"
-                        data-aos-duration="1800">
-                        <CountUp
-                          class="amount-text"
-                          data-aos="fade"
-                          data-aos-offset="0"
-                          data-aos-delay="1800"
-                          :end-val="12621.00"
-                          :duration="1.5"
-                          :decimalPlaces="2"
-                          :autoplay="false"
-                          @init="handleInit2"
-                          @transitionend="handleTransitionEnd2">
-                          <template #prefix>
-                            <span>$</span>
-                          </template>
-                        </CountUp>
-                      </div>
+                class="carousel-01-container-right-subtitle"
+                data-aos="fade"
+                data-aos-duration="1200"
+                data-aos-offset="0"
+                data-aos-delay="1800">
+                <img src="@/assets/image/home/carousel-01-subtitle.png" alt="">
+              </div>
+              <div class="carousel-01-container-right-content">
+                <div class="content-left">
+                  <div class="content-left-header">
+                    <div
+                      class="visa-bg background"
+                      data-aos="fade"
+                      data-aos-delay="400"
+                      data-aos-duration="1500">
                     </div>
                     <div
-                      class="content-left-footer background"
+                      class="fund-bg background"
                       data-aos="fade"
                       data-aos-delay="600"
                       data-aos-duration="1800">
-                      <div class="carousel-01-polyline">
-                        <img
-                          data-aos="aos-animate-padding-polyline"
-                          data-aos-duration="2000"
-                          data-aos-offset="0"
-                          data-aos-delay="1800"
-                          src="@/assets/image/home/carousel-01-polyline.png"
-                          alt="">
-                        <div
-                          class="carousel-01-dot"
-                          data-aos="fade"
-                          data-aos-duration="1000"
-                          data-aos-delay="3000"
-                          data-aos-offset="0">
-                          <img src="@/assets/image/home/carousel-01-dot.png" alt="">
-                          <div class="carousel-01-dot-amount">
-                            <img src="@/assets/image/home/carousel-01-dot-amount.png" alt="">
-                          </div>
+                      <CountUp
+                        class="amount-text"
+                        data-aos="fade"
+                        data-aos-offset="0"
+                        data-aos-delay="1800"
+                        :end-val="12621.00"
+                        :duration="1.5"
+                        :decimalPlaces="2"
+                        :autoplay="false"
+                        @init="handleInit2"
+                        @transitionend="handleTransitionEnd2">
+                        <template #prefix>
+                          <span>$</span>
+                        </template>
+                      </CountUp>
+                    </div>
+                  </div>
+                  <div
+                    class="content-left-footer background"
+                    data-aos="fade"
+                    data-aos-delay="600"
+                    data-aos-duration="1800">
+                    <div class="carousel-01-polyline">
+                      <img
+                        data-aos="aos-animate-padding-polyline"
+                        data-aos-duration="2000"
+                        data-aos-offset="0"
+                        data-aos-delay="1800"
+                        src="@/assets/image/home/carousel-01-polyline.png"
+                        alt="">
+                      <div
+                        class="carousel-01-dot"
+                        data-aos="fade"
+                        data-aos-duration="1000"
+                        data-aos-delay="3000"
+                        data-aos-offset="0">
+                        <img src="@/assets/image/home/carousel-01-dot.png" alt="">
+                        <div class="carousel-01-dot-amount">
+                          <img src="@/assets/image/home/carousel-01-dot-amount.png" alt="">
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="content-right">
-                    <div
-                      class="content-right-header background"
+                </div>
+                <div class="content-right">
+                  <div
+                    class="content-right-header background"
+                    data-aos="fade"
+                    data-aos-duration="1500"
+                    data-aos-offset="0"
+                    data-aos-delay="600">
+                    <CountUp
+                      class="amount-text"
                       data-aos="fade"
-                      data-aos-duration="1500"
                       data-aos-offset="0"
-                      data-aos-delay="600">
-                      <CountUp
-                        class="amount-text"
-                        data-aos="fade"
-                        data-aos-offset="0"
-                        data-aos-delay="1800"
-                        :end-val="45230.00"
-                        :duration="1.5"
-                        :decimalPlaces="2"
-                        :autoplay="false"
-                        @init="handleInit3"
-                        @transitionend="handleTransitionEnd3">
-                        <template #prefix>
-                          <span>$</span>
-                        </template>
-                      </CountUp>
-                      <CountUp
-                        class="amount-text"
-                        data-aos="fade"
-                        data-aos-offset="0"
-                        data-aos-delay="1800"
-                        :end-val="113291.00"
-                        :duration="1.5"
-                        :decimalPlaces="2"
-                        :autoplay="false"
-                        @init="handleInit4"
-                        @transitionend="handleTransitionEnd4">
-                        <template #prefix>
-                          <span>$</span>
-                        </template>
-                      </CountUp>
-                    </div>
-                    <div
-                      class="content-right-footer background"
+                      data-aos-delay="1800"
+                      :end-val="45230.00"
+                      :duration="1.5"
+                      :decimalPlaces="2"
+                      :autoplay="false"
+                      @init="handleInit3"
+                      @transitionend="handleTransitionEnd3">
+                      <template #prefix>
+                        <span>$</span>
+                      </template>
+                    </CountUp>
+                    <CountUp
+                      class="amount-text"
                       data-aos="fade"
-                      data-aos-duration="1500"
                       data-aos-offset="0"
-                      data-aos-delay="600">
-                      <CountUp
-                        class="amount-text"
-                        data-aos="fade"
-                        data-aos-offset="0"
-                        data-aos-delay="1800"
-                        :end-val="1339.00"
-                        :duration="1.5"
-                        :decimalPlaces="2"
-                        :autoplay="false"
-                        @init="handleInit5"
-                        @transitionend="handleTransitionEnd5">
-                        <template #prefix>
-                          <span>-$</span>
-                        </template>
-                      </CountUp>
-                      <CountUp
-                        class="amount-text"
-                        data-aos="fade"
-                        data-aos-offset="0"
-                        data-aos-delay="1800"
-                        :end-val="20000.00"
-                        :duration="1.5"
-                        :decimalPlaces="2"
-                        :autoplay="false"
-                        @init="handleInit6"
-                        @transitionend="handleTransitionEnd6">
-                        <template #prefix>
-                          <span>-$</span>
-                        </template>
-                      </CountUp>
-                    </div>
+                      data-aos-delay="1800"
+                      :end-val="113291.00"
+                      :duration="1.5"
+                      :decimalPlaces="2"
+                      :autoplay="false"
+                      @init="handleInit4"
+                      @transitionend="handleTransitionEnd4">
+                      <template #prefix>
+                        <span>$</span>
+                      </template>
+                    </CountUp>
+                  </div>
+                  <div
+                    class="content-right-footer background"
+                    data-aos="fade"
+                    data-aos-duration="1500"
+                    data-aos-offset="0"
+                    data-aos-delay="600">
+                    <CountUp
+                      class="amount-text"
+                      data-aos="fade"
+                      data-aos-offset="0"
+                      data-aos-delay="1800"
+                      :end-val="1339.00"
+                      :duration="1.5"
+                      :decimalPlaces="2"
+                      :autoplay="false"
+                      @init="handleInit5"
+                      @transitionend="handleTransitionEnd5">
+                      <template #prefix>
+                        <span>-$</span>
+                      </template>
+                    </CountUp>
+                    <CountUp
+                      class="amount-text"
+                      data-aos="fade"
+                      data-aos-offset="0"
+                      data-aos-delay="1800"
+                      :end-val="20000.00"
+                      :duration="1.5"
+                      :decimalPlaces="2"
+                      :autoplay="false"
+                      @init="handleInit6"
+                      @transitionend="handleTransitionEnd6">
+                      <template #prefix>
+                        <span>-$</span>
+                      </template>
+                    </CountUp>
                   </div>
                 </div>
               </div>
             </div>
-          </SwiperSlide>
-          <SwiperSlide class="carousel-item">
-            <p class="title">让每个人随时享受专业的国际银行服务</p>
-            <p class="sub-title">一个APP，解決全球个人汇款</p>
-            <Button type="blue" class="carousel-item-btn">立即申请</Button>
-            <div class="carousel-item-container" :class="swiperIndex === 1 ? '' : 'inactive'">
-              <div class="carousel-02-bg carousel-02-phone1-bg background" data-aos="fade-up">
-                <div
-                  class="carousel-02-widget-img carousel-02-phone1-01"
-                  data-aos="fade-up"
-                  data-aos-offset="0"
-                  data-aos-delay="400">
-                  <img src="@/assets/image/home/carousel-02-phone1-01.png" alt="">
-                </div>
-                <div
-                  class="carousel-02-widget-img carousel-02-phone1-02"
-                  data-aos="fade-up"
-                  data-aos-offset="0"
-                  data-aos-delay="600">
-                  <img src="@/assets/image/home/carousel-02-phone1-02.png" alt="">
-                </div>
-                <div
-                  class="carousel-02-widget-img carousel-02-phone1-03"
-                  data-aos="fade-up"
-                  data-aos-offset="0"
-                  data-aos-delay="800">
-                  <img src="@/assets/image/home/carousel-02-phone1-03.png" alt="">
-                </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide class="carousel-item">
+          <p class="title">让每个人随时享受专业的国际银行服务</p>
+          <p class="sub-title">一个APP，解決全球个人汇款</p>
+          <Button type="blue" class="carousel-item-btn">立即申请</Button>
+          <div class="carousel-item-container layout" :class="swiperIndex === 1 ? '' : 'inactive'">
+            <div class="carousel-02-bg carousel-02-phone1-bg background" data-aos="fade-up">
+              <div
+                class="carousel-02-widget-img carousel-02-phone1-01"
+                data-aos="fade-up"
+                data-aos-offset="0"
+                data-aos-delay="400">
+                <img src="@/assets/image/home/carousel-02-phone1-01.png" alt="">
               </div>
-              <div class="carousel-02-bg carousel-02-phone2-bg background" data-aos="fade-up">
-                <div
-                  class="carousel-02-widget-img carousel-02-phone2-01"
-                  data-aos="fade-up"
-                  data-aos-offset="0"
-                  data-aos-delay="400">
-                  <img src="@/assets/image/home/carousel-02-phone2-01.png" alt="">
-                </div>
-                <div
-                  class="carousel-02-widget-img carousel-02-phone2-02"
-                  data-aos="fade-up"
-                  data-aos-offset="0"
-                  data-aos-delay="600">
-                  <img src="@/assets/image/home/carousel-02-phone2-02.png" alt="">
-                </div>
-                <div
-                  class="carousel-02-widget-img carousel-02-phone2-03"
-                  data-aos="fade-up"
-                  data-aos-offset="0"
-                  data-aos-delay="800">
-                  <img src="@/assets/image/home/carousel-02-phone2-03.png" alt="">
-                </div>
-                <div
-                  class="carousel-02-widget-img carousel-02-phone2-04"
-                  data-aos="fade-up"
-                  data-aos-offset="0"
-                  data-aos-delay="800">
-                  <img src="@/assets/image/home/carousel-02-phone2-04.png" alt="">
-                </div>
+              <div
+                class="carousel-02-widget-img carousel-02-phone1-02"
+                data-aos="fade-up"
+                data-aos-offset="0"
+                data-aos-delay="600">
+                <img src="@/assets/image/home/carousel-02-phone1-02.png" alt="">
               </div>
-              <div class="carousel-02-bg carousel-02-phone3-bg background" data-aos="fade-up">
-                <div
-                  class="carousel-02-widget-img carousel-02-phone3-01"
-                  data-aos="fade-up"
-                  data-aos-offset="0"
-                  data-aos-delay="400">
-                  <img src="@/assets/image/home/carousel-02-phone3-01.png" alt="">
-                </div>
-                <div
-                  class="carousel-02-phone3-02"
-                  data-aos="slide-up"
-                  data-aos-offset="0"
-                  data-aos-delay="600">
-                  <img src="@/assets/image/home/carousel-02-phone3-02.png" alt="">
-                </div>
+              <div
+                class="carousel-02-widget-img carousel-02-phone1-03"
+                data-aos="fade-up"
+                data-aos-offset="0"
+                data-aos-delay="800">
+                <img src="@/assets/image/home/carousel-02-phone1-03.png" alt="">
               </div>
             </div>
-          </SwiperSlide>
-          <SwiperSlide class="carousel-item">
-            <p class="title">行之所至，畅通无忧</p>
-            <p class="sub-title">实时汇率、无隐藏费用，用CBiBank借记卡、VISA卡走遍全球</p>
-            <Button type="blue" class="carousel-item-btn">获取卡片</Button>
-            <div class="carousel-item-container" :class="swiperIndex === 2 ? 'active' : ''">
-              <div class="carousel-03-card-img carousel-03-card-01">
-                <img src="@/assets/image/home/carousel-03-card-01.png" alt="">
+            <div class="carousel-02-bg carousel-02-phone2-bg background" data-aos="fade-up">
+              <div
+                class="carousel-02-widget-img carousel-02-phone2-01"
+                data-aos="fade-up"
+                data-aos-offset="0"
+                data-aos-delay="400">
+                <img src="@/assets/image/home/carousel-02-phone2-01.png" alt="">
               </div>
-              <div class="carousel-03-card-img carousel-03-card-02">
-                <img src="@/assets/image/home/carousel-03-card-02.png" alt="">
+              <div
+                class="carousel-02-widget-img carousel-02-phone2-02"
+                data-aos="fade-up"
+                data-aos-offset="0"
+                data-aos-delay="600">
+                <img src="@/assets/image/home/carousel-02-phone2-02.png" alt="">
               </div>
-              <div class="carousel-03-card-img carousel-03-card-03">
-                <img src="@/assets/image/home/carousel-03-card-03.png" alt="">
+              <div
+                class="carousel-02-widget-img carousel-02-phone2-03"
+                data-aos="fade-up"
+                data-aos-offset="0"
+                data-aos-delay="800">
+                <img src="@/assets/image/home/carousel-02-phone2-03.png" alt="">
+              </div>
+              <div
+                class="carousel-02-widget-img carousel-02-phone2-04"
+                data-aos="fade-up"
+                data-aos-offset="0"
+                data-aos-delay="800">
+                <img src="@/assets/image/home/carousel-02-phone2-04.png" alt="">
               </div>
             </div>
-          </SwiperSlide>
-        </Swiper>
-      </div>
+            <div class="carousel-02-bg carousel-02-phone3-bg background" data-aos="fade-up">
+              <div
+                class="carousel-02-widget-img carousel-02-phone3-01"
+                data-aos="fade-up"
+                data-aos-offset="0"
+                data-aos-delay="400">
+                <img src="@/assets/image/home/carousel-02-phone3-01.png" alt="">
+              </div>
+              <div
+                class="carousel-02-phone3-02"
+                data-aos="slide-up"
+                data-aos-offset="0"
+                data-aos-delay="600">
+                <img src="@/assets/image/home/carousel-02-phone3-02.png" alt="">
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide class="carousel-item">
+          <p class="title">行之所至，畅通无忧</p>
+          <p class="sub-title">实时汇率、无隐藏费用，用CBiBank借记卡、VISA卡走遍全球</p>
+          <Button type="blue" class="carousel-item-btn">获取卡片</Button>
+          <div class="carousel-item-container layout" :class="swiperIndex === 2 ? 'active' : ''">
+            <div class="carousel-03-card-img carousel-03-card-01">
+              <img src="@/assets/image/home/carousel-03-card-01.png" alt="">
+            </div>
+            <div class="carousel-03-card-img carousel-03-card-02">
+              <img src="@/assets/image/home/carousel-03-card-02.png" alt="">
+            </div>
+            <div class="carousel-03-card-img carousel-03-card-03">
+              <img src="@/assets/image/home/carousel-03-card-03.png" alt="">
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
     <div class="partners">
       <Swiper
@@ -954,7 +952,6 @@ const swiperPartnersModules = ref([Autoplay])
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
-          width: 100%;
           height: 461px;
           &.carousel-01-container {
             align-items: flex-start;
