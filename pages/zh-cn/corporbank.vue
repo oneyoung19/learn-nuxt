@@ -10,13 +10,24 @@
     </div>
     <div class="channel">
       <div class="channel-container layout">
-        <div class="channel-left">
-          <p class="title" data-aos="fade-up">贸易无国界，</p>
-          <p class="title" data-aos="fade-up" data-aos-delay="300">轻松应对每一笔收付款</p>
+        <div
+          class="channel-left">
+          <div v-if="activeChannel === 'global'">
+            <p class="title" data-aos="fade" data-aos-offset="0">贸易无国界，</p>
+            <p class="title" data-aos="fade" data-aos-delay="100">轻松应对每一笔收付款</p>
+          </div>
+          <div v-if="activeChannel === 'ecommerce'">
+            <p class="title" data-aos="fade" data-aos-offset="0">一个帐户，</p>
+            <p class="title" data-aos="fade" data-aos-delay="100">管理多个电商平台收款</p>
+          </div>
+          <div v-if="activeChannel === 'internation'">
+            <p class="title" data-aos="fade" data-aos-offset="0">金融创新，</p>
+            <p class="title" data-aos="fade" data-aos-delay="100">全球投融资便利化</p>
+          </div>
           <ToggleTab
             class="channel-list"
             data-aos="fade-up"
-            data-aos-delay="600"
+            data-aos-delay="200"
             v-model="activeChannel"
             :list="channelList"
             @change="handleToggleTab">
@@ -25,92 +36,102 @@
         <div
           class="channel-right background"
           data-aos="fade-up"
-          data-aos-delay="600"
           :class="activeChannel">
           <div
             class="global-bg background"
             data-aos="fade-up"
-            data-aos-delay="800"
+            data-aos-delay="250"
             v-if="activeChannel === 'global'"
             key="global">
             <div
               class="global-img global-usd"
               data-aos="fade-right"
-              data-aos-delay="1000">
+              data-aos-delay="400"
+              key="global">
               <img src="@/assets/image/corporbank/global-usd.png" alt="">
             </div>
             <div
               class="global-img global-gbp"
               data-aos="fade-up"
-              data-aos-delay="1000">
+              data-aos-delay="400"
+              key="global">
               <img src="@/assets/image/corporbank/global-gbp.png" alt="">
             </div>
             <div
               class="global-img global-cad"
               data-aos="fade-up"
-              data-aos-delay="1000">
+              data-aos-delay="400"
+              key="global">
               <img src="@/assets/image/corporbank/global-cad.png" alt="">
             </div>
             <div
               class="global-img global-eur"
               data-aos="fade-left"
-              data-aos-delay="1000">
+              data-aos-delay="400"
+              key="global">
               <img src="@/assets/image/corporbank/global-eur.png" alt="">
             </div>
           </div>
           <div
             class="ecommerce-bg background"
             data-aos="fade-up"
-            data-aos-delay="800"
+            data-aos-delay="250"
             v-if="activeChannel === 'ecommerce'"
             key="ecommerce">
             <div
               class="ecommerce-img ecommerce-wish"
               data-aos="fade-down"
-              data-aos-delay="1000">
+              data-aos-delay="400"
+              key="ecommerce">
               <img src="@/assets/image/corporbank/wish.png" alt="">
             </div>
             <div
               class="ecommerce-img ecommerce-tiktok"
               data-aos="fade-left"
-              data-aos-delay="1000">
+              data-aos-delay="400"
+              key="ecommerce">
               <img src="@/assets/image/corporbank/tiktok.png" alt="">
             </div>
             <div
               class="ecommerce-img ecommerce-ebay"
               data-aos="fade-up-left"
-              data-aos-delay="1000">
+              data-aos-delay="400"
+              key="ecommerce">
               <img src="@/assets/image/corporbank/ebay.png" alt="">
             </div>
             <div
               class="ecommerce-img ecommerce-amazon"
               data-aos="fade-up"
-              data-aos-delay="1000">
+              data-aos-delay="400"
+              key="ecommerce">
               <img src="@/assets/image/corporbank/amazon.png" alt="">
             </div>
             <div
               class="ecommerce-img ecommerce-shopify"
               data-aos="fade-right"
-              data-aos-delay="1000">
+              data-aos-delay="400"
+              key="ecommerce">
               <img src="@/assets/image/corporbank/shopify.png" alt="">
             </div>
           </div>
           <div
             class="internation-bg background"
             data-aos="fade-up"
-            data-aos-delay="800"
+            data-aos-delay="250"
             v-if="activeChannel === 'internation'"
             key="internation">
             <div
               class="internation-amount"
               data-aos="fade-right"
-              data-aos-delay="1000">
+              data-aos-delay="400"
+              key="internation">
               <img src="@/assets/image/corporbank/internation-amount.png" alt="">
             </div>
             <div
               class="internation-arrow"
               data-aos="fade-up-left"
-              data-aos-delay="1000">
+              data-aos-delay="400"
+              key="internation">
               <img src="@/assets/image/corporbank/internation-arrow.png" alt="">
             </div>
           </div>
@@ -412,6 +433,8 @@ export default {
       .channel-right {
         width: 558px;
         height: 558px;
+        // 这里写作all 而不是background-image 因为这里会覆盖aos的transition
+        transition: all ease-in-out .8s;
         &.global {
           background-image: url('@/assets/image/corporbank/channel-bg-01.png');
         }

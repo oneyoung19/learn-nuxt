@@ -63,6 +63,7 @@ export default {
     line-height: 90px;
     border-radius: 10px;
     cursor: pointer;
+    user-select: none;
     &:last-child {
       margin-bottom: 0;
     }
@@ -76,6 +77,7 @@ export default {
       height: 100%;
       border-radius: 10px;
       background: @blank;
+      opacity: 0;
       transition: all ease-in-out .5s;
     }
     .icon {
@@ -101,6 +103,7 @@ export default {
       color: @topwhite;
       &::before {
         width: 100%;
+        opacity: 1;
       }
       .icon-arrow {
         opacity: 1;
