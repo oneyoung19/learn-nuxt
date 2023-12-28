@@ -1,6 +1,6 @@
 <template>
   <!-- 增加cookie提示，暂时只放在了首页中，将来要放到全局提示 -->
-  <div class="cookie-tip">
+  <div class="cookie-tip" v-if="showCookieTip">
     <div class="content layout">
       <div class="">
         <h3>Cookie 为您提供个性化体验</h3>
@@ -17,37 +17,22 @@
           @click="handleAcceptCookie">
           接受Cookie
         </Button>
-        <!-- <Button
-          type="gray"
-          size="small"
-          @click="handleRefuseCookie">
-          拒绝Cookie
-        </Button> -->
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-// if (!window.localStorage.getItem('cookieConsent')) {
-//   $('.cookie-consent').show()
-// }
+const showCookieTip = ref(false)
+onMounted(() => {
+  if (!window.localStorage.getItem('cookieConsent')) {
+    showCookieTip.value = true
+  }
+})
 // 接受cookie
 function handleAcceptCookie() {
-  // todo
-  // const cookieConsent = $('.cookie-consent')
-  // const height = cookieConsent.height()
-  // cookieConsent.animate({
-  //   bottom: `-${height}px`
-  // }, 500, function () {
-  //   cookieConsent.hide()
-  // })
-  // window.localStorage.setItem('cookieConsent', true)
-}
-
-// 拒绝cookie
-function handleRefuseCookie() {
-  // todo
+  showCookieTip.value = false
+  window.localStorage.setItem('cookieAccept', 'true')
 }
 </script>
 

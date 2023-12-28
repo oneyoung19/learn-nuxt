@@ -749,7 +749,6 @@
       </div>
     </div>
   </div>
-  <CookieTip />
 </template>
 
 <script setup>
