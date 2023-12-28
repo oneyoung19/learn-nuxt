@@ -64,9 +64,9 @@
       </div>
       <div class="footer-attach">
         <div class="protocol">
-          <a href="https://www.cbibank.com/protocol.html" target="_blank">服务协议</a>
+          <a class="underline" href="https://www.cbibank.com/protocol.html" target="_blank">服务协议</a>
           <span>|</span>
-          <a href="https://www.cbibank.com/privacy.html" target="_blank">隐私权协议</a>
+          <a class="underline" href="https://www.cbibank.com/privacy.html" target="_blank">隐私权协议</a>
         </div>
         <div class="copyright">Copyright ©2017 CB International Bank LLC</div>
       </div>
@@ -150,6 +150,7 @@ export default {
       }
       .footer-menu-item-title {
         margin-bottom: 50px;
+        font-weight: bold;
       }
       .footer-menu-item-link {
         margin-bottom: 20px;
@@ -160,7 +161,8 @@ export default {
         &:hover {
           .underline {
             color: @topwhite;
-            font-weight: bold;
+            // TODO: bold 会造成英文字体宽度变大 产生抖动
+            // font-weight: bold;
           }
         }
       }

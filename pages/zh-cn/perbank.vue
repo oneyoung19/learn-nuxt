@@ -10,7 +10,7 @@
             data-aos="fade-up">
           </DownloadApp>
         </div>
-        <div class="banner-right">
+        <div class="banner-right" data-aos="fade">
           <img src="@/assets/image/perbank/phone.png" alt="">
         </div>
       </div>
@@ -312,6 +312,7 @@ export default {
   .express {
     height: 700px;
     background-color: @gray3;
+    overflow: hidden;
     .express-container {
       display: flex;
       padding-top: 116px;

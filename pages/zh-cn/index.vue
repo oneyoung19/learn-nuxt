@@ -924,8 +924,8 @@ const swiperPartnersModules = ref([Autoplay])
 .home {
   // padding-top: @headerHeight;
   .banner {
-    height: 974px;
-    padding-top: calc(@headerHeight + 100px);
+    // height: 974px;
+    padding-top: calc(@headerHeight + 80px);
     color: @topwhite;
     background-color: @blank;
     text-align: center;
@@ -939,7 +939,7 @@ const swiperPartnersModules = ref([Autoplay])
           font-size: 60px;
         }
         .sub-title {
-          margin-bottom: 114px;
+          margin-bottom: 90px;
           font-size: 24px;
           color: #BBC0D8;
         }
@@ -1260,7 +1260,7 @@ const swiperPartnersModules = ref([Autoplay])
       }
       :deep(.swiper-pagination) {
         position: absolute;
-        top: 184px;
+        top: 170px;
         bottom: auto;
         display: flex;
         justify-content: center;
