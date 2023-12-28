@@ -67,13 +67,13 @@
     <div class="swap">
       <div class="swap-container layout">
         <div class="swap-left">
-          <div class="swap-steps" data-aos="fade-up">
+          <div class="swap-steps" data-aos="fade">
             <img src="@/assets/image/perbank/swap-steps.png" alt="">
           </div>
-          <div class="swap-select" data-aos="flip-up">
+          <div class="swap-select" data-aos="fade-up">
             <img src="@/assets/image/perbank/swap-select.png" alt="">
           </div>
-          <div class="swap-confirm" data-aos="zoom-in">
+          <div class="swap-confirm" data-aos="fade-up">
             <img src="@/assets/image/perbank/swap-confirm.png" alt="">
           </div>
         </div>
@@ -274,33 +274,33 @@ export default {
     background-color: @topwhite;
     .swap-container {
       display: flex;
-      padding-top: 132px;
+      padding-top: 102px;
       .swap-left {
         position: relative;
-        margin-right: 115px;
-        padding-left: 162px;
+        margin-right: 81px;
+        margin-left: 70px;
         .swap-steps {
-          width: 280px;
-          height: 438px;
+          width: 460px;
+          height: 527px;
         }
         .swap-select {
           position: absolute;
-          top: 120px;
-          left: 0;
-          width: 198px;
-          height: 298px;
+          bottom: 108px;
+          left: -113px;
+          width: 278px;
+          height: 370px;
         }
         .swap-confirm {
           position: absolute;
-          top: 208px;
-          left: 385px;
-          width: 116px;
-          height: 126px;
+          bottom: 195px;
+          right: 0;
+          width: 180px;
+          height: 201px;
         }
       }
       .swap-right {
         flex: 1;
-        padding-top: 150px;
+        padding-top: 181px;
         .title {
           margin-bottom: 40px;
           font-size: 40px;
