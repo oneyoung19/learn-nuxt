@@ -141,19 +141,19 @@
     <div class="efficiency">
       <div class="efficiency-container layout">
         <div class="efficiency-left background" data-aos="fade">
-          <div class="efficiency-img efficiency-usd" data-aos="fade-down" data-aos-delay="1000">
+          <div class="efficiency-img efficiency-usd" data-aos="fade-down" data-aos-delay="200">
             <img src="@/assets/image/corporbank/efficiency-usd.png" alt="">
           </div>
           <div class="efficiency-img efficiency-dashed-line">
             <img src="@/assets/image/corporbank/efficiency-dashed-line.png" alt="" data-aos="aos-c-animate-padding">
           </div>
-          <div class="efficiency-img efficiency-cad" data-aos="fade-up" data-aos-delay="1800">
+          <div class="efficiency-img efficiency-cad" data-aos="fade-up" data-aos-delay="400">
             <img src="@/assets/image/corporbank/efficiency-cad.png" alt="">
           </div>
         </div>
-        <div class="efficiency-right" data-aos="fade-left" data-aos-delay="3000">
-          <p class="title">收款速度更快，为您节省更多时间</p>
-          <p class="desc">通过智能风控系统实现款项到账即时完成相关风险排查，结合自动化风险评估体系，为您带来更快、更安全的收款体验。</p>
+        <div class="efficiency-right">
+          <p class="title" data-aos="fade-left" data-aos-delay="1000">收款速度更快，为您节省更多时间</p>
+          <p class="desc" data-aos="fade-left" data-aos-delay="1200">通过智能风控系统实现款项到账即时完成相关风险排查，结合自动化风险评估体系，为您带来更快、更安全的收款体验。</p>
         </div>
       </div>
     </div>
@@ -552,23 +552,20 @@ export default {
           left: -78px;
         }
         .efficiency-dashed-line {
-          width: 306px;
-          height: 63px;
-          top: 107px;
-          left: 113px;
+          width: 302px;
+          height: 62px;
+          top: 105px;
+          left: 106px;
           > img {
             padding-right: 306px;
             object-fit: cover;
             object-position: left;
             transition: all ease 1s;
-            // &:hover {
-            //   padding-right: 0;
-            // }
           }
         }
         .efficiency-cad {
-          right: -36px;
-          bottom: -45px;
+          right: -25px;
+          bottom: -90px;
         }
       }
       .efficiency-right {
