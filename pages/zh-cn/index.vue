@@ -33,7 +33,7 @@
               <div
                 class="active-menu"
                 data-aos="fade"
-                data-aos-delay="400">
+                data-aos-delay="200">
                 <img src="@/assets/image/home/carousel-01-menu-active.png" alt="">
               </div>
             </div>
@@ -44,7 +44,7 @@
                   class="text"
                   data-aos="fade"
                   data-aos-offset="0"
-                  data-aos-delay="1800"
+                  data-aos-delay="1600"
                   :end-val="158521.50"
                   :duration="1.5"
                   :decimalPlaces="2"
@@ -58,7 +58,7 @@
                 <div
                   class="img"
                   data-aos="fade"
-                  data-aos-delay="400"
+                  data-aos-delay="200"
                   data-aos-duration="1500">
                   <img src="@/assets/image/home/carousel-01-search.png" alt="">
                 </div>
@@ -68,7 +68,7 @@
                 data-aos="fade"
                 data-aos-duration="1200"
                 data-aos-offset="0"
-                data-aos-delay="1800">
+                data-aos-delay="1600">
                 <img src="@/assets/image/home/carousel-01-subtitle.png" alt="">
               </div>
               <div class="carousel-01-container-right-content">
@@ -77,19 +77,19 @@
                     <div
                       class="visa-bg background"
                       data-aos="fade"
-                      data-aos-delay="400"
+                      data-aos-delay="200"
                       data-aos-duration="1500">
                     </div>
                     <div
                       class="fund-bg background"
                       data-aos="fade"
-                      data-aos-delay="600"
+                      data-aos-delay="400"
                       data-aos-duration="1800">
                       <CountUp
                         class="amount-text"
                         data-aos="fade"
                         data-aos-offset="0"
-                        data-aos-delay="1800"
+                        data-aos-delay="1600"
                         :end-val="12621.00"
                         :duration="1.5"
                         :decimalPlaces="2"
@@ -105,21 +105,21 @@
                   <div
                     class="content-left-footer background"
                     data-aos="fade"
-                    data-aos-delay="600"
+                    data-aos-delay="400"
                     data-aos-duration="1800">
                     <div class="carousel-01-polyline">
                       <img
                         data-aos="aos-animate-padding-polyline"
                         data-aos-duration="2000"
                         data-aos-offset="0"
-                        data-aos-delay="1800"
+                        data-aos-delay="1600"
                         src="@/assets/image/home/carousel-01-polyline.png"
                         alt="">
                       <div
                         class="carousel-01-dot"
                         data-aos="fade"
                         data-aos-duration="1000"
-                        data-aos-delay="3000"
+                        data-aos-delay="2800"
                         data-aos-offset="0">
                         <img src="@/assets/image/home/carousel-01-dot.png" alt="">
                         <div class="carousel-01-dot-amount">
@@ -135,12 +135,12 @@
                     data-aos="fade"
                     data-aos-duration="1500"
                     data-aos-offset="0"
-                    data-aos-delay="600">
+                    data-aos-delay="400">
                     <CountUp
                       class="amount-text"
                       data-aos="fade"
                       data-aos-offset="0"
-                      data-aos-delay="1800"
+                      data-aos-delay="1600"
                       :end-val="45230.00"
                       :duration="1.5"
                       :decimalPlaces="2"
@@ -155,7 +155,7 @@
                       class="amount-text"
                       data-aos="fade"
                       data-aos-offset="0"
-                      data-aos-delay="1800"
+                      data-aos-delay="1600"
                       :end-val="113291.00"
                       :duration="1.5"
                       :decimalPlaces="2"
@@ -172,12 +172,12 @@
                     data-aos="fade"
                     data-aos-duration="1500"
                     data-aos-offset="0"
-                    data-aos-delay="600">
+                    data-aos-delay="400">
                     <CountUp
                       class="amount-text"
                       data-aos="fade"
                       data-aos-offset="0"
-                      data-aos-delay="1800"
+                      data-aos-delay="1600"
                       :end-val="1339.00"
                       :duration="1.5"
                       :decimalPlaces="2"
@@ -192,7 +192,7 @@
                       class="amount-text"
                       data-aos="fade"
                       data-aos-offset="0"
-                      data-aos-delay="1800"
+                      data-aos-delay="1600"
                       :end-val="20000.00"
                       :duration="1.5"
                       :decimalPlaces="2"
