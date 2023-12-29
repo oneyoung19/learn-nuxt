@@ -1,6 +1,5 @@
 <template>
-  <div class="page-404">
-    <img class="gradient-404" src="@/assets/image/404/404-gradient.png" alt="" srcset="">
+  <div class="page-404 background">
     <div class="content">
       <img src="@/assets/image/404/404-bg.png" alt="" srcset="">
       <h1>糟糕，您访问的页面飞走了</h1>
@@ -21,15 +20,9 @@ function handleToHome() {
   width: 100%;
   min-height: 100%;
   position: relative;
-  
-  .gradient-404 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 804px;
-    height: 503px;
-  }
-
+  background-image: url('@/assets/image/404/404-gradient.png');
+  background-size: 804px 503px;
+  background-position: top left;
   .content {
     width: 860px;
     margin: 0 auto;
@@ -70,7 +63,7 @@ function handleToHome() {
       z-index: 2;
       left: -320px;
       top: 432px;
-      background: url('../../assets/image/404/404-dashed.png') no-repeat;
+      background: url('@/assets/image/404/404-dashed.png') no-repeat;
       background-size: 100% 100%;
     }
 
@@ -82,7 +75,7 @@ function handleToHome() {
       z-index: 2;
       right: -230px;
       top: 621px;
-      background: url('../../assets/image/404/404-dashed.png') no-repeat;
+      background: url('@/assets/image/404/404-dashed.png') no-repeat;
       background-size: 100% 100%;
     }
   }
