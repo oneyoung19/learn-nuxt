@@ -16,14 +16,14 @@
             :key="linkIndex">
             <a
               v-if="linkItem.url"
-              :class="linkItem.url ? 'underline' : ''"
+              :class="linkItem.url ? 'underline hover-bold' : ''"
               :href="linkItem.url"
               target="_blank">
               {{ linkItem.text }}
             </a>
             <span
               v-else
-              :class="linkItem.url ? 'underline' : ''">
+              :class="linkItem.url ? 'underline hover-bold' : ''">
               {{ linkItem.text }}
             </span>
           </p>
@@ -64,9 +64,9 @@
       </div>
       <div class="footer-attach">
         <div class="protocol">
-          <a class="underline" href="https://www.cbibank.com/protocol.html" target="_blank">服务协议</a>
+          <a class="underline hover-bold" href="https://www.cbibank.com/protocol.html" target="_blank">服务协议</a>
           <span>|</span>
-          <a class="underline" href="https://www.cbibank.com/privacy.html" target="_blank">隐私权协议</a>
+          <a class="underline hover-bold" href="https://www.cbibank.com/privacy.html" target="_blank">隐私权协议</a>
         </div>
         <div class="copyright">Copyright ©2017 CB International Bank LLC</div>
       </div>
@@ -157,13 +157,6 @@ export default {
         color: @gray2;
         &:last-child {
           margin-bottom: 0;
-        }
-        &:hover {
-          .underline {
-            color: @topwhite;
-            // TODO: bold 会造成英文字体宽度变大 产生抖动
-            // font-weight: bold;
-          }
         }
       }
     }
