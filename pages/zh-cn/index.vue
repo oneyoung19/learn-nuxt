@@ -660,11 +660,21 @@
     </div>
     <div class="service">
       <div class="service-container layout">
-        <div class="service-left" data-aos="fade-right">
-          <p class="title">为多种类型的企业和个人提供定制化服务</p>
-          <p class="desc">支持实物贸易、服务贸易、全球投资、跨境电商等企业类型，服务留学生、移民、跨境工作者、个人投资者。</p>
+        <div class="service-left">
+          <p class="title" data-aos="fade-up">为多种类型的企业和个人提供定制化服务</p>
+          <p class="desc" data-aos="fade-up">支持实物贸易、服务贸易、全球投资、跨境电商等企业类型，服务留学生、移民、跨境工作者、个人投资者。</p>
         </div>
-        <div class="service-right background" data-aos="fade-left"></div>
+        <div class="service-right background" data-aos="fade-up">
+          <div class="service-person" data-aos="fade-up" data-aos-delay="50">
+            <img src="@/assets/image/home/service-person.png" alt="">
+          </div>
+          <!-- <div class="service-img service-img-01" data-aos="fade">
+            <img src="@/assets/image/home/service-img-01.png" alt="">
+          </div>
+          <div class="service-img service-img-02" data-aos="fade">
+            <img src="@/assets/image/home/service-img-02.png" alt="">
+          </div> -->
+        </div>
       </div>
     </div>
     <div class="global-net">
@@ -711,24 +721,24 @@
             class="customer-left-item background"
             data-aos="fade"
             data-aos-offset="350">
-            <p class="title" data-aos="fade-up" data-aos-offset="350" data-aos-duration="600" data-aos-delay="400">实物贸易型企业</p>
-            <p class="desc" data-aos="fade-up" data-aos-offset="350" data-aos-duration="600" data-aos-delay="400">针对实物贸易型企业的实际业务需求，尤其是中小企业在国际银行开户及全球汇款等方面的痛点，CBiBank可为客户提供相应的高效、便捷的银行服务。</p>
+            <p class="title" data-aos="fade" data-aos-offset="350" data-aos-duration="600" data-aos-delay="100">实物贸易型企业</p>
+            <p class="desc" data-aos="fade" data-aos-offset="350" data-aos-duration="600" data-aos-delay="200">针对实物贸易型企业的实际业务需求，尤其是中小企业在国际银行开户及全球汇款等方面的痛点，CBiBank可为客户提供相应的高效、便捷的银行服务。</p>
           </div>
           <div
             v-if="activeTab === 'customer-service'"
             class="customer-left-item background"
             data-aos="fade"
             data-aos-offset="350">
-            <p class="title" data-aos="fade-up" data-aos-offset="350" data-aos-duration="600" data-aos-delay="400">服务贸易型企业</p>
-            <p class="desc" data-aos="fade-up" data-aos-offset="350" data-aos-duration="600" data-aos-delay="400">基于出海服务型企业对全球多币种开户、跨境支付和定制化金融产品的迫切需求，CBiBank为IT外包、互联网运营服务等行业的出海服务型企业打造了定制化的银行服务和多元化的解决方案。</p>
+            <p class="title" data-aos="fade" data-aos-offset="350" data-aos-duration="600" data-aos-delay="100">服务贸易型企业</p>
+            <p class="desc" data-aos="fade" data-aos-offset="350" data-aos-duration="600" data-aos-delay="200">基于出海服务型企业对全球多币种开户、跨境支付和定制化金融产品的迫切需求，CBiBank为IT外包、互联网运营服务等行业的出海服务型企业打造了定制化的银行服务和多元化的解决方案。</p>
           </div>
           <div
             v-if="activeTab === 'customer-invest'"
             class="customer-left-item background"
             data-aos="fade"
             data-aos-offset="350">
-            <p class="title" data-aos="fade-up" data-aos-offset="350" data-aos-duration="600" data-aos-delay="400">国际投融资企业</p>
-            <p class="desc" data-aos="fade-up" data-aos-offset="350" data-aos-duration="600" data-aos-delay="400">赴海外投资和融资企业在国际金融业务方面的需求往往多样复杂，CBiBank可为客户提供基于CBiBank银行帐户之上的安全、高效、多元化资产管理解决方案。</p>
+            <p class="title" data-aos="fade" data-aos-offset="350" data-aos-duration="600" data-aos-delay="100">国际投融资企业</p>
+            <p class="desc" data-aos="fade" data-aos-offset="350" data-aos-duration="600" data-aos-delay="200">赴海外投资和融资企业在国际金融业务方面的需求往往多样复杂，CBiBank可为客户提供基于CBiBank银行帐户之上的安全、高效、多元化资产管理解决方案。</p>
           </div>
         </div>
         <div class="customer-right">
@@ -1869,6 +1879,7 @@ const swiperPartnersModules = ref([Autoplay])
   .service {
     height: 700px;
     background-color: @topwhite;
+    overflow: hidden;
     .service-container {
       display: flex;
       padding-top: 100px;
@@ -1893,8 +1904,26 @@ const swiperPartnersModules = ref([Autoplay])
         height: 600px;
         margin-left: 145px;
         margin-right: -75px;
-        // margin-left: 70px;
         background-image: url('@/assets/image/home/service-bg.png');
+        .service-person {
+          width: 100%;
+          height: 100%;
+        }
+        .service-img {
+          width: 222px;
+          height: 130px;
+          box-shadow: 0px 5px 25px -6px rgba(22,31,91,0.149);
+          &.service-img-01 {
+            position: absolute;
+            top: 68px;
+            right: -16px;
+          }
+          &.service-img-02 {
+            position: absolute;
+            top: 340px;
+            left: -96px;
+          }
+        }
       }
     }
   }
