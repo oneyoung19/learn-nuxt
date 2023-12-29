@@ -11,8 +11,11 @@ export default defineNuxtConfig({
   app: {
     head: {
       charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
-    }
+      viewport: 'width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no'
+    },
+    // meta: [
+    //   { name: 'viewport', content: 'width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no' }
+    // ]
     // pageTransition: { name: 'page', mode: 'out-in' }
   },
   devtools: { enabled: true },
@@ -21,7 +24,7 @@ export default defineNuxtConfig({
       '/cbi-catcher-app': {
         target: 'http://sit1.cbi-catcher-gateway.sitcbi.com/cbi-catcher-app',
         changeOrigin: true,
-        // TODO: Nutx是真垃圾 设置了不管用 https://github.com/http-party/node-http-proxy?tab=readme-ov-file#options
+        // TODO: 设置了不管用 https://github.com/http-party/node-http-proxy?tab=readme-ov-file#options
         // prependPath: true
       },
     },
