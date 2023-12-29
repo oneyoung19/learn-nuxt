@@ -1,15 +1,15 @@
 <template>
   <div class="home">
     <div class="banner">
+      <!-- :autoplay="{
+          delay: 6000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false
+        }" -->
       <Swiper
         class="carousel-list"
         :modules="swiperModules"
         :pagination="swiperPaginationOptions"
-        :autoplay="{
-          delay: 6000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: false
-        }"
         :loop="true"
         :speed="1500"
         :spaceBetween="80"
@@ -346,7 +346,7 @@
               <div class="icon-box">
                 <SvgIcon name="apply"></SvgIcon>
               </div>
-              <span>在线申请</span>
+              <span>Apply online</span>
             </div>
             <div
               class="activated-tip second"
@@ -355,7 +355,7 @@
               <div class="icon-box">
                 <SvgIcon name="cert"></SvgIcon>
               </div>
-              <span>线上开户</span>
+              <span>Open an account online</span>
             </div>
             <div
               class="timeout"
@@ -364,7 +364,9 @@
               <ElProgress
                 :class="timeoutActive ? 'active' : ''"
                 type="circle"
-                :percentage="(4 - timeout) * 25">
+                :percentage="(4 - timeout) * 25"
+                :indeterminate="true"
+                :duration="1">
                 <div>
                   <span class="timeout-text">{{ `${timeout}s` }}</span>
                   <img
@@ -617,7 +619,7 @@
           data-aos-offset="300">
           <div
             class="letter-img"
-            data-aos="fade-down-left"
+            data-aos="fade"
             data-aos-delay="200"
             data-aos-duration="1000"
             data-aos-offset="300">
@@ -784,7 +786,7 @@ const handleMouseEnterVideoDemo = () => {
       return
     }
     timeout.value -= 1
-  }, 1000)
+  }, 800)
 }
 
 const currentSwitchCard = ref('corporbank')
@@ -1071,9 +1073,9 @@ const swiperPartnersModules = ref([Autoplay])
                         .carousel-01-dot-amount {
                           position: absolute;
                           top: 20px;
-                          left: -35px;
-                          width: 105px;
-                          height: 52px;
+                          left: -48px;
+                          width: 130px;
+                          height: 75px;
                         }
                       }
                     }
@@ -1345,10 +1347,10 @@ const swiperPartnersModules = ref([Autoplay])
               position: absolute;
               display: flex;
               align-items: center;
-              width: 154px;
               height: 64px;
-              padding-left: 18px;
+              padding: 0 18px;
               background: rgba(255,255,255,0.9);
+              color: @gray4;
               box-shadow: 0px 8px 21px 0px rgba(0,0,0,0.1);
               border-radius: 8px;
               .icon-box {
@@ -1431,9 +1433,9 @@ const swiperPartnersModules = ref([Autoplay])
                     .timeout-img-binggo {
                       display: block;
                       animation-name: aos-animate-padding-binggo;
-                      animation-duration: .5s;
+                      animation-duration: 1s;
                       animation-timing-function: ease-in-out;
-                      animation-delay: .2s;
+                      animation-delay: 0;
                       animation-fill-mode: forwards;
                     }
                   }
@@ -1777,6 +1779,7 @@ const swiperPartnersModules = ref([Autoplay])
             z-index: 2;
             width: 215px;
             height: 106px;
+            box-shadow: 10px -10px 25px -6px rgba(22,31,91,0.149);
           }
           &:nth-child(2) {
             top: 50%;
@@ -1784,6 +1787,7 @@ const swiperPartnersModules = ref([Autoplay])
             transform: translate(-50%, -50%);
             width: 388px;
             height: 214px;
+            box-shadow: 0px 5px 25px -6px rgba(22,31,91,0.149);
           }
           &:nth-child(3), &:nth-child(4), &:nth-child(5) {
             right: 0;

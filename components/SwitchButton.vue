@@ -152,6 +152,7 @@ export default {
       height: 52px;
       text-align: center;
       transition: all ease .5s;
+      border-radius: 26px;
       &.active {
         color: @topwhite;
       }
@@ -186,6 +187,13 @@ export default {
     .switch-button-list {
       background-color: @gray3;
       color: @gray4;
+      // .switch-button-item {
+      //   &:not(.active) {
+      //     &:hover {
+      //       background-color: @gray2;
+      //     }
+      //   }
+      // }
     }
     .slider {
       background-color: @gray4;
