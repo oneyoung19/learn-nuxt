@@ -6,7 +6,11 @@
   </div>
 </template>
 
-<style>
+<style lang="less">
+html, body {
+  width: 100%;
+  min-width: @minLayoutWidth;
+}
 .page-enter-active,
 .page-leave-active {
   transition: all 0.4s;
