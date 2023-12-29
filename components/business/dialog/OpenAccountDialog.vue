@@ -1,6 +1,6 @@
 <template>
   <ElDialog
-    class="el-dialog-cover"
+    class="open-account-dialog el-dialog-cover"
     :modelValue="visible"
     @update:modelValue="handleVisible">
     <div class="open-account">
@@ -63,8 +63,7 @@
             <Button
               :loading="submitLoading"
               type="blank"
-              @click="handleSubmit"
-            >
+              @click="handleSubmit">
               提交
             </Button>
           </div>
@@ -174,8 +173,10 @@ export default {
 </script>
 
 <style lang="less">
-.el-dialog-cover {
-  width: 468px;
+.open-account-dialog {
+  &.el-dialog-cover {
+    width: 468px;
+  }
 }
 .open-account {
   .el-select__popper {

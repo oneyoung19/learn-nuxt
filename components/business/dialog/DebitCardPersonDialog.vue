@@ -1,6 +1,6 @@
 <template>
   <ElDialog
-    class="el-dialog-cover"
+    class="debit-card-person-dialog el-dialog-cover"
     :modelValue="visible"
     @update:modelValue="handleVisible">
     <div class="debit-card">
@@ -70,8 +70,10 @@ export default {
 </script>
 
 <style lang="less">
-.el-dialog-cover {
-  width: 600px;
+.debit-card-person-dialog {
+  &.el-dialog-cover {
+    width: 600px;
+  }
 }
 </style>
 
