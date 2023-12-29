@@ -18,6 +18,7 @@
             </li>
             <Select
               text="关于我们"
+              trigger="hover"
               v-model="aboutSelectValue"
               :list="aboutSelectList"
               @change="handleAboutSelect">
@@ -34,6 +35,7 @@
             <Select
               class="lang"
               text="简体中文"
+              trigger="hover"
               v-model="langSelectValue"
               :list="langSelectList"
               @change="handleLangSelect">

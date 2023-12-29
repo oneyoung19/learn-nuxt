@@ -544,7 +544,7 @@ useHead({
         position: absolute;
         &.top-right {
           top: 75px;
-          right: -245px;
+          right: -220px;
           width: 110px;
           height: 120px;
         }

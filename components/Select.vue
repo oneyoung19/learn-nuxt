@@ -8,6 +8,7 @@
     <div
       class="select-container"
       @click="handleClick">
+      <!-- :class="modelValue.value ? 'active' : ''" -->
       <span class="select-text">{{ text || modelValue.label }}</span>
       <SvgIcon class="arrow" name="arrow-bottom"></SvgIcon>
     </div>
@@ -98,7 +99,19 @@ export default {
   cursor: pointer;
   .select-container {
     .select-text {
+      position: relative;
       margin-right: 6px;
+      &.active {
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: calc(100% + 15px);
+          width: 100%;
+          height: 2px;
+          background-color: @blue;
+        }
+      }
     }
     .arrow {
       transition: all ease .5s;
