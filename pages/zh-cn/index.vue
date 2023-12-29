@@ -445,34 +445,12 @@
               class="cards-item-right background"
               data-aos="fade-up"
               data-aos-offset="300">
-              <div v-if="currentSwitchCard === 'perbank'" key="perbank">
-                <div
-                  key="perbank"
-                  class="card card-above"
-                  data-aos="fade-down-left">
-                  <img src="~assets/image/home/visa-card.png" alt="">
-                </div>
-                <div
-                  key="perbank"
-                  class="card card-bottom"
-                  data-aos="fade-up-right">
-                  <img src="~assets/image/home/union-pay-card.png" alt="">
-                </div>
-                <div
-                  key="perbank"
-                  class="card-tip"
-                  data-aos="fade-up">
-                  <div class="card-tip-icon">
-                    <img src="~assets/image/home/sawtooth-selected.png" alt="">
-                  </div>
-                  <p class="card-tip-text">消费成功</p>
-                </div>
-              </div>
               <div v-if="currentSwitchCard === 'corporbank'" key="corporbank">
                 <div
                   key="corporbank"
                   class="card"
-                  data-aos="fade-down-left">
+                  data-aos="fade-down-left"
+                  @click="handleSwitchCard('perbank')">
                   <img src="~assets/image/home/visa-card.png" alt="">
                 </div>
                 <div
@@ -483,6 +461,30 @@
                 </div>
                 <div
                   key="corporbank"
+                  class="card-tip"
+                  data-aos="fade-up">
+                  <div class="card-tip-icon">
+                    <img src="~assets/image/home/sawtooth-selected.png" alt="">
+                  </div>
+                  <p class="card-tip-text">消费成功</p>
+                </div>
+              </div>
+              <div v-if="currentSwitchCard === 'perbank'" key="perbank">
+                <div
+                  key="perbank"
+                  class="card card-above"
+                  data-aos="fade-down-left">
+                  <img src="~assets/image/home/visa-card.png" alt="">
+                </div>
+                <div
+                  key="perbank"
+                  class="card card-bottom"
+                  data-aos="fade-up-right"
+                  @click="handleSwitchCard('corporbank')">
+                  <img src="~assets/image/home/union-pay-card.png" alt="">
+                </div>
+                <div
+                  key="perbank"
                   class="card-tip"
                   data-aos="fade-up">
                   <div class="card-tip-icon">
@@ -829,6 +831,9 @@ const handleApplyCards = () => {
   } else {
     debitCardPersonDialogVisible.value = true
   }
+}
+const handleSwitchCard = (tabType) => {
+  currentSwitchCard.value = tabType
 }
 
 const activeTab = ref('customer-material')
@@ -1549,6 +1554,9 @@ const swiperPartnersModules = ref([Autoplay])
               }
               &.card-above {
                 z-index: 2;
+              }
+              &:not(.card-above) {
+                cursor: pointer;
               }
             }
             .card-tip {
