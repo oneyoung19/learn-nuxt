@@ -515,7 +515,7 @@
           <div
             class="circle-arrow"
             data-aos="fade"
-            data-aos-delay="1000">
+            data-aos-delay="400">
             <img
               data-aos="aos-animate-rotate"
               src="~assets/image/home/circle-arrow.png"
