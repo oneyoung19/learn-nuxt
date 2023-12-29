@@ -1,11 +1,10 @@
 <template>
   <div class="error">
-    <Page404 v-if="error.statusCode === 404" />
+    <NotFound v-if="error.statusCode === 404" />
   </div>
 </template>
 
 <script setup lang="ts">
-import Page404 from '@/components/error/404.vue'
 
 useHead({
   title: 'CBiBank富港银行 - 足不出户，连接您与全球财富【官网】',
