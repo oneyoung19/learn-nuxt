@@ -20,9 +20,10 @@ function handleToHome() {
 .page-404 {
   width: 100%;
   min-height: 100%;
+  position: relative;
   
   .gradient-404 {
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     width: 804px;
