@@ -69,11 +69,11 @@ export default defineNuxtConfig({
     '~/assets/styles/global.less',
     'animate.css/animate.css',
     'element-plus/dist/index.css',
-
-    '~/assets/styles/animation/aos.less',
-    '~/assets/styles/animation/cover-animate.less',
+    
+    '~/assets/styles/animation/animate.css/fade.less',
+    '~/assets/styles/animation/aos/index.less',
+    '~/assets/styles/animation/vue-transition/fade.less',
     '~/assets/styles/animation/custom.less',
-    '~/assets/styles/animation/vue-transition.less',
 
     '~/assets/styles/element/color.less',
     '~/assets/styles/element/dialog.less',
