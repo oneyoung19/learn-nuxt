@@ -27,8 +27,8 @@
         </div>
         <div class="header-right">
           <div class="buttons">
-            <Button type="gray" size="small" @click="handleCorporbankLogin">企业登录</Button>
-            <Button type="blue" size="small" @click="handleOpenAccount">开户申请</Button>
+            <Button type="gray" size="small">企业登录</Button>
+            <Button type="blue" size="small">开户申请</Button>
           </div>
           <div class="switch-lang">
             <SvgIcon class="svg-global" name="global"></SvgIcon>
@@ -44,9 +44,6 @@
         </div>
       </div>
     </div>
-    <OpenAccountDialog
-      v-model="openAccountDialogVisible">
-    </OpenAccountDialog>
   </div>
 </template>
 
@@ -64,8 +61,6 @@ export default {
         { label: '安全合规', value: '/zh-cn/about/safety' },
         { label: '我们是谁', value: '/zh-cn/about/who-we-are' }
       ],
-      // 开户申请
-      openAccountDialogVisible: false,
       // 语言切换
       langSelectValue: {},
       langSelectList: [
@@ -82,18 +77,12 @@ export default {
         path
       })
     },
-    handleCorporbankLogin () {
-      window.open('https://online.cbibank.com')
-    },
-    handleOpenAccount () {
-      this.openAccountDialogVisible = true
-    },
     handleLangSelect (langInfo) {
       const { value } = langInfo
       if (value === 'zh-hant') {
-        window.location.href = 'https://www.cbibank.com/index-hant.html'
+        // window.location.href = '/zh-hant'
       } else if (value === 'en') {
-        window.location.href = 'https://www.cbibank.com/index-en.html'
+        // window.location.href = '/en'
       }
     }
   }

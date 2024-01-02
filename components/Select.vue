@@ -95,7 +95,6 @@ export default {
 .select {
   position: relative;
   font-size: 16px;
-  line-height: 14px;
   cursor: pointer;
   .select-container {
     .select-text {
