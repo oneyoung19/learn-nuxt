@@ -145,7 +145,7 @@
             <img src="@/assets/image/corporbank/efficiency-usd.png" alt="">
           </div>
           <div class="efficiency-img efficiency-dashed-line">
-            <img src="@/assets/image/corporbank/efficiency-dashed-line.png" alt="" data-aos="aos-c-animate-padding">
+            <img src="@/assets/image/corporbank/efficiency-dashed-line.png" alt="" data-aos="aos-animate-padding">
           </div>
           <div class="efficiency-img efficiency-cad" data-aos="fade-up" data-aos-delay="400">
             <img src="@/assets/image/corporbank/efficiency-cad.png" alt="">
@@ -561,6 +561,23 @@ export default {
             object-fit: cover;
             object-position: left;
             transition: all ease 1s;
+            @keyframes aos-animate-padding {
+              0% {
+                padding-right: 306px;
+              }
+              100% {
+                padding-right: 0;
+              }
+            }
+            &[data-aos="aos-animate-padding"] {
+              &.aos-animate {
+                animation-name: aos-animate-padding;
+                animation-duration: 1.5s;
+                animation-timing-function: ease-in-out;
+                animation-delay: .6s;
+                animation-fill-mode: forwards;
+              }
+            }
           }
         }
         .efficiency-cad {

@@ -1,26 +1,19 @@
+/*
+  aos兼容animate.css
+  [Use animate.css with aos](https://github.com/michalsnik/aos/issues/7)
+  TODO: 即使按照文章所述添加了[data-aos]的visibility样式覆盖，animate.css依然有闪烁问题。aos与animate.css的实际搭配效果 并不是很理想。
+*/ 
 // [data-aos] {
 //   visibility: hidden;
 // }
 // [data-aos].aos-animate, [data-aos].animate__animated {
 //   visibility: visible;
 // }
-// 图片揭露
-@keyframes c-animate-padding {
-  0% {
-    padding-right: 306px;
-  }
-  100% {
-    padding-right: 0;
-  }
-}
-[data-aos="aos-c-animate-padding"].aos-animate {
-  animation-name: c-animate-padding;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-in-out;
-  animation-delay: .6s;
-  animation-fill-mode: forwards;
-}
-// 环形平移
+
+/*
+  环形平移
+  See more at: https://acgtofe.com/posts/2016/11/arc-path-movement
+*/ 
 @keyframes spinUpRight {
   0% {
     transform: translateX(75px) rotate(-270deg) translateY(75px) rotate(270deg);
@@ -77,7 +70,7 @@
   }
 }
 
-// 宽度渐变
+// before伪元素宽度渐变
 [data-aos="aos-c-animate-before-width"] {
   &::before {
     width: 0;
