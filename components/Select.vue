@@ -13,8 +13,8 @@
       <SvgIcon class="arrow" name="arrow-bottom"></SvgIcon>
     </div>
     <transition
-      enter-active-class="animate__animated animate__fadeInDown"
-      leave-active-class="animate__animated animate__fadeOutUp">
+      enter-active-class="animate__animated cover__animate__fadeInDown"
+      leave-active-class="animate__animated cover__animate__fadeOutUp">
       <div
         class="select-dropdown"
         v-show="visible">
@@ -59,7 +59,7 @@ export default {
       default: 'click'
     }
   },
-  emits: ['change'],
+  emits: ['update:modelValue', 'change'],
   data () {
     return {
       visible: false

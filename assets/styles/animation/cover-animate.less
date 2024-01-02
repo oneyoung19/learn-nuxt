@@ -1,5 +1,5 @@
-/* 覆盖animate.css动画库 */ 
-@keyframes fadeInDown {
+/* 覆盖animate.css动画库 */
+@keyframes coverFadeInDown {
   from {
     opacity: 0;
     -webkit-transform: translate3d(0, -100%, 0);
@@ -13,7 +13,7 @@
   }
 }
 
-@keyframes fadeOutUp {
+@keyframes coverFadeOutUp {
   from {
     opacity: 1;
   }
@@ -23,4 +23,12 @@
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -10%, 0);
   }
+}
+
+.cover__animate__fadeInDown {
+  animation-name: coverFadeInDown;
+}
+
+.cover__animate__fadeOutUp {
+  animation-name: coverFadeOutUp;
 }
