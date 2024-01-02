@@ -1,8 +1,4 @@
 <template>
-  <div>
-    <div>Home Page</div>
-    <NuxtLink to="/about">About</NuxtLink>
-  </div>
 </template>
 
 <script setup>
