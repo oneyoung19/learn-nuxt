@@ -29,5 +29,8 @@
     "swiper": "^11.0.5",
     "typed.js": "^2.1.0",
     "vue-countup-v3": "^1.4.0"
+  },
+  "resolutions": {
+    "string-width": "4.2.3"
   }
 }
