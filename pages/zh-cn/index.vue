@@ -13,7 +13,7 @@ export default {
     }
   },
   created () {
-    // SSR相对SSR有两个优点：
+    // SSR相对SSG有两个优点：
     // 1.SEO更好 譬如https://example.com?query=usd_to_rmb该查询字符串 在SSR中的HTML能够直接渲染出usd_to_rmb 而SSG需要借助浏览器渲染
     // 2.数据更新更友好 SSG的数据更新是借助JS渲染之后才能完成的 而SSR在服务端的渲染逻辑能够在某种程度上减少该开销
     // SSR的缺点 在于：
